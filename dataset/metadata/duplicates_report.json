@@ -1,0 +1,1105 @@
+{
+ "duplicate_groups": 42,
+ "redundant_entries": 53,
+ "groups_with_conflicting_labels": 28,
+ "merged_into": {
+  "69": 64,
+  "4006": 3964,
+  "4007": 3969,
+  "4026": 4008,
+  "5607": 5476,
+  "5995": 5896,
+  "6019": 5745,
+  "10095": 9929,
+  "11442": 11441,
+  "11482": 5527,
+  "11564": 720,
+  "11565": 938,
+  "11568": 972,
+  "11574": 1544,
+  "11595": 2050,
+  "11596": 2064,
+  "11672": 6507,
+  "11695": 5294,
+  "11701": 5388,
+  "11971": 11966,
+  "11972": 11956,
+  "11973": 11966,
+  "11974": 11956,
+  "12316": 12020,
+  "12317": 12020,
+  "12318": 12076,
+  "12319": 12076,
+  "12321": 12090,
+  "12322": 12090,
+  "12327": 12140,
+  "12328": 12140,
+  "12330": 12164,
+  "12331": 12164,
+  "12332": 12169,
+  "12337": 12204,
+  "12338": 12204,
+  "12404": 12359,
+  "12586": 12585,
+  "12589": 12505,
+  "12590": 12505,
+  "12591": 12514,
+  "12593": 12442,
+  "12595": 12447,
+  "12598": 12452,
+  "12599": 12452,
+  "12602": 12601,
+  "12603": 12457,
+  "12617": 12588,
+  "12620": 12585,
+  "12622": 12535,
+  "12649": 12587,
+  "12654": 12628,
+  "12655": 12627
+ },
+ "groups": [
+  {
+   "kind": "identical_content",
+   "key": "81873387e99c5a9120fc5759ebada0c9228f260e0f78d6ee68adbd3eabe5fddb",
+   "kept_word_id": 64,
+   "removed_word_ids": [
+    69
+   ],
+   "labels": [
+    {
+     "word_id": 64,
+     "label_ar": "34",
+     "label_en": "Thirty-Four",
+     "category_id": 2
+    },
+    {
+     "word_id": 69,
+     "label_ar": "43",
+     "label_en": "Forty-three",
+     "category_id": 2
+    }
+   ],
+   "labels_conflict": true
+  },
+  {
+   "kind": "identical_content",
+   "key": "1d662e6a85450199eef68d013566e1c49975f08ed17e3d20019e34a180de25bc",
+   "kept_word_id": 720,
+   "removed_word_ids": [
+    11564
+   ],
+   "labels": [
+    {
+     "word_id": 720,
+     "label_ar": "الكلم الطيب",
+     "label_en": "Good Words (Chapter of Religion)",
+     "category_id": 23
+    },
+    {
+     "word_id": 11564,
+     "label_ar": "كلم الطيب",
+     "label_en": "Good word",
+     "category_id": 23
+    }
+   ],
+   "labels_conflict": true
+  },
+  {
+   "kind": "identical_content",
+   "key": "a689e046fb474afa8558055ce5ba6089cc1fdb9c4f5c5c020d82386c8d947823",
+   "kept_word_id": 938,
+   "removed_word_ids": [
+    11565
+   ],
+   "labels": [
+    {
+     "word_id": 938,
+     "label_ar": "لا",
+     "label_en": "No (Chapter of Religion)",
+     "category_id": 23
+    },
+    {
+     "word_id": 11565,
+     "label_ar": "لا",
+     "label_en": "No",
+     "category_id": 23
+    }
+   ],
+   "labels_conflict": false
+  },
+  {
+   "kind": "identical_content",
+   "key": "0082f709e398618b61cf2d5fedbb296a10c0984195142ce3db32dc64f4f62292",
+   "kept_word_id": 972,
+   "removed_word_ids": [
+    11568
+   ],
+   "labels": [
+    {
+     "word_id": 972,
+     "label_ar": "نعم",
+     "label_en": "Yes (Bab Al-Din)",
+     "category_id": 23
+    },
+    {
+     "word_id": 11568,
+     "label_ar": "نعم",
+     "label_en": "Yes",
+     "category_id": 23
+    }
+   ],
+   "labels_conflict": false
+  },
+  {
+   "kind": "identical_content",
+   "key": "eb8902f58faf2572c29bb46b6a2049f1b212e203c5d603d656c075d21181fa0b",
+   "kept_word_id": 1544,
+   "removed_word_ids": [
+    11574
+   ],
+   "labels": [
+    {
+     "word_id": 1544,
+     "label_ar": "أذى",
+     "label_en": "Harm",
+     "category_id": 26
+    },
+    {
+     "word_id": 11574,
+     "label_ar": "أذى",
+     "label_en": "Harm",
+     "category_id": 26
+    }
+   ],
+   "labels_conflict": false
+  },
+  {
+   "kind": "identical_content",
+   "key": "4b9a05ff8f5909eae893ac81947704891ef4661d3f13fd6e7b5bf147392d15ea",
+   "kept_word_id": 2050,
+   "removed_word_ids": [
+    11595
+   ],
+   "labels": [
+    {
+     "word_id": 2050,
+     "label_ar": "ذَرة",
+     "label_en": "Atom",
+     "category_id": 26
+    },
+    {
+     "word_id": 11595,
+     "label_ar": "ذَرة",
+     "label_en": "Corn",
+     "category_id": 26
+    }
+   ],
+   "labels_conflict": false
+  },
+  {
+   "kind": "identical_content",
+   "key": "9a9ea9f072efba0fe3e335d96840262fa7be29c5bf5805f6cb946b62ddfa226e",
+   "kept_word_id": 2064,
+   "removed_word_ids": [
+    11596
+   ],
+   "labels": [
+    {
+     "word_id": 2064,
+     "label_ar": "رِجل",
+     "label_en": "Leg",
+     "category_id": 26
+    },
+    {
+     "word_id": 11596,
+     "label_ar": "رِجل",
+     "label_en": "Leg",
+     "category_id": 26
+    }
+   ],
+   "labels_conflict": false
+  },
+  {
+   "kind": "identical_content",
+   "key": "a2a926fb80e9db88a14bf719b7def55a4d23f668a7d0d562655698b2c3c1ebb6",
+   "kept_word_id": 3964,
+   "removed_word_ids": [
+    4006
+   ],
+   "labels": [
+    {
+     "word_id": 3964,
+     "label_ar": "ذهل",
+     "label_en": "Astonished",
+     "category_id": 24
+    },
+    {
+     "word_id": 4006,
+     "label_ar": "مذهل",
+     "label_en": "Amazing",
+     "category_id": 24
+    }
+   ],
+   "labels_conflict": true
+  },
+  {
+   "kind": "identical_content",
+   "key": "e944a7d7a8ddc34d2b930dda69f5738f7eff3ca062a83eccacf12325029d0e55",
+   "kept_word_id": 3969,
+   "removed_word_ids": [
+    4007
+   ],
+   "labels": [
+    {
+     "word_id": 3969,
+     "label_ar": "رسالة - برقية",
+     "label_en": "Message - Telegram",
+     "category_id": 24
+    },
+    {
+     "word_id": 4007,
+     "label_ar": "شفوق_2",
+     "label_en": "Shafuq_2",
+     "category_id": 24
+    }
+   ],
+   "labels_conflict": true
+  },
+  {
+   "kind": "identical_content",
+   "key": "26d516e26d0a4736aa59da6a82279627d33b20f58b2397b591a7895ab4c9b45b",
+   "kept_word_id": 4008,
+   "removed_word_ids": [
+    4026
+   ],
+   "labels": [
+    {
+     "word_id": 4008,
+     "label_ar": "شفوق_3",
+     "label_en": "Shafuq_3",
+     "category_id": 24
+    },
+    {
+     "word_id": 4026,
+     "label_ar": "طعن",
+     "label_en": "Stab",
+     "category_id": 24
+    }
+   ],
+   "labels_conflict": true
+  },
+  {
+   "kind": "identical_content",
+   "key": "bd264c3aee9deb15fcbcb7d306a613086989f35f8d075260edc9e71c7f4ed507",
+   "kept_word_id": 5294,
+   "removed_word_ids": [
+    11695
+   ],
+   "labels": [
+    {
+     "word_id": 5294,
+     "label_ar": "اجازة",
+     "label_en": "Vacation",
+     "category_id": 7
+    },
+    {
+     "word_id": 11695,
+     "label_ar": "اجازة",
+     "label_en": "Vacation",
+     "category_id": 7
+    }
+   ],
+   "labels_conflict": false
+  },
+  {
+   "kind": "identical_content",
+   "key": "18a61b4c069d7f919c784d41f2c1e286f3bf2147e7c9298ce17063b0388ef993",
+   "kept_word_id": 5388,
+   "removed_word_ids": [
+    11701
+   ],
+   "labels": [
+    {
+     "word_id": 5388,
+     "label_ar": "مشروع تطور",
+     "label_en": "Development Project",
+     "category_id": 7
+    },
+    {
+     "word_id": 11701,
+     "label_ar": "مشروع تطور",
+     "label_en": "Development Project",
+     "category_id": 7
+    }
+   ],
+   "labels_conflict": false
+  },
+  {
+   "kind": "identical_content",
+   "key": "a39e2a721bbbcecd9f741d088e2a2581a302b5c8d17c41fa61df74b8910c1023",
+   "kept_word_id": 5476,
+   "removed_word_ids": [
+    5607
+   ],
+   "labels": [
+    {
+     "word_id": 5476,
+     "label_ar": "الم",
+     "label_en": "Pain",
+     "category_id": 13
+    },
+    {
+     "word_id": 5607,
+     "label_ar": "ألم",
+     "label_en": "Pain",
+     "category_id": 13
+    }
+   ],
+   "labels_conflict": true
+  },
+  {
+   "kind": "identical_content",
+   "key": "87585eead5295bf73c22e6ab40a4ee964f3fa9fb10edafc1f6c538da93e22230",
+   "kept_word_id": 5527,
+   "removed_word_ids": [
+    11482
+   ],
+   "labels": [
+    {
+     "word_id": 5527,
+     "label_ar": "ريجيم - رجيم",
+     "label_en": "Diet",
+     "category_id": 13
+    },
+    {
+     "word_id": 11482,
+     "label_ar": "رجيم",
+     "label_en": "Diet",
+     "category_id": 38
+    }
+   ],
+   "labels_conflict": true
+  },
+  {
+   "kind": "identical_content",
+   "key": "7b05411430863ed9acf74a40e89180fc647fe1e9939a7f62f9c87607f50a8ec4",
+   "kept_word_id": 5745,
+   "removed_word_ids": [
+    6019
+   ],
+   "labels": [
+    {
+     "word_id": 5745,
+     "label_ar": "رياضة غطس",
+     "label_en": "Diving Sport",
+     "category_id": 30
+    },
+    {
+     "word_id": 6019,
+     "label_ar": "غوص عميق",
+     "label_en": "Deep Diving",
+     "category_id": 8
+    }
+   ],
+   "labels_conflict": true
+  },
+  {
+   "kind": "identical_content",
+   "key": "03cea8e0e31349ec2ba7307731b046cbfaf6d5dc23b9153b087b0cc1c998fea4",
+   "kept_word_id": 5896,
+   "removed_word_ids": [
+    5995
+   ],
+   "labels": [
+    {
+     "word_id": 5896,
+     "label_ar": "البحر الميت",
+     "label_en": "Al-Bahr Al-Mayyit",
+     "category_id": 8
+    },
+    {
+     "word_id": 5995,
+     "label_ar": "البجر الميت",
+     "label_en": "Dead Sea",
+     "category_id": 8
+    }
+   ],
+   "labels_conflict": true
+  },
+  {
+   "kind": "identical_content",
+   "key": "dd4bb8f4b6fc1ac841dea69fc147732aa17e90b12fea309745d5572ac1ef7013",
+   "kept_word_id": 6507,
+   "removed_word_ids": [
+    11672
+   ],
+   "labels": [
+    {
+     "word_id": 6507,
+     "label_ar": "دودج",
+     "label_en": "Dodge",
+     "category_id": 18
+    },
+    {
+     "word_id": 11672,
+     "label_ar": "دودج",
+     "label_en": "Dodge",
+     "category_id": 18
+    }
+   ],
+   "labels_conflict": false
+  },
+  {
+   "kind": "identical_content",
+   "key": "bf0ddf2dc0c98f6d5c76ba2e54ed742ec5500ad7ad6fbe71af0c37448c9dc00c",
+   "kept_word_id": 9929,
+   "removed_word_ids": [
+    10095
+   ],
+   "labels": [
+    {
+     "word_id": 9929,
+     "label_ar": "لصق",
+     "label_en": "Paste",
+     "category_id": 36
+    },
+    {
+     "word_id": 10095,
+     "label_ar": "لصق",
+     "label_en": "Adhesive",
+     "category_id": 36
+    }
+   ],
+   "labels_conflict": false
+  },
+  {
+   "kind": "identical_content",
+   "key": "21525787e506ce42b3ea0d26221aa2d9dc9c27c9961bc1794a433f91c557b5d5",
+   "kept_word_id": 11441,
+   "removed_word_ids": [
+    11442
+   ],
+   "labels": [
+    {
+     "word_id": 11441,
+     "label_ar": "يدهش",
+     "label_en": "other",
+     "category_id": 39
+    },
+    {
+     "word_id": 11442,
+     "label_ar": "يرضى",
+     "label_en": "Satisfy",
+     "category_id": 39
+    }
+   ],
+   "labels_conflict": true
+  },
+  {
+   "kind": "identical_content",
+   "key": "7b438abac44c4b1ca085609ec834f6537f57c0f257cb6f91a23d6f779b503e05",
+   "kept_word_id": 11956,
+   "removed_word_ids": [
+    11972,
+    11974
+   ],
+   "labels": [
+    {
+     "word_id": 11956,
+     "label_ar": "حرام",
+     "label_en": "other",
+     "category_id": 23
+    },
+    {
+     "word_id": 11972,
+     "label_ar": "حرام",
+     "label_en": "other",
+     "category_id": 23
+    },
+    {
+     "word_id": 11974,
+     "label_ar": "2 حرام",
+     "label_en": "other",
+     "category_id": 23
+    }
+   ],
+   "labels_conflict": true
+  },
+  {
+   "kind": "identical_content",
+   "key": "1c226e8f56905ab1a5fa6855c229432a9e1b8cd89184f7e65884ea318a887389",
+   "kept_word_id": 11966,
+   "removed_word_ids": [
+    11971,
+    11973
+   ],
+   "labels": [
+    {
+     "word_id": 11966,
+     "label_ar": "لا",
+     "label_en": "other",
+     "category_id": 23
+    },
+    {
+     "word_id": 11971,
+     "label_ar": "لا",
+     "label_en": "other",
+     "category_id": 23
+    },
+    {
+     "word_id": 11973,
+     "label_ar": "لالا",
+     "label_en": "other",
+     "category_id": 23
+    }
+   ],
+   "labels_conflict": true
+  },
+  {
+   "kind": "identical_content",
+   "key": "729c2fb7414e0846ae0046a8b16fb92aba71ead29e7f40c4faf32a71a7e10e16",
+   "kept_word_id": 12020,
+   "removed_word_ids": [
+    12316,
+    12317
+   ],
+   "labels": [
+    {
+     "word_id": 12020,
+     "label_ar": "خط",
+     "label_en": "other",
+     "category_id": 36
+    },
+    {
+     "word_id": 12316,
+     "label_ar": "خط",
+     "label_en": "other",
+     "category_id": 36
+    },
+    {
+     "word_id": 12317,
+     "label_ar": "خطوط",
+     "label_en": "other",
+     "category_id": 36
+    }
+   ],
+   "labels_conflict": true
+  },
+  {
+   "kind": "identical_content",
+   "key": "88de5ac155fb1f4a3d04ea4bacea740bed5551f53e7a6c17780dd988530304db",
+   "kept_word_id": 12076,
+   "removed_word_ids": [
+    12318,
+    12319
+   ],
+   "labels": [
+    {
+     "word_id": 12076,
+     "label_ar": "امس",
+     "label_en": "other",
+     "category_id": 37
+    },
+    {
+     "word_id": 12318,
+     "label_ar": "امس",
+     "label_en": "other",
+     "category_id": 37
+    },
+    {
+     "word_id": 12319,
+     "label_ar": "امس 2",
+     "label_en": "other",
+     "category_id": 37
+    }
+   ],
+   "labels_conflict": true
+  },
+  {
+   "kind": "identical_content",
+   "key": "3cc2f4524384ec84c9198f6955d483047c40f0ccbae1ca938d37360156ec7a5e",
+   "kept_word_id": 12090,
+   "removed_word_ids": [
+    12321,
+    12322
+   ],
+   "labels": [
+    {
+     "word_id": 12090,
+     "label_ar": "صف",
+     "label_en": "other",
+     "category_id": 37
+    },
+    {
+     "word_id": 12321,
+     "label_ar": "صف",
+     "label_en": "other",
+     "category_id": 37
+    },
+    {
+     "word_id": 12322,
+     "label_ar": "صف 2",
+     "label_en": "other",
+     "category_id": 37
+    }
+   ],
+   "labels_conflict": true
+  },
+  {
+   "kind": "identical_content",
+   "key": "e4347a3cb78109a8595f956bf24a758d69886a6dd083b0b906eef1a3ead50857",
+   "kept_word_id": 12140,
+   "removed_word_ids": [
+    12327,
+    12328
+   ],
+   "labels": [
+    {
+     "word_id": 12140,
+     "label_ar": "دب",
+     "label_en": "other",
+     "category_id": 26
+    },
+    {
+     "word_id": 12327,
+     "label_ar": "دب",
+     "label_en": "other",
+     "category_id": 26
+    },
+    {
+     "word_id": 12328,
+     "label_ar": "دب 2",
+     "label_en": "other",
+     "category_id": 26
+    }
+   ],
+   "labels_conflict": true
+  },
+  {
+   "kind": "identical_content",
+   "key": "4dbb0aef007c6e4719adb2c96aa0abb9b4142ee2f870b2d0da05f57dfd8f87be",
+   "kept_word_id": 12164,
+   "removed_word_ids": [
+    12330,
+    12331
+   ],
+   "labels": [
+    {
+     "word_id": 12164,
+     "label_ar": "الله",
+     "label_en": "other",
+     "category_id": 35
+    },
+    {
+     "word_id": 12330,
+     "label_ar": "الله",
+     "label_en": "other",
+     "category_id": 35
+    },
+    {
+     "word_id": 12331,
+     "label_ar": "الله 2",
+     "label_en": "other",
+     "category_id": 35
+    }
+   ],
+   "labels_conflict": true
+  },
+  {
+   "kind": "identical_content",
+   "key": "11f6d05ce99ae514114698c50a9a8668b9a846164d3c5b24a82ccc31de3e87e4",
+   "kept_word_id": 12169,
+   "removed_word_ids": [
+    12332
+   ],
+   "labels": [
+    {
+     "word_id": 12169,
+     "label_ar": "انتحار",
+     "label_en": "other",
+     "category_id": 35
+    },
+    {
+     "word_id": 12332,
+     "label_ar": "انتحار",
+     "label_en": "other",
+     "category_id": 35
+    }
+   ],
+   "labels_conflict": false
+  },
+  {
+   "kind": "identical_content",
+   "key": "ce596c3e7b87d4065665fc65ffcfd9b4197b815d188c4926fb69cd48249e9da2",
+   "kept_word_id": 12204,
+   "removed_word_ids": [
+    12337,
+    12338
+   ],
+   "labels": [
+    {
+     "word_id": 12204,
+     "label_ar": "دم",
+     "label_en": "other",
+     "category_id": 35
+    },
+    {
+     "word_id": 12337,
+     "label_ar": "دم",
+     "label_en": "other",
+     "category_id": 35
+    },
+    {
+     "word_id": 12338,
+     "label_ar": "دم 2",
+     "label_en": "other",
+     "category_id": 35
+    }
+   ],
+   "labels_conflict": true
+  },
+  {
+   "kind": "identical_content",
+   "key": "b8d781ada2820523e6a8c266ad6334604fe5a948ec6c20ed7431a9e349696745",
+   "kept_word_id": 12359,
+   "removed_word_ids": [
+    12404
+   ],
+   "labels": [
+    {
+     "word_id": 12359,
+     "label_ar": "تقديم",
+     "label_en": "other",
+     "category_id": 38
+    },
+    {
+     "word_id": 12404,
+     "label_ar": "تقديم",
+     "label_en": "other",
+     "category_id": 38
+    }
+   ],
+   "labels_conflict": false
+  },
+  {
+   "kind": "identical_content",
+   "key": "45392e217b044f07da1629048ffb75df11e8570fbbc59011b0fac2950c8bc4de",
+   "kept_word_id": 12442,
+   "removed_word_ids": [
+    12593
+   ],
+   "labels": [
+    {
+     "word_id": 12442,
+     "label_ar": "دم",
+     "label_en": "other",
+     "category_id": 35
+    },
+    {
+     "word_id": 12593,
+     "label_ar": "دم 2",
+     "label_en": "other",
+     "category_id": 35
+    }
+   ],
+   "labels_conflict": true
+  },
+  {
+   "kind": "identical_content",
+   "key": "9ff4d15d08d1568eb2af5089347930010f4d1cecdc4add32bc46f16ef78800e6",
+   "kept_word_id": 12447,
+   "removed_word_ids": [
+    12595
+   ],
+   "labels": [
+    {
+     "word_id": 12447,
+     "label_ar": "طارئ - طرأ - فجاة",
+     "label_en": "other",
+     "category_id": 35
+    },
+    {
+     "word_id": 12595,
+     "label_ar": "طارئ - طرأ - فجاة",
+     "label_en": "other",
+     "category_id": 35
+    }
+   ],
+   "labels_conflict": false
+  },
+  {
+   "kind": "identical_content",
+   "key": "d33320a8af515535fec30ccfd6e9b7b295250d2fc5a2aabc6f9ecc1213886c27",
+   "kept_word_id": 12452,
+   "removed_word_ids": [
+    12598,
+    12599
+   ],
+   "labels": [
+    {
+     "word_id": 12452,
+     "label_ar": "عزيز",
+     "label_en": "other",
+     "category_id": 35
+    },
+    {
+     "word_id": 12598,
+     "label_ar": "عزيز",
+     "label_en": "other",
+     "category_id": 35
+    },
+    {
+     "word_id": 12599,
+     "label_ar": "2 عزيز",
+     "label_en": "other",
+     "category_id": 35
+    }
+   ],
+   "labels_conflict": true
+  },
+  {
+   "kind": "identical_content",
+   "key": "afe41f2e4347c404ea043e0cdfb9405608167f464a5c66289c54ffd0bc2646bf",
+   "kept_word_id": 12457,
+   "removed_word_ids": [
+    12603
+   ],
+   "labels": [
+    {
+     "word_id": 12457,
+     "label_ar": "لبن",
+     "label_en": "other",
+     "category_id": 35
+    },
+    {
+     "word_id": 12603,
+     "label_ar": "2 لبن",
+     "label_en": "other",
+     "category_id": 35
+    }
+   ],
+   "labels_conflict": true
+  },
+  {
+   "kind": "identical_content",
+   "key": "2aa1e2788bc76a563186929bdc6b2a3c4549a14adcdf14c1a765650d5d31bcf4",
+   "kept_word_id": 12505,
+   "removed_word_ids": [
+    12589,
+    12590
+   ],
+   "labels": [
+    {
+     "word_id": 12505,
+     "label_ar": "صح",
+     "label_en": "other",
+     "category_id": 37
+    },
+    {
+     "word_id": 12589,
+     "label_ar": "صح",
+     "label_en": "other",
+     "category_id": 30
+    },
+    {
+     "word_id": 12590,
+     "label_ar": "صحة (صحيح) 2",
+     "label_en": "other",
+     "category_id": 30
+    }
+   ],
+   "labels_conflict": true
+  },
+  {
+   "kind": "identical_content",
+   "key": "691a632907e0faf016bf3a6f2b7a58db42ee29f7e80758001e7f26fd7f3e608f",
+   "kept_word_id": 12514,
+   "removed_word_ids": [
+    12591
+   ],
+   "labels": [
+    {
+     "word_id": 12514,
+     "label_ar": "قص",
+     "label_en": "other",
+     "category_id": 37
+    },
+    {
+     "word_id": 12591,
+     "label_ar": "قص 2",
+     "label_en": "other",
+     "category_id": 30
+    }
+   ],
+   "labels_conflict": true
+  },
+  {
+   "kind": "identical_content",
+   "key": "2b5ae3b8dab6ccd41ca56a3f7b0c5ddce26b2bfa602c48c22030aa27b78fd6f4",
+   "kept_word_id": 12535,
+   "removed_word_ids": [
+    12622
+   ],
+   "labels": [
+    {
+     "word_id": 12535,
+     "label_ar": "سعف",
+     "label_en": "other",
+     "category_id": 36
+    },
+    {
+     "word_id": 12622,
+     "label_ar": "سعف",
+     "label_en": "other",
+     "category_id": 26
+    }
+   ],
+   "labels_conflict": false
+  },
+  {
+   "kind": "identical_content",
+   "key": "9b641c02ab2f3befc30fb1eb795e5e5b783190532de85ed713729298f96eb3d7",
+   "kept_word_id": 12585,
+   "removed_word_ids": [
+    12586,
+    12620
+   ],
+   "labels": [
+    {
+     "word_id": 12585,
+     "label_ar": "ستر",
+     "label_en": "other",
+     "category_id": 38
+    },
+    {
+     "word_id": 12586,
+     "label_ar": "ستر 2",
+     "label_en": "other",
+     "category_id": 38
+    },
+    {
+     "word_id": 12620,
+     "label_ar": "ستر",
+     "label_en": "other",
+     "category_id": 26
+    }
+   ],
+   "labels_conflict": true
+  },
+  {
+   "kind": "identical_content",
+   "key": "14e2bb75c3f78b7fb33145348122f58eed4f3b016673d6b966ef12501affa87d",
+   "kept_word_id": 12587,
+   "removed_word_ids": [
+    12649
+   ],
+   "labels": [
+    {
+     "word_id": 12587,
+     "label_ar": "هام",
+     "label_en": "other",
+     "category_id": 38
+    },
+    {
+     "word_id": 12649,
+     "label_ar": "مهم",
+     "label_en": "other",
+     "category_id": 26
+    }
+   ],
+   "labels_conflict": true
+  },
+  {
+   "kind": "identical_content",
+   "key": "aeb2487ee75f50884da73a72cb02b3f66fc8e2ca36bdbe507501f133f043a61e",
+   "kept_word_id": 12588,
+   "removed_word_ids": [
+    12617
+   ],
+   "labels": [
+    {
+     "word_id": 12588,
+     "label_ar": "ذهاب",
+     "label_en": "other",
+     "category_id": 30
+    },
+    {
+     "word_id": 12617,
+     "label_ar": "ذهاب",
+     "label_en": "other",
+     "category_id": 26
+    }
+   ],
+   "labels_conflict": false
+  },
+  {
+   "kind": "identical_content",
+   "key": "40ffbd76ae1c9696881f435671503643e286520693285ce7ed95aa41a85f95f2",
+   "kept_word_id": 12601,
+   "removed_word_ids": [
+    12602
+   ],
+   "labels": [
+    {
+     "word_id": 12601,
+     "label_ar": "لا",
+     "label_en": "other",
+     "category_id": 35
+    },
+    {
+     "word_id": 12602,
+     "label_ar": "لالا",
+     "label_en": "other",
+     "category_id": 35
+    }
+   ],
+   "labels_conflict": true
+  },
+  {
+   "kind": "identical_content",
+   "key": "df538e4396032b04c54f1b8b3fb43a67a7f7a0b32a267c952b932c51e4eff503",
+   "kept_word_id": 12627,
+   "removed_word_ids": [
+    12655
+   ],
+   "labels": [
+    {
+     "word_id": 12627,
+     "label_ar": "طالبات",
+     "label_en": "other",
+     "category_id": 26
+    },
+    {
+     "word_id": 12655,
+     "label_ar": "تلميذة",
+     "label_en": "other",
+     "category_id": 38
+    }
+   ],
+   "labels_conflict": true
+  },
+  {
+   "kind": "identical_content",
+   "key": "d993e4c044bb85c9c3ad27a7dd9c432bfff44eed6d6941172546a9b1644b7a90",
+   "kept_word_id": 12628,
+   "removed_word_ids": [
+    12654
+   ],
+   "labels": [
+    {
+     "word_id": 12628,
+     "label_ar": "طلاب",
+     "label_en": "other",
+     "category_id": 26
+    },
+    {
+     "word_id": 12654,
+     "label_ar": "تلميذ",
+     "label_en": "other",
+     "category_id": 38
+    }
+   ],
+   "labels_conflict": true
+  }
+ ]
+}
