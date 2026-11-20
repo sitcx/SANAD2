@@ -1,0 +1,6527 @@
+{
+ "packs": [
+  {
+   "id": "greetings",
+   "title": "التحيات والتعارف",
+   "sentences": [
+    {
+     "id": "greetings-2",
+     "ar": "صباح الخير، صباح النور.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "صباح الخير",
+       "term": {
+        "id": 4858,
+        "wordAr": "صباح الخير",
+        "wordEn": "Good morning",
+        "category_id": 14,
+        "video": "صباح الخير.mp4",
+        "descriptionImage": "Zxtf1dVDkE4Ql3BcICGVH0IRmMe3bw4T.png",
+        "description": "عِبَارَةٌ لِلتَّحِيَّةِ تُسْتَعْمَلُ فِي مَطْلَعِ النَّهَارِ، لِيَكُنْ يَوْمُكَ هَنِيئاً مُرِيحاً.",
+        "synonym": null,
+        "watchCount": 3321,
+        "category": {
+         "id": 14,
+         "nameAr": "باب العلاقات الاجتماعية"
+        }
+       }
+      },
+      {
+       "word": "صباح النور",
+       "term": {
+        "id": 4859,
+        "wordAr": "صباح النور",
+        "wordEn": "Good morning",
+        "category_id": 14,
+        "video": "صباح النور.mp4",
+        "descriptionImage": null,
+        "description": "تحية صباحية تعبر عن التفاؤل والود.",
+        "synonym": null,
+        "watchCount": 1570,
+        "category": {
+         "id": 14,
+         "nameAr": "باب العلاقات الاجتماعية"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "greetings-3",
+     "ar": "مساء الخير، أهلاً وسهلاً.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "مساء الخير",
+       "term": {
+        "id": 4863,
+        "wordAr": "مساء الخير",
+        "wordEn": "Good evening",
+        "category_id": 14,
+        "video": "مساء الخير.mp4",
+        "descriptionImage": "caXQbTKHHdDemWHFgnTWOeLGdKel03M4.png",
+        "description": "تحية مسائية تعبر عن الود والتواصل.",
+        "synonym": null,
+        "watchCount": 918,
+        "category": {
+         "id": 14,
+         "nameAr": "باب العلاقات الاجتماعية"
+        }
+       }
+      },
+      {
+       "word": "أهلا وسهلاً",
+       "term": {
+        "id": 4994,
+        "wordAr": "أهلا وسهلاً",
+        "wordEn": "Welcome",
+        "category_id": 14,
+        "video": "أهلا وسهلاً.mp4",
+        "descriptionImage": null,
+        "description": "تحية تعبر عن الترحيب بالزائر.",
+        "synonym": null,
+        "watchCount": 462,
+        "category": {
+         "id": 14,
+         "nameAr": "باب العلاقات الاجتماعية"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "greetings-4",
+     "ar": "كيف حالك؟ أنا سعيد بمعرفتك.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "كيف حالك",
+       "term": {
+        "id": 4926,
+        "wordAr": "كيف حالك ؟",
+        "wordEn": "How are  you",
+        "category_id": 14,
+        "video": "كيف حالك ؟.mp4",
+        "descriptionImage": null,
+        "description": "عبارة تسأل عن حال الشخص بشكل عام.",
+        "synonym": null,
+        "watchCount": 959,
+        "category": {
+         "id": 14,
+         "nameAr": "باب العلاقات الاجتماعية"
+        }
+       }
+      },
+      {
+       "word": "أنا سعيد بمعرفتك",
+       "term": {
+        "id": 4986,
+        "wordAr": "أنا سعيد بمعرفتك",
+        "wordEn": "Pleased to meet you",
+        "category_id": 14,
+        "video": "أنا سعيد بمعرفتك.mp4",
+        "descriptionImage": null,
+        "description": "عبارة تعبر عن السعادة بلقاء شخص جديد.",
+        "synonym": "انا سعيد بمعرفتك سعيد بمعرفتك",
+        "watchCount": 794,
+        "category": {
+         "id": 14,
+         "nameAr": "باب العلاقات الاجتماعية"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "greetings-5",
+     "ar": "شكراً، هذا لطف منك.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "شكراً",
+       "term": {
+        "id": 5018,
+        "wordAr": "شكراً",
+        "wordEn": "? Thank you",
+        "category_id": 14,
+        "video": "شكراً.mp4",
+        "descriptionImage": null,
+        "description": "الشكر كلمة لها عدة معاني ودوال. مادة (ش ك ر) تدل في اللغة على الثناء على المحسن، والمجازاة، وعرفان الإحسان، يقال: شَكَرَهُ وشَكَرَ له يَشْكُرُ شُكْراً وشُكُوراً وشُكْراناً.",
+        "synonym": "شكرا",
+        "watchCount": 1234,
+        "category": {
+         "id": 14,
+         "nameAr": "باب العلاقات الاجتماعية"
+        }
+       }
+      },
+      {
+       "word": "هذا لطف منك",
+       "term": {
+        "id": 4880,
+        "wordAr": "هذا لطف منك",
+        "wordEn": "That is kind of you",
+        "category_id": 14,
+        "video": "! هذا لطف منك.mp4",
+        "descriptionImage": null,
+        "description": "اللطف هو الفعل الذي يقرب العبد إلى الطاعة ويبعده عن المعصية بحيث لا يؤدي إلى الإلجاء أي الاضطرار.",
+        "synonym": "انت لطيف",
+        "watchCount": 283,
+        "category": {
+         "id": 14,
+         "nameAr": "باب العلاقات الاجتماعية"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "greetings-6",
+     "ar": "ما أسمك؟ تشرفت بلقائك.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "ما أسمك",
+       "term": {
+        "id": 4948,
+        "wordAr": "ما أسمك ؟",
+        "wordEn": "?What is your name",
+        "category_id": 14,
+        "video": "ما أسمك ؟.mp4",
+        "descriptionImage": null,
+        "description": "استفسار عن اسم شخص.",
+        "synonym": "ما اسمك :ماهو اسمك",
+        "watchCount": 510,
+        "category": {
+         "id": 14,
+         "nameAr": "باب العلاقات الاجتماعية"
+        }
+       }
+      },
+      {
+       "word": "تشرفت بلقائك",
+       "term": {
+        "id": 5003,
+        "wordAr": "تشرفت بلقائك",
+        "wordEn": "nice to meet you",
+        "category_id": 14,
+        "video": "تشرفت بلقائك.mp4",
+        "descriptionImage": null,
+        "description": "عبارة تعبر عن السرور بلقاء شخص ما.",
+        "synonym": "تشرفت بك",
+        "watchCount": 179,
+        "category": {
+         "id": 14,
+         "nameAr": "باب العلاقات الاجتماعية"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "greetings-7",
+     "ar": "أهلاً وسهلاً، تفضل بالجلوس.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أهلا وسهلاً",
+       "term": {
+        "id": 4994,
+        "wordAr": "أهلا وسهلاً",
+        "wordEn": "Welcome",
+        "category_id": 14,
+        "video": "أهلا وسهلاً.mp4",
+        "descriptionImage": null,
+        "description": "تحية تعبر عن الترحيب بالزائر.",
+        "synonym": null,
+        "watchCount": 462,
+        "category": {
+         "id": 14,
+         "nameAr": "باب العلاقات الاجتماعية"
+        }
+       }
+      },
+      {
+       "word": "تفضل بالجلوس",
+       "term": {
+        "id": 5005,
+        "wordAr": "تفضل بالجلوس",
+        "wordEn": "? Please take a seat",
+        "category_id": 14,
+        "video": "تفضل بالجلوس.mp4",
+        "descriptionImage": null,
+        "description": "طلب للجلوس بطريقة مهذبة.",
+        "synonym": "تفضل",
+        "watchCount": 161,
+        "category": {
+         "id": 14,
+         "nameAr": "باب العلاقات الاجتماعية"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "greetings-8",
+     "ar": "صباح الخير، كيف صحتك؟",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "صباح الخير",
+       "term": {
+        "id": 4858,
+        "wordAr": "صباح الخير",
+        "wordEn": "Good morning",
+        "category_id": 14,
+        "video": "صباح الخير.mp4",
+        "descriptionImage": "Zxtf1dVDkE4Ql3BcICGVH0IRmMe3bw4T.png",
+        "description": "عِبَارَةٌ لِلتَّحِيَّةِ تُسْتَعْمَلُ فِي مَطْلَعِ النَّهَارِ، لِيَكُنْ يَوْمُكَ هَنِيئاً مُرِيحاً.",
+        "synonym": null,
+        "watchCount": 3321,
+        "category": {
+         "id": 14,
+         "nameAr": "باب العلاقات الاجتماعية"
+        }
+       }
+      },
+      {
+       "word": "كيف صحتك",
+       "term": {
+        "id": 5052,
+        "wordAr": "كيف صحتك",
+        "wordEn": "How is your health?",
+        "category_id": 14,
+        "video": "كيف صحتك.mp4",
+        "descriptionImage": null,
+        "description": "عبارة تستخدم للاستفسار عن الحالة الصحية لشخص ما.",
+        "synonym": null,
+        "watchCount": 423,
+        "category": {
+         "id": 14,
+         "nameAr": "باب العلاقات الاجتماعية"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "greetings-9",
+     "ar": "مساء الخير، أتمنى لك أمسية سعيدة.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "مساء الخير",
+       "term": {
+        "id": 4863,
+        "wordAr": "مساء الخير",
+        "wordEn": "Good evening",
+        "category_id": 14,
+        "video": "مساء الخير.mp4",
+        "descriptionImage": "caXQbTKHHdDemWHFgnTWOeLGdKel03M4.png",
+        "description": "تحية مسائية تعبر عن الود والتواصل.",
+        "synonym": null,
+        "watchCount": 918,
+        "category": {
+         "id": 14,
+         "nameAr": "باب العلاقات الاجتماعية"
+        }
+       }
+      },
+      {
+       "word": "أتمنى لك أمسية سعيدة",
+       "term": {
+        "id": 4959,
+        "wordAr": "أتمنى لك أمسية سعيدة",
+        "wordEn": "I wish you a happy evening",
+        "category_id": 14,
+        "video": "نتمنى لك أمسية  ! سعيدة.mp4",
+        "descriptionImage": null,
+        "description": "تمنيات بأمسية سعيدة لشخص ما.",
+        "synonym": "ليلة سعيدة",
+        "watchCount": 192,
+        "category": {
+         "id": 14,
+         "nameAr": "باب العلاقات الاجتماعية"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "greetings-12",
+     "ar": "أهلاً وسهلاً، كيف أمورك؟",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أهلا وسهلاً",
+       "term": {
+        "id": 4994,
+        "wordAr": "أهلا وسهلاً",
+        "wordEn": "Welcome",
+        "category_id": 14,
+        "video": "أهلا وسهلاً.mp4",
+        "descriptionImage": null,
+        "description": "تحية تعبر عن الترحيب بالزائر.",
+        "synonym": null,
+        "watchCount": 462,
+        "category": {
+         "id": 14,
+         "nameAr": "باب العلاقات الاجتماعية"
+        }
+       }
+      },
+      {
+       "word": "كيف أمورك",
+       "term": {
+        "id": 4929,
+        "wordAr": "كيف أمورك ؟",
+        "wordEn": "?how are you",
+        "category_id": 14,
+        "video": "كيف هي أمورك ؟.mp4",
+        "descriptionImage": null,
+        "description": "عبارة تسأل عن أمور الشخص بشكل عام.",
+        "synonym": null,
+        "watchCount": 239,
+        "category": {
+         "id": 14,
+         "nameAr": "باب العلاقات الاجتماعية"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "greetings-13",
+     "ar": "صباح النور، كل عام وأنت بخير.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "صباح النور",
+       "term": {
+        "id": 4859,
+        "wordAr": "صباح النور",
+        "wordEn": "Good morning",
+        "category_id": 14,
+        "video": "صباح النور.mp4",
+        "descriptionImage": null,
+        "description": "تحية صباحية تعبر عن التفاؤل والود.",
+        "synonym": null,
+        "watchCount": 1570,
+        "category": {
+         "id": 14,
+         "nameAr": "باب العلاقات الاجتماعية"
+        }
+       }
+      },
+      {
+       "word": "كل عام وانت بخير",
+       "term": {
+        "id": 4860,
+        "wordAr": "كل عام وانت بخير",
+        "wordEn": "Season's greetings",
+        "category_id": 14,
+        "video": "كل عام و انت بخير.mp4",
+        "descriptionImage": "llr4e2YnrOYkqpniJIFshWRnSrBLkroM.png",
+        "description": "عيدُ الفِطر هو عيد إسلامي يكون في اليوم الأول من شهر شوال الذي يفطر فيه المسلمون محتفلين بإتمام عبادةرمضان و عيد الأضحى هو (العيد الذي يوافق يوم 10 ذو الحجة بعد انتهاء وقفة يوم عرفة، الموقف الذي يقف فيه الحجاج المسلمون.",
+        "synonym": "Every year and you are fine",
+        "watchCount": 1152,
+        "category": {
+         "id": 14,
+         "nameAr": "باب العلاقات الاجتماعية"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "greetings-14",
+     "ar": "مساء الخير، أتود الذهاب معي للتسوق؟",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "مساء الخير",
+       "term": {
+        "id": 4863,
+        "wordAr": "مساء الخير",
+        "wordEn": "Good evening",
+        "category_id": 14,
+        "video": "مساء الخير.mp4",
+        "descriptionImage": "caXQbTKHHdDemWHFgnTWOeLGdKel03M4.png",
+        "description": "تحية مسائية تعبر عن الود والتواصل.",
+        "synonym": null,
+        "watchCount": 918,
+        "category": {
+         "id": 14,
+         "nameAr": "باب العلاقات الاجتماعية"
+        }
+       }
+      },
+      {
+       "word": "أتود الذهاب معي للتسوق",
+       "term": {
+        "id": 4888,
+        "wordAr": "أتود الذهاب معي للتسوق ؟",
+        "wordEn": "?I take my psychosis to the market",
+        "category_id": 14,
+        "video": "أتود الذهاب معي للتسوق ؟.mp4",
+        "descriptionImage": null,
+        "description": "دعوة للذهاب للتسوق مع شخص آخر.",
+        "synonym": "اترغب ب الذهاب معي السوق؟",
+        "watchCount": 234,
+        "category": {
+         "id": 14,
+         "nameAr": "باب العلاقات الاجتماعية"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "greetings-16",
+     "ar": "شكراً، الله يبارك فيك.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "شكراً",
+       "term": {
+        "id": 5018,
+        "wordAr": "شكراً",
+        "wordEn": "? Thank you",
+        "category_id": 14,
+        "video": "شكراً.mp4",
+        "descriptionImage": null,
+        "description": "الشكر كلمة لها عدة معاني ودوال. مادة (ش ك ر) تدل في اللغة على الثناء على المحسن، والمجازاة، وعرفان الإحسان، يقال: شَكَرَهُ وشَكَرَ له يَشْكُرُ شُكْراً وشُكُوراً وشُكْراناً.",
+        "synonym": "شكرا",
+        "watchCount": 1234,
+        "category": {
+         "id": 14,
+         "nameAr": "باب العلاقات الاجتماعية"
+        }
+       }
+      },
+      {
+       "word": "الله يبارك فيك",
+       "term": {
+        "id": 5028,
+        "wordAr": "الله يبارك فيك",
+        "wordEn": "God bless you",
+        "category_id": 14,
+        "video": "الله يبارك فيك.mp4",
+        "descriptionImage": null,
+        "description": "عبارة تعبر عن الدعاء بالبركة لشخص ما.",
+        "synonym": "بارك الله فيك",
+        "watchCount": 244,
+        "category": {
+         "id": 14,
+         "nameAr": "باب العلاقات الاجتماعية"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "greetings-17",
+     "ar": "كيف حالك؟ أخبارك الجديدة.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "كيف حالك",
+       "term": {
+        "id": 4926,
+        "wordAr": "كيف حالك ؟",
+        "wordEn": "How are  you",
+        "category_id": 14,
+        "video": "كيف حالك ؟.mp4",
+        "descriptionImage": null,
+        "description": "عبارة تسأل عن حال الشخص بشكل عام.",
+        "synonym": null,
+        "watchCount": 959,
+        "category": {
+         "id": 14,
+         "nameAr": "باب العلاقات الاجتماعية"
+        }
+       }
+      },
+      {
+       "word": "أخبارك الجديدة",
+       "term": {
+        "id": 4974,
+        "wordAr": "أخبارك الجديدة",
+        "wordEn": "؟How are you doing",
+        "category_id": 14,
+        "video": "هل من جديد ؟.mp4",
+        "descriptionImage": null,
+        "description": "سؤال عن حال الشخص الآخر.",
+        "synonym": "اخبارك الجديدة",
+        "watchCount": 180,
+        "category": {
+         "id": 14,
+         "nameAr": "باب العلاقات الاجتماعية"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "greetings-18",
+     "ar": "أهلاً وسهلاً، أتمنى لك رحلة موفقة.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أهلا وسهلاً",
+       "term": {
+        "id": 4994,
+        "wordAr": "أهلا وسهلاً",
+        "wordEn": "Welcome",
+        "category_id": 14,
+        "video": "أهلا وسهلاً.mp4",
+        "descriptionImage": null,
+        "description": "تحية تعبر عن الترحيب بالزائر.",
+        "synonym": null,
+        "watchCount": 462,
+        "category": {
+         "id": 14,
+         "nameAr": "باب العلاقات الاجتماعية"
+        }
+       }
+      },
+      {
+       "word": "أتمني لك رحلة موفقة",
+       "term": {
+        "id": 4887,
+        "wordAr": "أتمني لك رحلة موفقة",
+        "wordEn": "I wish you a nice trip",
+        "category_id": 14,
+        "video": "اتمني لك رحلة موفقة !.mp4",
+        "descriptionImage": null,
+        "description": "تمنيات برحلة مريحة وممتعة.",
+        "synonym": "اتمنى لك رحله موفقه",
+        "watchCount": 264,
+        "category": {
+         "id": 14,
+         "nameAr": "باب العلاقات الاجتماعية"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "greetings-19",
+     "ar": "صباح الخير، أريد كوباً من الماء.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "صباح الخير",
+       "term": {
+        "id": 4858,
+        "wordAr": "صباح الخير",
+        "wordEn": "Good morning",
+        "category_id": 14,
+        "video": "صباح الخير.mp4",
+        "descriptionImage": "Zxtf1dVDkE4Ql3BcICGVH0IRmMe3bw4T.png",
+        "description": "عِبَارَةٌ لِلتَّحِيَّةِ تُسْتَعْمَلُ فِي مَطْلَعِ النَّهَارِ، لِيَكُنْ يَوْمُكَ هَنِيئاً مُرِيحاً.",
+        "synonym": null,
+        "watchCount": 3321,
+        "category": {
+         "id": 14,
+         "nameAr": "باب العلاقات الاجتماعية"
+        }
+       }
+      },
+      {
+       "word": "أريد كوباً من الماء",
+       "term": {
+        "id": 4896,
+        "wordAr": "أريد كوباً من الماء",
+        "wordEn": "I want a cup of water",
+        "category_id": 14,
+        "video": "أريد كأساً من الماء.mp4",
+        "descriptionImage": null,
+        "description": "طلب الحصول على كوب من الماء.",
+        "synonym": "اريد كاس ماء: أريد كوباً من الماء",
+        "watchCount": 480,
+        "category": {
+         "id": 14,
+         "nameAr": "باب العلاقات الاجتماعية"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "greetings-20",
+     "ar": "مساء الخير، أتوصي بشيء؟",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "مساء الخير",
+       "term": {
+        "id": 4863,
+        "wordAr": "مساء الخير",
+        "wordEn": "Good evening",
+        "category_id": 14,
+        "video": "مساء الخير.mp4",
+        "descriptionImage": "caXQbTKHHdDemWHFgnTWOeLGdKel03M4.png",
+        "description": "تحية مسائية تعبر عن الود والتواصل.",
+        "synonym": null,
+        "watchCount": 918,
+        "category": {
+         "id": 14,
+         "nameAr": "باب العلاقات الاجتماعية"
+        }
+       }
+      },
+      {
+       "word": "أتوصي بشيء",
+       "term": {
+        "id": 4889,
+        "wordAr": "أتوصي بشيء ؟",
+        "wordEn": "I recommend something",
+        "category_id": 14,
+        "video": "أتوصي بشيء ؟.mp4",
+        "descriptionImage": null,
+        "description": "استفسار عن التوصيات لشيء معين.",
+        "synonym": "توصيني بشئ ولا شي",
+        "watchCount": 436,
+        "category": {
+         "id": 14,
+         "nameAr": "باب العلاقات الاجتماعية"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "greetings-22",
+     "ar": "شكراً على الزيارة، مع السلامة.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "شكراً على الزيارة",
+       "term": {
+        "id": 5014,
+        "wordAr": "شكراً على الزيارة",
+        "wordEn": "Thanks for the visit",
+        "category_id": 14,
+        "video": "شكراً على الزيارة.mp4",
+        "descriptionImage": null,
+        "description": "عبارة شكر على زيارة شخص ما.",
+        "synonym": "اشكرك على الزيارة",
+        "watchCount": 201,
+        "category": {
+         "id": 14,
+         "nameAr": "باب العلاقات الاجتماعية"
+        }
+       }
+      },
+      {
+       "word": "مع السلامة",
+       "term": {
+        "id": 5059,
+        "wordAr": "مع السلامة",
+        "wordEn": "Good-bye",
+        "category_id": 14,
+        "video": "مع السلامة.mp4",
+        "descriptionImage": null,
+        "description": "عبارة تستخدم عند وداع شخص ما.",
+        "synonym": "في امان الله",
+        "watchCount": 401,
+        "category": {
+         "id": 14,
+         "nameAr": "باب العلاقات الاجتماعية"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "greetings-23",
+     "ar": "كيف صحتك؟ صحة وعافية.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "كيف صحتك",
+       "term": {
+        "id": 5052,
+        "wordAr": "كيف صحتك",
+        "wordEn": "How is your health?",
+        "category_id": 14,
+        "video": "كيف صحتك.mp4",
+        "descriptionImage": null,
+        "description": "عبارة تستخدم للاستفسار عن الحالة الصحية لشخص ما.",
+        "synonym": null,
+        "watchCount": 423,
+        "category": {
+         "id": 14,
+         "nameAr": "باب العلاقات الاجتماعية"
+        }
+       }
+      },
+      {
+       "word": "صحة وعافية",
+       "term": {
+        "id": 4876,
+        "wordAr": "صحة وعافية",
+        "wordEn": "Health and wellness",
+        "category_id": 14,
+        "video": "! صحة وعافية.mp4",
+        "descriptionImage": null,
+        "description": "الصحة هي حالة من اكتمال السلامة بدنياً وعقلياً واجتماعياً، لا مجرد انعدام المرض أو العجز. التمتع بأعلى مستوى من الصحة يمكن بلوغه هو أحد الحقوق الأساسية لكل إنسان، دون تمييز بسبب العنصر أو الدين أو العقيدة السياسية أو الحالة الاقتصادية أو الاجتماعية.",
+        "synonym": "صحه وعافيه",
+        "watchCount": 357,
+        "category": {
+         "id": 14,
+         "nameAr": "باب العلاقات الاجتماعية"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "greetings-24",
+     "ar": "أهلاً وسهلاً، أتمنى لك الشفاء العاجل.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أهلا وسهلاً",
+       "term": {
+        "id": 4994,
+        "wordAr": "أهلا وسهلاً",
+        "wordEn": "Welcome",
+        "category_id": 14,
+        "video": "أهلا وسهلاً.mp4",
+        "descriptionImage": null,
+        "description": "تحية تعبر عن الترحيب بالزائر.",
+        "synonym": null,
+        "watchCount": 462,
+        "category": {
+         "id": 14,
+         "nameAr": "باب العلاقات الاجتماعية"
+        }
+       }
+      },
+      {
+       "word": "أتمنى لك الشفاء العاجل",
+       "term": {
+        "id": 4885,
+        "wordAr": "أتمنى لك الشفاء العاجل",
+        "wordEn": "Get well soon",
+        "category_id": 14,
+        "video": "أتمنى لك الشفاء العاجل.mp4",
+        "descriptionImage": null,
+        "description": "تمنيات بالشفاء العاجل لشخص مريض.",
+        "synonym": "الله يشفيك",
+        "watchCount": 293,
+        "category": {
+         "id": 14,
+         "nameAr": "باب العلاقات الاجتماعية"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "greetings-25",
+     "ar": "صباح النور، كيف يمكنني الاتصال بك؟",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "صباح النور",
+       "term": {
+        "id": 4859,
+        "wordAr": "صباح النور",
+        "wordEn": "Good morning",
+        "category_id": 14,
+        "video": "صباح النور.mp4",
+        "descriptionImage": null,
+        "description": "تحية صباحية تعبر عن التفاؤل والود.",
+        "synonym": null,
+        "watchCount": 1570,
+        "category": {
+         "id": 14,
+         "nameAr": "باب العلاقات الاجتماعية"
+        }
+       }
+      },
+      {
+       "word": "كيف يمكنني الاتصال بك",
+       "term": {
+        "id": 4930,
+        "wordAr": "كيف يمكنني الاتصال بك ؟",
+        "wordEn": "?how can l contact you",
+        "category_id": 14,
+        "video": "كيف يمكنني الاتصال بك ؟.mp4",
+        "descriptionImage": null,
+        "description": "استفسار عن وسيلة التواصل مع شخص ما.",
+        "synonym": null,
+        "watchCount": 202,
+        "category": {
+         "id": 14,
+         "nameAr": "باب العلاقات الاجتماعية"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "greetings-26",
+     "ar": "مساء الخير، أتوصيني بشيء؟",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "مساء الخير",
+       "term": {
+        "id": 4863,
+        "wordAr": "مساء الخير",
+        "wordEn": "Good evening",
+        "category_id": 14,
+        "video": "مساء الخير.mp4",
+        "descriptionImage": "caXQbTKHHdDemWHFgnTWOeLGdKel03M4.png",
+        "description": "تحية مسائية تعبر عن الود والتواصل.",
+        "synonym": null,
+        "watchCount": 918,
+        "category": {
+         "id": 14,
+         "nameAr": "باب العلاقات الاجتماعية"
+        }
+       }
+      },
+      {
+       "word": "أتوصيني بشيء",
+       "term": {
+        "id": 5024,
+        "wordAr": "أتوصيني بشيء",
+        "wordEn": "I recommend something",
+        "category_id": 14,
+        "video": "أتوصيني بشيء.mp4",
+        "descriptionImage": null,
+        "description": "عبارة تدل على تقديم توصية أو اقتراح بشيء.",
+        "synonym": "توصي بشيء",
+        "watchCount": 151,
+        "category": {
+         "id": 14,
+         "nameAr": "باب العلاقات الاجتماعية"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "greetings-28",
+     "ar": "شكراً، أنت في غاية الكرم.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "شكراً",
+       "term": {
+        "id": 5018,
+        "wordAr": "شكراً",
+        "wordEn": "? Thank you",
+        "category_id": 14,
+        "video": "شكراً.mp4",
+        "descriptionImage": null,
+        "description": "الشكر كلمة لها عدة معاني ودوال. مادة (ش ك ر) تدل في اللغة على الثناء على المحسن، والمجازاة، وعرفان الإحسان، يقال: شَكَرَهُ وشَكَرَ له يَشْكُرُ شُكْراً وشُكُوراً وشُكْراناً.",
+        "synonym": "شكرا",
+        "watchCount": 1234,
+        "category": {
+         "id": 14,
+         "nameAr": "باب العلاقات الاجتماعية"
+        }
+       }
+      },
+      {
+       "word": "أنت في غاية الكرم",
+       "term": {
+        "id": 4875,
+        "wordAr": "! أنت في غاية الكرم",
+        "wordEn": "You are so generous",
+        "category_id": 14,
+        "video": "! أنت في غاية الكرم.mp4",
+        "descriptionImage": null,
+        "description": "مدح للشخص على كرمه وسخائه.",
+        "synonym": "انت كريم جدا",
+        "watchCount": 459,
+        "category": {
+         "id": 14,
+         "nameAr": "باب العلاقات الاجتماعية"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "greetings-29",
+     "ar": "كيف حالك؟ أتمنى لك النجاح في العمل.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "كيف حالك",
+       "term": {
+        "id": 4926,
+        "wordAr": "كيف حالك ؟",
+        "wordEn": "How are  you",
+        "category_id": 14,
+        "video": "كيف حالك ؟.mp4",
+        "descriptionImage": null,
+        "description": "عبارة تسأل عن حال الشخص بشكل عام.",
+        "synonym": null,
+        "watchCount": 959,
+        "category": {
+         "id": 14,
+         "nameAr": "باب العلاقات الاجتماعية"
+        }
+       }
+      },
+      {
+       "word": "أتمنى لك النجاح في العمل",
+       "term": {
+        "id": 4886,
+        "wordAr": "أتمنى لك النجاح في   العمل",
+        "wordEn": "I wish you success in business",
+        "category_id": 14,
+        "video": "أتمنى لك النجاح في   العمل.mp4",
+        "descriptionImage": null,
+        "description": "تعبير عن الأمل في نجاح الشخص في عمله.",
+        "synonym": null,
+        "watchCount": 234,
+        "category": {
+         "id": 14,
+         "nameAr": "باب العلاقات الاجتماعية"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "greetings-30",
+     "ar": "أهلاً وسهلاً، اعتن بنفسك.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أهلا وسهلاً",
+       "term": {
+        "id": 4994,
+        "wordAr": "أهلا وسهلاً",
+        "wordEn": "Welcome",
+        "category_id": 14,
+        "video": "أهلا وسهلاً.mp4",
+        "descriptionImage": null,
+        "description": "تحية تعبر عن الترحيب بالزائر.",
+        "synonym": null,
+        "watchCount": 462,
+        "category": {
+         "id": 14,
+         "nameAr": "باب العلاقات الاجتماعية"
+        }
+       }
+      },
+      {
+       "word": "اعتن بنفسك",
+       "term": {
+        "id": 4906,
+        "wordAr": "اعتن بنفسك",
+        "wordEn": "Give yourself to me",
+        "category_id": 14,
+        "video": "اعتن بنفسك.mp4",
+        "descriptionImage": null,
+        "description": "عبارة تعبر عن الاهتمام برفاهية الشخص الآخر.",
+        "synonym": "انتبة لنفسك",
+        "watchCount": 209,
+        "category": {
+         "id": 14,
+         "nameAr": "باب العلاقات الاجتماعية"
+        }
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "health",
+   "title": "في المستشفى والصحة",
+   "sentences": [
+    {
+     "id": "health-1",
+     "ar": "أريد طبيباً.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أريد",
+       "term": {
+        "id": 5078,
+        "wordAr": "أريد",
+        "wordEn": "I Want",
+        "category_id": 5,
+        "video": "أراد.mp4",
+        "descriptionImage": "pDBShYV4RpmKEPTYKKdLiYSSUNPJegNW.jpeg",
+        "description": "أريد هو تعبير عن الرغبة في الحصول على شيء أو تحقيق هدف.",
+        "synonym": "اريد",
+        "watchCount": 857,
+        "category": {
+         "id": 5,
+         "nameAr": "صفات وحالات"
+        }
+       }
+      },
+      {
+       "word": "طبيب",
+       "term": {
+        "id": 9533,
+        "wordAr": "طبيب",
+        "wordEn": "Physician",
+        "category_id": 19,
+        "video": "طبيب.mp4",
+        "descriptionImage": null,
+        "description": "طبيب مختص في تشخيص وعلاج الأمراض.",
+        "synonym": null,
+        "watchCount": 434,
+        "category": {
+         "id": 19,
+         "nameAr": "وظائف ومهن"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "health-2",
+     "ar": "أين المستشفى؟",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أين",
+       "term": {
+        "id": 8425,
+        "wordAr": "أين",
+        "wordEn": "Ayna",
+        "category_id": 35,
+        "video": "أين.mp4",
+        "descriptionImage": null,
+        "description": "استفهام عن المكان أو الموقع.",
+        "synonym": "اين",
+        "watchCount": 331,
+        "category": {
+         "id": 35,
+         "nameAr": "اللغة العربية"
+        }
+       }
+      },
+      {
+       "word": "مستشفى",
+       "term": {
+        "id": 5591,
+        "wordAr": "مستشفى",
+        "wordEn": "Hospital",
+        "category_id": 13,
+        "video": "مستشفى.mp4",
+        "descriptionImage": null,
+        "description": "مؤسسة طبية تقدم خدمات الرعاية الصحية للمرضى.",
+        "synonym": null,
+        "watchCount": 337,
+        "category": {
+         "id": 13,
+         "nameAr": "الصحة والمرض"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "health-3",
+     "ar": "أشعر بألم.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أنا",
+       "term": {
+        "id": 8385,
+        "wordAr": "أنا",
+        "wordEn": "Ana",
+        "category_id": 35,
+        "video": "أنا.mp4",
+        "descriptionImage": null,
+        "description": "ضمير يدل على المتحدث.",
+        "synonym": null,
+        "watchCount": 418,
+        "category": {
+         "id": 35,
+         "nameAr": "اللغة العربية"
+        }
+       }
+      },
+      {
+       "word": "ألم",
+       "term": {
+        "id": 5607,
+        "wordAr": "ألم",
+        "wordEn": "Pain",
+        "category_id": 13,
+        "video": "ألمم.mp4",
+        "descriptionImage": null,
+        "description": "إحساس غير مريح، قد يكون ناتجًا عن إصابة أو مرض.",
+        "synonym": "الم:وجع",
+        "watchCount": 237,
+        "category": {
+         "id": 13,
+         "nameAr": "الصحة والمرض"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "health-5",
+     "ar": "لدي صداع.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أنا",
+       "term": {
+        "id": 8385,
+        "wordAr": "أنا",
+        "wordEn": "Ana",
+        "category_id": 35,
+        "video": "أنا.mp4",
+        "descriptionImage": null,
+        "description": "ضمير يدل على المتحدث.",
+        "synonym": null,
+        "watchCount": 418,
+        "category": {
+         "id": 35,
+         "nameAr": "اللغة العربية"
+        }
+       }
+      },
+      {
+       "word": "صداع",
+       "term": {
+        "id": 5545,
+        "wordAr": "صداع",
+        "wordEn": "Headache",
+        "category_id": 13,
+        "video": "صداع.mp4",
+        "descriptionImage": null,
+        "description": "الصداع ألم يشعر به الشخص في منطقة الرأس.",
+        "synonym": null,
+        "watchCount": 231,
+        "category": {
+         "id": 13,
+         "nameAr": "الصحة والمرض"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "health-6",
+     "ar": "أريد حجز موعد.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أريد",
+       "term": {
+        "id": 5078,
+        "wordAr": "أريد",
+        "wordEn": "I Want",
+        "category_id": 5,
+        "video": "أراد.mp4",
+        "descriptionImage": "pDBShYV4RpmKEPTYKKdLiYSSUNPJegNW.jpeg",
+        "description": "أريد هو تعبير عن الرغبة في الحصول على شيء أو تحقيق هدف.",
+        "synonym": "اريد",
+        "watchCount": 857,
+        "category": {
+         "id": 5,
+         "nameAr": "صفات وحالات"
+        }
+       }
+      },
+      {
+       "word": "حجز موعد",
+       "term": {
+        "id": 11823,
+        "wordAr": "حجز موعد",
+        "wordEn": "Appointment Booking",
+        "category_id": 53,
+        "video": "uhczYYTQlWuXwDlisAU2C7fjaQFVBpl5.mp4",
+        "descriptionImage": null,
+        "description": "حجز موعد يعني عملية تحديد موعد للحصول على خدمة صحية.",
+        "synonym": null,
+        "watchCount": 252,
+        "category": {
+         "id": 53,
+         "nameAr": "مصطلحات في الصحة"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "health-7",
+     "ar": "أين الصيدلية؟",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أين",
+       "term": {
+        "id": 8425,
+        "wordAr": "أين",
+        "wordEn": "Ayna",
+        "category_id": 35,
+        "video": "أين.mp4",
+        "descriptionImage": null,
+        "description": "استفهام عن المكان أو الموقع.",
+        "synonym": "اين",
+        "watchCount": 331,
+        "category": {
+         "id": 35,
+         "nameAr": "اللغة العربية"
+        }
+       }
+      },
+      {
+       "word": "صيدلية",
+       "term": {
+        "id": 5548,
+        "wordAr": "صيدلية",
+        "wordEn": "Pharmacy",
+        "category_id": 13,
+        "video": "صيدلية.mp4",
+        "descriptionImage": null,
+        "description": "الصيدلية مكان يبيع الأدوية والمستلزمات الطبية.",
+        "synonym": null,
+        "watchCount": 150,
+        "category": {
+         "id": 13,
+         "nameAr": "الصحة والمرض"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "health-9",
+     "ar": "المريض في المستشفى.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "مريض-سقيم",
+       "term": {
+        "id": 9267,
+        "wordAr": "مريض-سقيم",
+        "wordEn": "Sick",
+        "category_id": 35,
+        "video": "مريض-سقيم.mp4",
+        "descriptionImage": null,
+        "description": "مريض هو الشخص الذي يعاني من حالة صحية غير جيدة.",
+        "synonym": null,
+        "watchCount": 79,
+        "category": {
+         "id": 35,
+         "nameAr": "اللغة العربية"
+        }
+       }
+      },
+      {
+       "word": "مستشفى",
+       "term": {
+        "id": 5591,
+        "wordAr": "مستشفى",
+        "wordEn": "Hospital",
+        "category_id": 13,
+        "video": "مستشفى.mp4",
+        "descriptionImage": null,
+        "description": "مؤسسة طبية تقدم خدمات الرعاية الصحية للمرضى.",
+        "synonym": null,
+        "watchCount": 337,
+        "category": {
+         "id": 13,
+         "nameAr": "الصحة والمرض"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "health-11",
+     "ar": "أريد وصفة طبية.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أريد",
+       "term": {
+        "id": 5078,
+        "wordAr": "أريد",
+        "wordEn": "I Want",
+        "category_id": 5,
+        "video": "أراد.mp4",
+        "descriptionImage": "pDBShYV4RpmKEPTYKKdLiYSSUNPJegNW.jpeg",
+        "description": "أريد هو تعبير عن الرغبة في الحصول على شيء أو تحقيق هدف.",
+        "synonym": "اريد",
+        "watchCount": 857,
+        "category": {
+         "id": 5,
+         "nameAr": "صفات وحالات"
+        }
+       }
+      },
+      {
+       "word": "وصفة طبية",
+       "term": {
+        "id": 5604,
+        "wordAr": "وصفة طبية",
+        "wordEn": "Prescription",
+        "category_id": 13,
+        "video": "وصفة طبية.mp4",
+        "descriptionImage": null,
+        "description": "توجيهات طبية مكتوبة من طبيب للحصول على الأدوية.",
+        "synonym": null,
+        "watchCount": 127,
+        "category": {
+         "id": 13,
+         "nameAr": "الصحة والمرض"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "health-15",
+     "ar": "أريد ممرضة.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أريد",
+       "term": {
+        "id": 5078,
+        "wordAr": "أريد",
+        "wordEn": "I Want",
+        "category_id": 5,
+        "video": "أراد.mp4",
+        "descriptionImage": "pDBShYV4RpmKEPTYKKdLiYSSUNPJegNW.jpeg",
+        "description": "أريد هو تعبير عن الرغبة في الحصول على شيء أو تحقيق هدف.",
+        "synonym": "اريد",
+        "watchCount": 857,
+        "category": {
+         "id": 5,
+         "nameAr": "صفات وحالات"
+        }
+       }
+      },
+      {
+       "word": "ممرضة - ممرض",
+       "term": {
+        "id": 9547,
+        "wordAr": "ممرضة - ممرض",
+        "wordEn": "Nurse",
+        "category_id": 19,
+        "video": "ممرضة - ممرض.mp4",
+        "descriptionImage": null,
+        "description": "الممرضة هي المتخصصة في تقديم الرعاية الصحية للمرضى ودعمهم في العلاج.",
+        "synonym": null,
+        "watchCount": 226,
+        "category": {
+         "id": 19,
+         "nameAr": "وظائف ومهن"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "health-16",
+     "ar": "لدي مغص.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أنا",
+       "term": {
+        "id": 8385,
+        "wordAr": "أنا",
+        "wordEn": "Ana",
+        "category_id": 35,
+        "video": "أنا.mp4",
+        "descriptionImage": null,
+        "description": "ضمير يدل على المتحدث.",
+        "synonym": null,
+        "watchCount": 418,
+        "category": {
+         "id": 35,
+         "nameAr": "اللغة العربية"
+        }
+       }
+      },
+      {
+       "word": "مغص",
+       "term": {
+        "id": 5594,
+        "wordAr": "مغص",
+        "wordEn": "Colic",
+        "category_id": 13,
+        "video": "مغص.mp4",
+        "descriptionImage": null,
+        "description": "ألم شديد في البطن، قد يكون ناتجًا عن مشاكل هضمية.",
+        "synonym": null,
+        "watchCount": 110,
+        "category": {
+         "id": 13,
+         "nameAr": "الصحة والمرض"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "health-19",
+     "ar": "أريد سيارة إسعاف.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أريد",
+       "term": {
+        "id": 5078,
+        "wordAr": "أريد",
+        "wordEn": "I Want",
+        "category_id": 5,
+        "video": "أراد.mp4",
+        "descriptionImage": "pDBShYV4RpmKEPTYKKdLiYSSUNPJegNW.jpeg",
+        "description": "أريد هو تعبير عن الرغبة في الحصول على شيء أو تحقيق هدف.",
+        "synonym": "اريد",
+        "watchCount": 857,
+        "category": {
+         "id": 5,
+         "nameAr": "صفات وحالات"
+        }
+       }
+      },
+      {
+       "word": "سيارة إسعاف",
+       "term": {
+        "id": 6513,
+        "wordAr": "سيارة إسعاف",
+        "wordEn": "Ambulance",
+        "category_id": 18,
+        "video": "سيارة اسعاف.mp4",
+        "descriptionImage": null,
+        "description": "سيارة إسعاف تستخدم لنقل المرضى والمصابين إلى المستشفيات بسرعة.",
+        "synonym": null,
+        "watchCount": 95,
+        "category": {
+         "id": 18,
+         "nameAr": "مرور ونقل"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "health-20",
+     "ar": "أشكرك على المساعدة.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "شكراً",
+       "term": {
+        "id": 5018,
+        "wordAr": "شكراً",
+        "wordEn": "? Thank you",
+        "category_id": 14,
+        "video": "شكراً.mp4",
+        "descriptionImage": null,
+        "description": "الشكر كلمة لها عدة معاني ودوال. مادة (ش ك ر) تدل في اللغة على الثناء على المحسن، والمجازاة، وعرفان الإحسان، يقال: شَكَرَهُ وشَكَرَ له يَشْكُرُ شُكْراً وشُكُوراً وشُكْراناً.",
+        "synonym": "شكرا",
+        "watchCount": 1234,
+        "category": {
+         "id": 14,
+         "nameAr": "باب العلاقات الاجتماعية"
+        }
+       }
+      },
+      {
+       "word": "مساعدة - مساندة",
+       "term": {
+        "id": 11081,
+        "wordAr": "مساعدة - مساندة",
+        "wordEn": "Assistance",
+        "category_id": 38,
+        "video": "مساعدة.mp4",
+        "descriptionImage": null,
+        "description": "تقديم الدعم والمساعدة للآخرين.",
+        "synonym": null,
+        "watchCount": 360,
+        "category": {
+         "id": 38,
+         "nameAr": "التربية الاسرية"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "health-21",
+     "ar": "أين المستشفى؟ لو سمحت.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أين",
+       "term": {
+        "id": 8425,
+        "wordAr": "أين",
+        "wordEn": "Ayna",
+        "category_id": 35,
+        "video": "أين.mp4",
+        "descriptionImage": null,
+        "description": "استفهام عن المكان أو الموقع.",
+        "synonym": "اين",
+        "watchCount": 331,
+        "category": {
+         "id": 35,
+         "nameAr": "اللغة العربية"
+        }
+       }
+      },
+      {
+       "word": "مستشفى",
+       "term": {
+        "id": 5591,
+        "wordAr": "مستشفى",
+        "wordEn": "Hospital",
+        "category_id": 13,
+        "video": "مستشفى.mp4",
+        "descriptionImage": null,
+        "description": "مؤسسة طبية تقدم خدمات الرعاية الصحية للمرضى.",
+        "synonym": null,
+        "watchCount": 337,
+        "category": {
+         "id": 13,
+         "nameAr": "الصحة والمرض"
+        }
+       }
+      },
+      {
+       "word": "لو سمحت",
+       "term": {
+        "id": 11837,
+        "wordAr": "لو سمحت",
+        "wordEn": "Please",
+        "category_id": 53,
+        "video": "iMufIZphK4wi53zi2JEYfKXhBkpRzZts.mp4",
+        "descriptionImage": null,
+        "description": "لو سمحت تعبير يستخدم لطلب شيء بطريقة مهذبة.",
+        "synonym": null,
+        "watchCount": 133,
+        "category": {
+         "id": 53,
+         "nameAr": "مصطلحات في الصحة"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "health-23",
+     "ar": "لدي ألم في البطن.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أنا",
+       "term": {
+        "id": 8385,
+        "wordAr": "أنا",
+        "wordEn": "Ana",
+        "category_id": 35,
+        "video": "أنا.mp4",
+        "descriptionImage": null,
+        "description": "ضمير يدل على المتحدث.",
+        "synonym": null,
+        "watchCount": 418,
+        "category": {
+         "id": 35,
+         "nameAr": "اللغة العربية"
+        }
+       }
+      },
+      {
+       "word": "ألم",
+       "term": {
+        "id": 5607,
+        "wordAr": "ألم",
+        "wordEn": "Pain",
+        "category_id": 13,
+        "video": "ألمم.mp4",
+        "descriptionImage": null,
+        "description": "إحساس غير مريح، قد يكون ناتجًا عن إصابة أو مرض.",
+        "synonym": "الم:وجع",
+        "watchCount": 237,
+        "category": {
+         "id": 13,
+         "nameAr": "الصحة والمرض"
+        }
+       }
+      },
+      {
+       "word": "بطن",
+       "term": {
+        "id": 8450,
+        "wordAr": "بطن",
+        "wordEn": "Batan",
+        "category_id": 35,
+        "video": "بطن.mp4",
+        "descriptionImage": null,
+        "description": "بطن: الجزء الأوسط من الجسم الذي يحتوي على الأعضاء الداخلية.",
+        "synonym": null,
+        "watchCount": 73,
+        "category": {
+         "id": 35,
+         "nameAr": "اللغة العربية"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "health-27",
+     "ar": "أريد موعداً اليوم.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أريد",
+       "term": {
+        "id": 5078,
+        "wordAr": "أريد",
+        "wordEn": "I Want",
+        "category_id": 5,
+        "video": "أراد.mp4",
+        "descriptionImage": "pDBShYV4RpmKEPTYKKdLiYSSUNPJegNW.jpeg",
+        "description": "أريد هو تعبير عن الرغبة في الحصول على شيء أو تحقيق هدف.",
+        "synonym": "اريد",
+        "watchCount": 857,
+        "category": {
+         "id": 5,
+         "nameAr": "صفات وحالات"
+        }
+       }
+      },
+      {
+       "word": "موعد",
+       "term": {
+        "id": 11254,
+        "wordAr": "موعد",
+        "wordEn": "Appointment",
+        "category_id": 38,
+        "video": "موعد.mp4",
+        "descriptionImage": null,
+        "description": "تحديد موعد معين للقاء أو حدث.",
+        "synonym": null,
+        "watchCount": 158,
+        "category": {
+         "id": 38,
+         "nameAr": "التربية الاسرية"
+        }
+       }
+      },
+      {
+       "word": "اليوم",
+       "term": {
+        "id": 10357,
+        "wordAr": "اليوم",
+        "wordEn": "Today",
+        "category_id": 37,
+        "video": "اليوم.mp4",
+        "descriptionImage": null,
+        "description": "اليوم: الفترة الزمنية الحالية أو اليوم المحدد.",
+        "synonym": null,
+        "watchCount": 375,
+        "category": {
+         "id": 37,
+         "nameAr": "رياضيات"
+        }
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "school",
+   "title": "في المدرسة",
+   "sentences": [
+    {
+     "id": "school-1",
+     "ar": "أذهب إلى المدرسة.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أنا",
+       "term": {
+        "id": 8385,
+        "wordAr": "أنا",
+        "wordEn": "Ana",
+        "category_id": 35,
+        "video": "أنا.mp4",
+        "descriptionImage": null,
+        "description": "ضمير يدل على المتحدث.",
+        "synonym": null,
+        "watchCount": 418,
+        "category": {
+         "id": 35,
+         "nameAr": "اللغة العربية"
+        }
+       }
+      },
+      {
+       "word": "مدرسة",
+       "term": {
+        "id": 5378,
+        "wordAr": "مدرسة",
+        "wordEn": "School",
+        "category_id": 7,
+        "video": "مدرسة.mp4",
+        "descriptionImage": null,
+        "description": "المدرسة هي مؤسسة تعليمية تُعنى بتعليم الطلاب في مراحل مختلفة.",
+        "synonym": null,
+        "watchCount": 514,
+        "category": {
+         "id": 7,
+         "nameAr": "تعليم وتدريب"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "school-2",
+     "ar": "المعلم في الفصل.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "معلم - مدرس",
+       "term": {
+        "id": 9545,
+        "wordAr": "معلم - مدرس",
+        "wordEn": "Civil Defense",
+        "category_id": 19,
+        "video": "معلم - مدرس.mp4",
+        "descriptionImage": null,
+        "description": "المعلم هو الشخص الذي يقوم بتعليم الطلاب في المدارس أو المؤسسات التعليمية.",
+        "synonym": null,
+        "watchCount": 471,
+        "category": {
+         "id": 19,
+         "nameAr": "وظائف ومهن"
+        }
+       }
+      },
+      {
+       "word": "فصل-مدرسة",
+       "term": {
+        "id": 9026,
+        "wordAr": "فصل-مدرسة",
+        "wordEn": "Class-School",
+        "category_id": 35,
+        "video": "فصل-مدرسة.mp4",
+        "descriptionImage": null,
+        "description": "فصل-مدرسة: مجموعة من الطلاب يتلقون التعليم معًا.",
+        "synonym": null,
+        "watchCount": 141,
+        "category": {
+         "id": 35,
+         "nameAr": "اللغة العربية"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "school-3",
+     "ar": "أين المدرسة؟",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أين",
+       "term": {
+        "id": 8425,
+        "wordAr": "أين",
+        "wordEn": "Ayna",
+        "category_id": 35,
+        "video": "أين.mp4",
+        "descriptionImage": null,
+        "description": "استفهام عن المكان أو الموقع.",
+        "synonym": "اين",
+        "watchCount": 331,
+        "category": {
+         "id": 35,
+         "nameAr": "اللغة العربية"
+        }
+       }
+      },
+      {
+       "word": "مدرسة",
+       "term": {
+        "id": 5378,
+        "wordAr": "مدرسة",
+        "wordEn": "School",
+        "category_id": 7,
+        "video": "مدرسة.mp4",
+        "descriptionImage": null,
+        "description": "المدرسة هي مؤسسة تعليمية تُعنى بتعليم الطلاب في مراحل مختلفة.",
+        "synonym": null,
+        "watchCount": 514,
+        "category": {
+         "id": 7,
+         "nameAr": "تعليم وتدريب"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "school-5",
+     "ar": "شكراً للمعلم.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "شكراً",
+       "term": {
+        "id": 5018,
+        "wordAr": "شكراً",
+        "wordEn": "? Thank you",
+        "category_id": 14,
+        "video": "شكراً.mp4",
+        "descriptionImage": null,
+        "description": "الشكر كلمة لها عدة معاني ودوال. مادة (ش ك ر) تدل في اللغة على الثناء على المحسن، والمجازاة، وعرفان الإحسان، يقال: شَكَرَهُ وشَكَرَ له يَشْكُرُ شُكْراً وشُكُوراً وشُكْراناً.",
+        "synonym": "شكرا",
+        "watchCount": 1234,
+        "category": {
+         "id": 14,
+         "nameAr": "باب العلاقات الاجتماعية"
+        }
+       }
+      },
+      {
+       "word": "معلم - مدرس",
+       "term": {
+        "id": 9545,
+        "wordAr": "معلم - مدرس",
+        "wordEn": "Civil Defense",
+        "category_id": 19,
+        "video": "معلم - مدرس.mp4",
+        "descriptionImage": null,
+        "description": "المعلم هو الشخص الذي يقوم بتعليم الطلاب في المدارس أو المؤسسات التعليمية.",
+        "synonym": null,
+        "watchCount": 471,
+        "category": {
+         "id": 19,
+         "nameAr": "وظائف ومهن"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "school-6",
+     "ar": "أدرس في المدرسة.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "درس-دراسة-دراسي",
+       "term": {
+        "id": 8699,
+        "wordAr": "درس-دراسة-دراسي",
+        "wordEn": "Lesson",
+        "category_id": 35,
+        "video": "درس-دراسة-دراسي.mp4",
+        "descriptionImage": null,
+        "description": "عملية تعليمية تهدف إلى نقل المعرفة.",
+        "synonym": null,
+        "watchCount": 188,
+        "category": {
+         "id": 35,
+         "nameAr": "اللغة العربية"
+        }
+       }
+      },
+      {
+       "word": "مدرسة",
+       "term": {
+        "id": 5378,
+        "wordAr": "مدرسة",
+        "wordEn": "School",
+        "category_id": 7,
+        "video": "مدرسة.mp4",
+        "descriptionImage": null,
+        "description": "المدرسة هي مؤسسة تعليمية تُعنى بتعليم الطلاب في مراحل مختلفة.",
+        "synonym": null,
+        "watchCount": 514,
+        "category": {
+         "id": 7,
+         "nameAr": "تعليم وتدريب"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "school-11",
+     "ar": "الامتحان غداً.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "امتحان",
+       "term": {
+        "id": 11555,
+        "wordAr": "امتحان",
+        "wordEn": "Test",
+        "category_id": 23,
+        "video": "oK7FCzcllp3pcJiIx9vyXIn4hdvPucF2.mp4",
+        "descriptionImage": null,
+        "description": null,
+        "synonym": null,
+        "watchCount": 112,
+        "category": {
+         "id": 23,
+         "nameAr": "باب الدين"
+        }
+       }
+      },
+      {
+       "word": "غدا",
+       "term": {
+        "id": 10298,
+        "wordAr": "غدا",
+        "wordEn": "Tomorrow",
+        "category_id": 20,
+        "video": "غدا.mp4",
+        "descriptionImage": null,
+        "description": "اليوم الذي يلي اليوم الحالي.",
+        "synonym": "بكرة",
+        "watchCount": 222,
+        "category": {
+         "id": 20,
+         "nameAr": "مقايسس وازمنة"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "school-12",
+     "ar": "أنا لا أفهم.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أنا",
+       "term": {
+        "id": 8385,
+        "wordAr": "أنا",
+        "wordEn": "Ana",
+        "category_id": 35,
+        "video": "أنا.mp4",
+        "descriptionImage": null,
+        "description": "ضمير يدل على المتحدث.",
+        "synonym": null,
+        "watchCount": 418,
+        "category": {
+         "id": 35,
+         "nameAr": "اللغة العربية"
+        }
+       }
+      },
+      {
+       "word": "لم أفهم",
+       "term": {
+        "id": 4939,
+        "wordAr": "لم أفهم",
+        "wordEn": "I didn't understand",
+        "category_id": 14,
+        "video": "لم أفهم.mp4",
+        "descriptionImage": null,
+        "description": "إعلان عن عدم الفهم لموضوع معين.",
+        "synonym": "مافهمتك",
+        "watchCount": 330,
+        "category": {
+         "id": 14,
+         "nameAr": "باب العلاقات الاجتماعية"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "school-13",
+     "ar": "أين القلم؟",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أين",
+       "term": {
+        "id": 8425,
+        "wordAr": "أين",
+        "wordEn": "Ayna",
+        "category_id": 35,
+        "video": "أين.mp4",
+        "descriptionImage": null,
+        "description": "استفهام عن المكان أو الموقع.",
+        "synonym": "اين",
+        "watchCount": 331,
+        "category": {
+         "id": 35,
+         "nameAr": "اللغة العربية"
+        }
+       }
+      },
+      {
+       "word": "قلم",
+       "term": {
+        "id": 9079,
+        "wordAr": "قلم",
+        "wordEn": "Pen",
+        "category_id": 35,
+        "video": "قلم.mp4",
+        "descriptionImage": null,
+        "description": "قلم أداة كتابة تستخدم لإنتاج النصوص على الورق.",
+        "synonym": null,
+        "watchCount": 102,
+        "category": {
+         "id": 35,
+         "nameAr": "اللغة العربية"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "school-15",
+     "ar": "أنا أصم.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أنا",
+       "term": {
+        "id": 8385,
+        "wordAr": "أنا",
+        "wordEn": "Ana",
+        "category_id": 35,
+        "video": "أنا.mp4",
+        "descriptionImage": null,
+        "description": "ضمير يدل على المتحدث.",
+        "synonym": null,
+        "watchCount": 418,
+        "category": {
+         "id": 35,
+         "nameAr": "اللغة العربية"
+        }
+       }
+      },
+      {
+       "word": "أصم",
+       "term": {
+        "id": 10632,
+        "wordAr": "أصم",
+        "wordEn": "Deaf",
+        "category_id": 38,
+        "video": "أصم.mp4",
+        "descriptionImage": null,
+        "description": "أصم هو الشخص الذي لا يستطيع السمع.",
+        "synonym": "اصم",
+        "watchCount": 171,
+        "category": {
+         "id": 38,
+         "nameAr": "التربية الاسرية"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "school-17",
+     "ar": "أين الفصل؟",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أين",
+       "term": {
+        "id": 8425,
+        "wordAr": "أين",
+        "wordEn": "Ayna",
+        "category_id": 35,
+        "video": "أين.mp4",
+        "descriptionImage": null,
+        "description": "استفهام عن المكان أو الموقع.",
+        "synonym": "اين",
+        "watchCount": 331,
+        "category": {
+         "id": 35,
+         "nameAr": "اللغة العربية"
+        }
+       }
+      },
+      {
+       "word": "فصل-مدرسة",
+       "term": {
+        "id": 9026,
+        "wordAr": "فصل-مدرسة",
+        "wordEn": "Class-School",
+        "category_id": 35,
+        "video": "فصل-مدرسة.mp4",
+        "descriptionImage": null,
+        "description": "فصل-مدرسة: مجموعة من الطلاب يتلقون التعليم معًا.",
+        "synonym": null,
+        "watchCount": 141,
+        "category": {
+         "id": 35,
+         "nameAr": "اللغة العربية"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "school-22",
+     "ar": "شكراً لمساعدتك.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "شكراً",
+       "term": {
+        "id": 5018,
+        "wordAr": "شكراً",
+        "wordEn": "? Thank you",
+        "category_id": 14,
+        "video": "شكراً.mp4",
+        "descriptionImage": null,
+        "description": "الشكر كلمة لها عدة معاني ودوال. مادة (ش ك ر) تدل في اللغة على الثناء على المحسن، والمجازاة، وعرفان الإحسان، يقال: شَكَرَهُ وشَكَرَ له يَشْكُرُ شُكْراً وشُكُوراً وشُكْراناً.",
+        "synonym": "شكرا",
+        "watchCount": 1234,
+        "category": {
+         "id": 14,
+         "nameAr": "باب العلاقات الاجتماعية"
+        }
+       }
+      },
+      {
+       "word": "مساعدة - مساندة",
+       "term": {
+        "id": 11081,
+        "wordAr": "مساعدة - مساندة",
+        "wordEn": "Assistance",
+        "category_id": 38,
+        "video": "مساعدة.mp4",
+        "descriptionImage": null,
+        "description": "تقديم الدعم والمساعدة للآخرين.",
+        "synonym": null,
+        "watchCount": 360,
+        "category": {
+         "id": 38,
+         "nameAr": "التربية الاسرية"
+        }
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "family",
+   "title": "في البيت والأسرة",
+   "sentences": [
+    {
+     "id": "family-1",
+     "ar": "أمي في البيت.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أم",
+       "term": {
+        "id": 6119,
+        "wordAr": "أم",
+        "wordEn": "Mother",
+        "category_id": 15,
+        "video": "أم.mp4",
+        "descriptionImage": null,
+        "description": "الأم هي أنثى وَلَدَتْ طفلاً أو أكثر.",
+        "synonym": "ام امي ماما",
+        "watchCount": 1090,
+        "category": {
+         "id": 15,
+         "nameAr": "الاسرة والمجتمع"
+        }
+       }
+      },
+      {
+       "word": "بيت",
+       "term": {
+        "id": 4586,
+        "wordAr": "بيت",
+        "wordEn": "House",
+        "category_id": 10,
+        "video": "بيت.mp4",
+        "descriptionImage": "iBQSB1LMlK5lqLF96pQLdhYVd9WsKSj2.png",
+        "description": "مبنى يُستخدم للسكن ويحتوي على غرف متعددة.",
+        "synonym": "البيت ملجأ",
+        "watchCount": 816,
+        "category": {
+         "id": 10,
+         "nameAr": "المنزل"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "family-2",
+     "ar": "أبي في غرفة النوم.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أب",
+       "term": {
+        "id": 6103,
+        "wordAr": "أب",
+        "wordEn": "Father",
+        "category_id": 15,
+        "video": "أب.mp4",
+        "descriptionImage": null,
+        "description": "الأبُ هو الوالد الذكر لطفل.",
+        "synonym": "بابا أبي ابي ابوي",
+        "watchCount": 1802,
+        "category": {
+         "id": 15,
+         "nameAr": "الاسرة والمجتمع"
+        }
+       }
+      },
+      {
+       "word": "غرفة نوم",
+       "term": {
+        "id": 4787,
+        "wordAr": "غرفة نوم",
+        "wordEn": "Bedroom",
+        "category_id": 10,
+        "video": "غرفة نوم.mp4",
+        "descriptionImage": null,
+        "description": "غرفة مخصصة للنوم، تحتوي على سرير وأثاث آخر.",
+        "synonym": null,
+        "watchCount": 58,
+        "category": {
+         "id": 10,
+         "nameAr": "المنزل"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "family-3",
+     "ar": "أختي تأكل البيتزا.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أخت",
+       "term": {
+        "id": 6112,
+        "wordAr": "أخت",
+        "wordEn": "Sister",
+        "category_id": 15,
+        "video": "أخت.mp4",
+        "descriptionImage": null,
+        "description": "الأخت صلة قرابة تشير إلى ابنة ذات الأب أو الأم.",
+        "synonym": "اخت",
+        "watchCount": 562,
+        "category": {
+         "id": 15,
+         "nameAr": "الاسرة والمجتمع"
+        }
+       }
+      },
+      {
+       "word": "يأكل",
+       "term": {
+        "id": 11350,
+        "wordAr": "يأكل",
+        "wordEn": "Eat",
+        "category_id": 39,
+        "video": "يأكل.mp4",
+        "descriptionImage": "VWZ089AEuQs94zcePiva4vclHdZTlHod.png",
+        "description": "فعل يُستخدم للإشارة إلى عملية استهلاك الطعام، ويعبر عن حاجة الكائنات الحية للغذاء. يبدأ بحرف الياء، ويُعتبر مذكراً في اللغة العربية. يُستخدم في سياقات متعددة، مثل الحديث عن الوجبات اليومية أو العادات الغذائية.",
+        "synonym": null,
+        "watchCount": 329,
+        "category": {
+         "id": 39,
+         "nameAr": "الكلمات الشائعة"
+        }
+       }
+      },
+      {
+       "word": "بيتزا",
+       "term": {
+        "id": 1668,
+        "wordAr": "بيتزا",
+        "wordEn": "Pizza",
+        "category_id": 26,
+        "video": "بيتزا.mp4",
+        "descriptionImage": "vmEmR968z9nkjKG53cz4Q0G2JLssxVw5.png",
+        "description": "البيتزا أو البِتْزَة هو طبق من أصل إيطالي يصنع من عجينة من القمح تكون عادة مستديرة ومسطحة ومخمرة وتغطى بالطماطم والجبن والعديد من المكونات الأخرى .",
+        "synonym": null,
+        "watchCount": 58,
+        "category": {
+         "id": 26,
+         "nameAr": "العلوم"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "family-4",
+     "ar": "أخي في غرفة الضيوف.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أخ",
+       "term": {
+        "id": 6111,
+        "wordAr": "أخ",
+        "wordEn": "Brother",
+        "category_id": 15,
+        "video": "أخ.mp4",
+        "descriptionImage": null,
+        "description": "الأخ (الجمع: إخوة وإخوان) تعني صبي أو رجل له نفس الأب والأم.",
+        "synonym": null,
+        "watchCount": 539,
+        "category": {
+         "id": 15,
+         "nameAr": "الاسرة والمجتمع"
+        }
+       }
+      },
+      {
+       "word": "غرفة ضيوف",
+       "term": {
+        "id": 4633,
+        "wordAr": "غرفة ضيوف",
+        "wordEn": "Guest room",
+        "category_id": 10,
+        "video": "غرفة ضيوف.mp4",
+        "descriptionImage": null,
+        "description": "غرفة ضيوف مكان مخصص لاستقبال الضيوف.",
+        "synonym": null,
+        "watchCount": 106,
+        "category": {
+         "id": 10,
+         "nameAr": "المنزل"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "family-5",
+     "ar": "نحن نأكل العشاء.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "نحن",
+       "term": {
+        "id": 9411,
+        "wordAr": "نحن",
+        "wordEn": "We",
+        "category_id": 35,
+        "video": "نحن.mp4",
+        "descriptionImage": null,
+        "description": null,
+        "synonym": null,
+        "watchCount": 172,
+        "category": {
+         "id": 35,
+         "nameAr": "اللغة العربية"
+        }
+       }
+      },
+      {
+       "word": "يأكل",
+       "term": {
+        "id": 11350,
+        "wordAr": "يأكل",
+        "wordEn": "Eat",
+        "category_id": 39,
+        "video": "يأكل.mp4",
+        "descriptionImage": "VWZ089AEuQs94zcePiva4vclHdZTlHod.png",
+        "description": "فعل يُستخدم للإشارة إلى عملية استهلاك الطعام، ويعبر عن حاجة الكائنات الحية للغذاء. يبدأ بحرف الياء، ويُعتبر مذكراً في اللغة العربية. يُستخدم في سياقات متعددة، مثل الحديث عن الوجبات اليومية أو العادات الغذائية.",
+        "synonym": null,
+        "watchCount": 329,
+        "category": {
+         "id": 39,
+         "nameAr": "الكلمات الشائعة"
+        }
+       }
+      },
+      {
+       "word": "عشاء",
+       "term": {
+        "id": 8945,
+        "wordAr": "عشاء",
+        "wordEn": "Dinner",
+        "category_id": 35,
+        "video": "عشاء.mp4",
+        "descriptionImage": null,
+        "description": "عشاء: وجبة تؤكل في المساء، وغالباً ما تكون الوجبة الرئيسية في اليوم.",
+        "synonym": null,
+        "watchCount": 42,
+        "category": {
+         "id": 35,
+         "nameAr": "اللغة العربية"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "family-6",
+     "ar": "الطفل ينام في الغرفة.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "طفل",
+       "term": {
+        "id": 6142,
+        "wordAr": "طفل",
+        "wordEn": "Child",
+        "category_id": 15,
+        "video": "طفل.mp4",
+        "descriptionImage": "1kr2CSmdyHjYNwzebYltya1w1meKxym0.png",
+        "description": "الطفل (الطفلة مؤنثة) هو مصطلح يُطلق عادةً على الإنسان منذ ولادته وحتى ما قبل مرحلة البلوغ.",
+        "synonym": null,
+        "watchCount": 322,
+        "category": {
+         "id": 15,
+         "nameAr": "الاسرة والمجتمع"
+        }
+       }
+      },
+      {
+       "word": "نوم",
+       "term": {
+        "id": 2175,
+        "wordAr": "نوم",
+        "wordEn": "Sleep",
+        "category_id": 26,
+        "video": "نوم.mp4",
+        "descriptionImage": "oZsUA6mlLtW5St27qoIyfg6bgb1j80tH.png",
+        "description": "النَّوم هو حالة طبيعية من الاسترخاء العضلي عند الكائنات الحية، وانخفاض الاستجابة للمحفزات الخارجية.",
+        "synonym": "نام ينام",
+        "watchCount": 173,
+        "category": {
+         "id": 26,
+         "nameAr": "العلوم"
+        }
+       }
+      },
+      {
+       "word": "غرفة",
+       "term": {
+        "id": 4635,
+        "wordAr": "غرفة",
+        "wordEn": "Room",
+        "category_id": 10,
+        "video": "غرفة.mp4",
+        "descriptionImage": null,
+        "description": "غرفة مساحة مغلقة تُستخدم لأغراض متعددة.",
+        "synonym": null,
+        "watchCount": 165,
+        "category": {
+         "id": 10,
+         "nameAr": "المنزل"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "family-8",
+     "ar": "أبي يقرأ في المجلس.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أب",
+       "term": {
+        "id": 6103,
+        "wordAr": "أب",
+        "wordEn": "Father",
+        "category_id": 15,
+        "video": "أب.mp4",
+        "descriptionImage": null,
+        "description": "الأبُ هو الوالد الذكر لطفل.",
+        "synonym": "بابا أبي ابي ابوي",
+        "watchCount": 1802,
+        "category": {
+         "id": 15,
+         "nameAr": "الاسرة والمجتمع"
+        }
+       }
+      },
+      {
+       "word": "مجلس",
+       "term": {
+        "id": 10105,
+        "wordAr": "مجلس",
+        "wordEn": "Council",
+        "category_id": 36,
+        "video": "مجلس.mp4",
+        "descriptionImage": "0E2FCtXAFJY23TRK4oGVG4t1QUuGEp6u.jpeg",
+        "description": "المجلس أو الديوانية أو المضافة أو الديوان هو غرفة استقبال الضيوف في البيوت العربية التقليدية، ويعد مكان اجتماع العائلة والضيوف، والتواصل بين أبناء المجتمع ..",
+        "synonym": "غرفة",
+        "watchCount": 130,
+        "category": {
+         "id": 36,
+         "nameAr": "الفنية"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "family-9",
+     "ar": "أختي في غرفة الطعام.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أخت",
+       "term": {
+        "id": 6112,
+        "wordAr": "أخت",
+        "wordEn": "Sister",
+        "category_id": 15,
+        "video": "أخت.mp4",
+        "descriptionImage": null,
+        "description": "الأخت صلة قرابة تشير إلى ابنة ذات الأب أو الأم.",
+        "synonym": "اخت",
+        "watchCount": 562,
+        "category": {
+         "id": 15,
+         "nameAr": "الاسرة والمجتمع"
+        }
+       }
+      },
+      {
+       "word": "غرفة طعام",
+       "term": {
+        "id": 4634,
+        "wordAr": "غرفة طعام",
+        "wordEn": "Dining room",
+        "category_id": 10,
+        "video": "غرفة طعام.mp4",
+        "descriptionImage": null,
+        "description": "غرفة طعام مكان مخصص لتناول الوجبات.",
+        "synonym": null,
+        "watchCount": 97,
+        "category": {
+         "id": 10,
+         "nameAr": "المنزل"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "family-13",
+     "ar": "أبي يساعد في البيت.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أب",
+       "term": {
+        "id": 6103,
+        "wordAr": "أب",
+        "wordEn": "Father",
+        "category_id": 15,
+        "video": "أب.mp4",
+        "descriptionImage": null,
+        "description": "الأبُ هو الوالد الذكر لطفل.",
+        "synonym": "بابا أبي ابي ابوي",
+        "watchCount": 1802,
+        "category": {
+         "id": 15,
+         "nameAr": "الاسرة والمجتمع"
+        }
+       }
+      },
+      {
+       "word": "يساعد",
+       "term": {
+        "id": 11361,
+        "wordAr": "يساعد",
+        "wordEn": "Help",
+        "category_id": 39,
+        "video": "يساعد.mp4",
+        "descriptionImage": null,
+        "description": "يساعد: يقدم العون أو الدعم لشخص أو شيء.",
+        "synonym": null,
+        "watchCount": 220,
+        "category": {
+         "id": 39,
+         "nameAr": "الكلمات الشائعة"
+        }
+       }
+      },
+      {
+       "word": "بيت",
+       "term": {
+        "id": 4586,
+        "wordAr": "بيت",
+        "wordEn": "House",
+        "category_id": 10,
+        "video": "بيت.mp4",
+        "descriptionImage": "iBQSB1LMlK5lqLF96pQLdhYVd9WsKSj2.png",
+        "description": "مبنى يُستخدم للسكن ويحتوي على غرف متعددة.",
+        "synonym": "البيت ملجأ",
+        "watchCount": 816,
+        "category": {
+         "id": 10,
+         "nameAr": "المنزل"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "family-14",
+     "ar": "أختي تدرس في الجامعة الإسلامية.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أخت",
+       "term": {
+        "id": 6112,
+        "wordAr": "أخت",
+        "wordEn": "Sister",
+        "category_id": 15,
+        "video": "أخت.mp4",
+        "descriptionImage": null,
+        "description": "الأخت صلة قرابة تشير إلى ابنة ذات الأب أو الأم.",
+        "synonym": "اخت",
+        "watchCount": 562,
+        "category": {
+         "id": 15,
+         "nameAr": "الاسرة والمجتمع"
+        }
+       }
+      },
+      {
+       "word": "الجامعة الاسلامية",
+       "term": {
+        "id": 5300,
+        "wordAr": "الجامعة الاسلامية",
+        "wordEn": "Islamic University",
+        "category_id": 7,
+        "video": "الجامعة الاسلامية.mp4",
+        "descriptionImage": "0Nt2NL3ccWEwckHJRoW5r4ars9ZcRxvF.jpg",
+        "description": "الجامعة الإسلامية بالمدينة المنورة هي جامعة حكومية سعودية، تقع في المدينة المنورة بالمملكة العربية السعودية. وهي تحت إشراف وزارة التعليم السعودية",
+        "synonym": "الجامعه الاسلاميه",
+        "watchCount": 340,
+        "category": {
+         "id": 7,
+         "nameAr": "تعليم وتدريب"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "family-16",
+     "ar": "الطفل يأكل الغداء.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "طفل",
+       "term": {
+        "id": 6142,
+        "wordAr": "طفل",
+        "wordEn": "Child",
+        "category_id": 15,
+        "video": "طفل.mp4",
+        "descriptionImage": "1kr2CSmdyHjYNwzebYltya1w1meKxym0.png",
+        "description": "الطفل (الطفلة مؤنثة) هو مصطلح يُطلق عادةً على الإنسان منذ ولادته وحتى ما قبل مرحلة البلوغ.",
+        "synonym": null,
+        "watchCount": 322,
+        "category": {
+         "id": 15,
+         "nameAr": "الاسرة والمجتمع"
+        }
+       }
+      },
+      {
+       "word": "يأكل",
+       "term": {
+        "id": 11350,
+        "wordAr": "يأكل",
+        "wordEn": "Eat",
+        "category_id": 39,
+        "video": "يأكل.mp4",
+        "descriptionImage": "VWZ089AEuQs94zcePiva4vclHdZTlHod.png",
+        "description": "فعل يُستخدم للإشارة إلى عملية استهلاك الطعام، ويعبر عن حاجة الكائنات الحية للغذاء. يبدأ بحرف الياء، ويُعتبر مذكراً في اللغة العربية. يُستخدم في سياقات متعددة، مثل الحديث عن الوجبات اليومية أو العادات الغذائية.",
+        "synonym": null,
+        "watchCount": 329,
+        "category": {
+         "id": 39,
+         "nameAr": "الكلمات الشائعة"
+        }
+       }
+      },
+      {
+       "word": "غداء",
+       "term": {
+        "id": 10941,
+        "wordAr": "غداء",
+        "wordEn": "Lunch",
+        "category_id": 38,
+        "video": "غداء.mp4",
+        "descriptionImage": "1KFTMnoJLrGTq8LD94cSajAksnVBrNuT.jpg",
+        "description": "غداء هو وجبة تؤكل في منتصف النهار، وعادةً ما تكون أكبر من وجبة الإفطار.",
+        "synonym": null,
+        "watchCount": 67,
+        "category": {
+         "id": 38,
+         "nameAr": "التربية الاسرية"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "family-17",
+     "ar": "أمي في غرفة النوم.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أم",
+       "term": {
+        "id": 6119,
+        "wordAr": "أم",
+        "wordEn": "Mother",
+        "category_id": 15,
+        "video": "أم.mp4",
+        "descriptionImage": null,
+        "description": "الأم هي أنثى وَلَدَتْ طفلاً أو أكثر.",
+        "synonym": "ام امي ماما",
+        "watchCount": 1090,
+        "category": {
+         "id": 15,
+         "nameAr": "الاسرة والمجتمع"
+        }
+       }
+      },
+      {
+       "word": "غرفة نوم",
+       "term": {
+        "id": 4787,
+        "wordAr": "غرفة نوم",
+        "wordEn": "Bedroom",
+        "category_id": 10,
+        "video": "غرفة نوم.mp4",
+        "descriptionImage": null,
+        "description": "غرفة مخصصة للنوم، تحتوي على سرير وأثاث آخر.",
+        "synonym": null,
+        "watchCount": 58,
+        "category": {
+         "id": 10,
+         "nameAr": "المنزل"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "family-20",
+     "ar": "أخي يقرأ في المجلس.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أخ",
+       "term": {
+        "id": 6111,
+        "wordAr": "أخ",
+        "wordEn": "Brother",
+        "category_id": 15,
+        "video": "أخ.mp4",
+        "descriptionImage": null,
+        "description": "الأخ (الجمع: إخوة وإخوان) تعني صبي أو رجل له نفس الأب والأم.",
+        "synonym": null,
+        "watchCount": 539,
+        "category": {
+         "id": 15,
+         "nameAr": "الاسرة والمجتمع"
+        }
+       }
+      },
+      {
+       "word": "مجلس",
+       "term": {
+        "id": 10105,
+        "wordAr": "مجلس",
+        "wordEn": "Council",
+        "category_id": 36,
+        "video": "مجلس.mp4",
+        "descriptionImage": "0E2FCtXAFJY23TRK4oGVG4t1QUuGEp6u.jpeg",
+        "description": "المجلس أو الديوانية أو المضافة أو الديوان هو غرفة استقبال الضيوف في البيوت العربية التقليدية، ويعد مكان اجتماع العائلة والضيوف، والتواصل بين أبناء المجتمع ..",
+        "synonym": "غرفة",
+        "watchCount": 130,
+        "category": {
+         "id": 36,
+         "nameAr": "الفنية"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "family-21",
+     "ar": "نحن نأكل الغداء.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "نحن",
+       "term": {
+        "id": 9411,
+        "wordAr": "نحن",
+        "wordEn": "We",
+        "category_id": 35,
+        "video": "نحن.mp4",
+        "descriptionImage": null,
+        "description": null,
+        "synonym": null,
+        "watchCount": 172,
+        "category": {
+         "id": 35,
+         "nameAr": "اللغة العربية"
+        }
+       }
+      },
+      {
+       "word": "يأكل",
+       "term": {
+        "id": 11350,
+        "wordAr": "يأكل",
+        "wordEn": "Eat",
+        "category_id": 39,
+        "video": "يأكل.mp4",
+        "descriptionImage": "VWZ089AEuQs94zcePiva4vclHdZTlHod.png",
+        "description": "فعل يُستخدم للإشارة إلى عملية استهلاك الطعام، ويعبر عن حاجة الكائنات الحية للغذاء. يبدأ بحرف الياء، ويُعتبر مذكراً في اللغة العربية. يُستخدم في سياقات متعددة، مثل الحديث عن الوجبات اليومية أو العادات الغذائية.",
+        "synonym": null,
+        "watchCount": 329,
+        "category": {
+         "id": 39,
+         "nameAr": "الكلمات الشائعة"
+        }
+       }
+      },
+      {
+       "word": "غداء",
+       "term": {
+        "id": 10941,
+        "wordAr": "غداء",
+        "wordEn": "Lunch",
+        "category_id": 38,
+        "video": "غداء.mp4",
+        "descriptionImage": "1KFTMnoJLrGTq8LD94cSajAksnVBrNuT.jpg",
+        "description": "غداء هو وجبة تؤكل في منتصف النهار، وعادةً ما تكون أكبر من وجبة الإفطار.",
+        "synonym": null,
+        "watchCount": 67,
+        "category": {
+         "id": 38,
+         "nameAr": "التربية الاسرية"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "family-24",
+     "ar": "أبي ينام في الغرفة.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أب",
+       "term": {
+        "id": 6103,
+        "wordAr": "أب",
+        "wordEn": "Father",
+        "category_id": 15,
+        "video": "أب.mp4",
+        "descriptionImage": null,
+        "description": "الأبُ هو الوالد الذكر لطفل.",
+        "synonym": "بابا أبي ابي ابوي",
+        "watchCount": 1802,
+        "category": {
+         "id": 15,
+         "nameAr": "الاسرة والمجتمع"
+        }
+       }
+      },
+      {
+       "word": "نوم",
+       "term": {
+        "id": 2175,
+        "wordAr": "نوم",
+        "wordEn": "Sleep",
+        "category_id": 26,
+        "video": "نوم.mp4",
+        "descriptionImage": "oZsUA6mlLtW5St27qoIyfg6bgb1j80tH.png",
+        "description": "النَّوم هو حالة طبيعية من الاسترخاء العضلي عند الكائنات الحية، وانخفاض الاستجابة للمحفزات الخارجية.",
+        "synonym": "نام ينام",
+        "watchCount": 173,
+        "category": {
+         "id": 26,
+         "nameAr": "العلوم"
+        }
+       }
+      },
+      {
+       "word": "غرفة",
+       "term": {
+        "id": 4635,
+        "wordAr": "غرفة",
+        "wordEn": "Room",
+        "category_id": 10,
+        "video": "غرفة.mp4",
+        "descriptionImage": null,
+        "description": "غرفة مساحة مغلقة تُستخدم لأغراض متعددة.",
+        "synonym": null,
+        "watchCount": 165,
+        "category": {
+         "id": 10,
+         "nameAr": "المنزل"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "family-27",
+     "ar": "نحن ننام في البيت.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "نحن",
+       "term": {
+        "id": 9411,
+        "wordAr": "نحن",
+        "wordEn": "We",
+        "category_id": 35,
+        "video": "نحن.mp4",
+        "descriptionImage": null,
+        "description": null,
+        "synonym": null,
+        "watchCount": 172,
+        "category": {
+         "id": 35,
+         "nameAr": "اللغة العربية"
+        }
+       }
+      },
+      {
+       "word": "نوم",
+       "term": {
+        "id": 2175,
+        "wordAr": "نوم",
+        "wordEn": "Sleep",
+        "category_id": 26,
+        "video": "نوم.mp4",
+        "descriptionImage": "oZsUA6mlLtW5St27qoIyfg6bgb1j80tH.png",
+        "description": "النَّوم هو حالة طبيعية من الاسترخاء العضلي عند الكائنات الحية، وانخفاض الاستجابة للمحفزات الخارجية.",
+        "synonym": "نام ينام",
+        "watchCount": 173,
+        "category": {
+         "id": 26,
+         "nameAr": "العلوم"
+        }
+       }
+      },
+      {
+       "word": "بيت",
+       "term": {
+        "id": 4586,
+        "wordAr": "بيت",
+        "wordEn": "House",
+        "category_id": 10,
+        "video": "بيت.mp4",
+        "descriptionImage": "iBQSB1LMlK5lqLF96pQLdhYVd9WsKSj2.png",
+        "description": "مبنى يُستخدم للسكن ويحتوي على غرف متعددة.",
+        "synonym": "البيت ملجأ",
+        "watchCount": 816,
+        "category": {
+         "id": 10,
+         "nameAr": "المنزل"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "family-29",
+     "ar": "أمي في غرفة الضيوف.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أم",
+       "term": {
+        "id": 6119,
+        "wordAr": "أم",
+        "wordEn": "Mother",
+        "category_id": 15,
+        "video": "أم.mp4",
+        "descriptionImage": null,
+        "description": "الأم هي أنثى وَلَدَتْ طفلاً أو أكثر.",
+        "synonym": "ام امي ماما",
+        "watchCount": 1090,
+        "category": {
+         "id": 15,
+         "nameAr": "الاسرة والمجتمع"
+        }
+       }
+      },
+      {
+       "word": "غرفة ضيوف",
+       "term": {
+        "id": 4633,
+        "wordAr": "غرفة ضيوف",
+        "wordEn": "Guest room",
+        "category_id": 10,
+        "video": "غرفة ضيوف.mp4",
+        "descriptionImage": null,
+        "description": "غرفة ضيوف مكان مخصص لاستقبال الضيوف.",
+        "synonym": null,
+        "watchCount": 106,
+        "category": {
+         "id": 10,
+         "nameAr": "المنزل"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "family-30",
+     "ar": "أبي في غرفة الطعام.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أب",
+       "term": {
+        "id": 6103,
+        "wordAr": "أب",
+        "wordEn": "Father",
+        "category_id": 15,
+        "video": "أب.mp4",
+        "descriptionImage": null,
+        "description": "الأبُ هو الوالد الذكر لطفل.",
+        "synonym": "بابا أبي ابي ابوي",
+        "watchCount": 1802,
+        "category": {
+         "id": 15,
+         "nameAr": "الاسرة والمجتمع"
+        }
+       }
+      },
+      {
+       "word": "غرفة طعام",
+       "term": {
+        "id": 4634,
+        "wordAr": "غرفة طعام",
+        "wordEn": "Dining room",
+        "category_id": 10,
+        "video": "غرفة طعام.mp4",
+        "descriptionImage": null,
+        "description": "غرفة طعام مكان مخصص لتناول الوجبات.",
+        "synonym": null,
+        "watchCount": 97,
+        "category": {
+         "id": 10,
+         "nameAr": "المنزل"
+        }
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "emergency",
+   "title": "الطوارئ والسلامة",
+   "sentences": [
+    {
+     "id": "emergency-1",
+     "ar": "في حالة الطوارئ، اذهب إلى مخرج الطوارئ.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "طوارئ",
+       "term": {
+        "id": 11829,
+        "wordAr": "طوارئ",
+        "wordEn": "Emergency",
+        "category_id": 53,
+        "video": "oxFAe2jBS1EBzj2zfwm19wcyzgKOzPLZ.mp4",
+        "descriptionImage": null,
+        "description": "الطوارئ تشير إلى الحالة الصحية العاجلة التي تتطلب رعاية فورية.",
+        "synonym": null,
+        "watchCount": 155,
+        "category": {
+         "id": 53,
+         "nameAr": "مصطلحات في الصحة"
+        }
+       }
+      },
+      {
+       "word": "مخرج الطوارئ",
+       "term": {
+        "id": 128,
+        "wordAr": "مخرج الطوارئ",
+        "wordEn": "Emergency Exit",
+        "category_id": 11,
+        "video": "TYSHO9lXS0Ck2KCWNRMj77V3UPOJe0nw.mp4",
+        "descriptionImage": null,
+        "description": "مخرج خاص للطوارئ لضمان سلامة النزلاء في الحالات الطارئة.",
+        "synonym": null,
+        "watchCount": 53,
+        "category": {
+         "id": 11,
+         "nameAr": "الأنظمة الإصلاحية والسجون"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "emergency-2",
+     "ar": "اتصل بالإسعاف بسرعة.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "إسعاف",
+       "term": {
+        "id": 8320,
+        "wordAr": "إسعاف",
+        "wordEn": "First Aid",
+        "category_id": 35,
+        "video": "إسعاف.mp4",
+        "descriptionImage": null,
+        "description": "إسعاف هو تقديم المساعدة الطبية الفورية في حالات الطوارئ.",
+        "synonym": "اسعاف",
+        "watchCount": 88,
+        "category": {
+         "id": 35,
+         "nameAr": "اللغة العربية"
+        }
+       }
+      },
+      {
+       "word": "بسرعة - سرعة",
+       "term": {
+        "id": 5309,
+        "wordAr": "بسرعة - سرعة",
+        "wordEn": "Quickly - Speed",
+        "category_id": 7,
+        "video": "بسرعة.mp4",
+        "descriptionImage": null,
+        "description": "الإجراء الذي يتم بسرعة، مما يدل على الفعالية والسرعة.",
+        "synonym": null,
+        "watchCount": 213,
+        "category": {
+         "id": 7,
+         "nameAr": "تعليم وتدريب"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "emergency-3",
+     "ar": "هناك حريق، أطلب المساعدة.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "الحريق",
+       "term": {
+        "id": 4277,
+        "wordAr": "الحريق",
+        "wordEn": "Al- hariq",
+        "category_id": 21,
+        "video": "الحريق.mp4",
+        "descriptionImage": null,
+        "description": "الحريق هو اشتعال النار في مكان معين، قد يكون عرضيًا أو متعمدًا.",
+        "synonym": null,
+        "watchCount": 75,
+        "category": {
+         "id": 21,
+         "nameAr": "وطني"
+        }
+       }
+      },
+      {
+       "word": "استغاثة",
+       "term": {
+        "id": 5089,
+        "wordAr": "استغاثة",
+        "wordEn": "Cry for Help",
+        "category_id": 5,
+        "video": "استغاثة.mp4",
+        "descriptionImage": "UNS1iFM0CwXwfka52QcuMdZhT9YOCGb8.webp",
+        "description": "استغاثة هي طلب المساعدة في موقف صعب أو خطر.",
+        "synonym": null,
+        "watchCount": 281,
+        "category": {
+         "id": 5,
+         "nameAr": "صفات وحالات"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "emergency-4",
+     "ar": "حادث هنا، أحضر سيارة إسعاف.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "حادث",
+       "term": {
+        "id": 6500,
+        "wordAr": "حادث",
+        "wordEn": "Accident",
+        "category_id": 18,
+        "video": "حادث.mp4",
+        "descriptionImage": null,
+        "description": "حادثة تحدث نتيجة تصادم أو خطأ في القيادة.",
+        "synonym": null,
+        "watchCount": 162,
+        "category": {
+         "id": 18,
+         "nameAr": "مرور ونقل"
+        }
+       }
+      },
+      {
+       "word": "سيارة إسعاف",
+       "term": {
+        "id": 6513,
+        "wordAr": "سيارة إسعاف",
+        "wordEn": "Ambulance",
+        "category_id": 18,
+        "video": "سيارة اسعاف.mp4",
+        "descriptionImage": null,
+        "description": "سيارة إسعاف تستخدم لنقل المرضى والمصابين إلى المستشفيات بسرعة.",
+        "synonym": null,
+        "watchCount": 95,
+        "category": {
+         "id": 18,
+         "nameAr": "مرور ونقل"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "emergency-5",
+     "ar": "لا تلمس، خطر.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "لا",
+       "term": {
+        "id": 938,
+        "wordAr": "لا",
+        "wordEn": "No (Chapter of Religion)",
+        "category_id": 23,
+        "video": "لا.mp4",
+        "descriptionImage": null,
+        "description": "لا تعني الرفض أو النفي.",
+        "synonym": null,
+        "watchCount": 53,
+        "category": {
+         "id": 23,
+         "nameAr": "باب الدين"
+        }
+       }
+      },
+      {
+       "word": "خطر",
+       "term": {
+        "id": 2023,
+        "wordAr": "خطر",
+        "wordEn": "Danger",
+        "category_id": 26,
+        "video": "خطر.mp4",
+        "descriptionImage": "QtF9ViAk5o9dhCcs7P0GuKpOccewarYj.png",
+        "description": "الخطورة ضمن السياق العلمي التقني هي التعرض لأي عامل قد يسبب الضرر أو الأذى لما يتوجب حمايته سواء من الأشخاص أو الممتلكات.",
+        "synonym": "خطير",
+        "watchCount": 172,
+        "category": {
+         "id": 26,
+         "nameAr": "العلوم"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "emergency-7",
+     "ar": "أسرع لو سمحت، هناك طوارئ.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أسرع لو سمحت",
+       "term": {
+        "id": 4874,
+        "wordAr": "أسرع لو سمحت",
+        "wordEn": "Hurry, please",
+        "category_id": 14,
+        "video": "! أسرع لو سمحت.mp4",
+        "descriptionImage": null,
+        "description": "طلب الإسراع في القيام بشيء معين.",
+        "synonym": "بسرعة",
+        "watchCount": 306,
+        "category": {
+         "id": 14,
+         "nameAr": "باب العلاقات الاجتماعية"
+        }
+       }
+      },
+      {
+       "word": "طوارئ",
+       "term": {
+        "id": 11829,
+        "wordAr": "طوارئ",
+        "wordEn": "Emergency",
+        "category_id": 53,
+        "video": "oxFAe2jBS1EBzj2zfwm19wcyzgKOzPLZ.mp4",
+        "descriptionImage": null,
+        "description": "الطوارئ تشير إلى الحالة الصحية العاجلة التي تتطلب رعاية فورية.",
+        "synonym": null,
+        "watchCount": 155,
+        "category": {
+         "id": 53,
+         "nameAr": "مصطلحات في الصحة"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "emergency-8",
+     "ar": "أين مخرج الطوارئ؟",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أين",
+       "term": {
+        "id": 8425,
+        "wordAr": "أين",
+        "wordEn": "Ayna",
+        "category_id": 35,
+        "video": "أين.mp4",
+        "descriptionImage": null,
+        "description": "استفهام عن المكان أو الموقع.",
+        "synonym": "اين",
+        "watchCount": 331,
+        "category": {
+         "id": 35,
+         "nameAr": "اللغة العربية"
+        }
+       }
+      },
+      {
+       "word": "مخرج الطوارئ",
+       "term": {
+        "id": 128,
+        "wordAr": "مخرج الطوارئ",
+        "wordEn": "Emergency Exit",
+        "category_id": 11,
+        "video": "TYSHO9lXS0Ck2KCWNRMj77V3UPOJe0nw.mp4",
+        "descriptionImage": null,
+        "description": "مخرج خاص للطوارئ لضمان سلامة النزلاء في الحالات الطارئة.",
+        "synonym": null,
+        "watchCount": 53,
+        "category": {
+         "id": 11,
+         "nameAr": "الأنظمة الإصلاحية والسجون"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "emergency-9",
+     "ar": "اتصل بالشرطة فوراً.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "شرطة",
+       "term": {
+        "id": 11211,
+        "wordAr": "شرطة",
+        "wordEn": "Police",
+        "category_id": 38,
+        "video": "شرطة.mp4",
+        "descriptionImage": null,
+        "description": "شرطة: جهة مسؤولة عن حفظ الأمن والنظام في المجتمع.",
+        "synonym": null,
+        "watchCount": 85,
+        "category": {
+         "id": 38,
+         "nameAr": "التربية الاسرية"
+        }
+       }
+      },
+      {
+       "word": "الآن - حالاً - حالية",
+       "term": {
+        "id": 10353,
+        "wordAr": "الآن - حالاً - حالية",
+        "wordEn": "Now",
+        "category_id": 37,
+        "video": "الآن.mp4",
+        "descriptionImage": null,
+        "description": "آن هو اللحظة بالنسبة للزمان، كالنقطة بالنسبة إلى المكان، لا امتداد لها ولا مدة، وإنما هي الحد المشترك بين مدتين متعاقبتين.",
+        "synonym": "الان حالا حاليه",
+        "watchCount": 216,
+        "category": {
+         "id": 37,
+         "nameAr": "رياضيات"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "emergency-10",
+     "ar": "هناك سرقة، أبلغ الشرطة.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "السرقة",
+       "term": {
+        "id": 292,
+        "wordAr": "السرقة",
+        "wordEn": "Allah Al-Sitteer",
+        "category_id": 23,
+        "video": "السرقة.mp4",
+        "descriptionImage": null,
+        "description": "السرقة تعني أخذ مال الغير بغير حق، وهي جريمة في الإسلام.",
+        "synonym": null,
+        "watchCount": 55,
+        "category": {
+         "id": 23,
+         "nameAr": "باب الدين"
+        }
+       }
+      },
+      {
+       "word": "شرطة",
+       "term": {
+        "id": 11211,
+        "wordAr": "شرطة",
+        "wordEn": "Police",
+        "category_id": 38,
+        "video": "شرطة.mp4",
+        "descriptionImage": null,
+        "description": "شرطة: جهة مسؤولة عن حفظ الأمن والنظام في المجتمع.",
+        "synonym": null,
+        "watchCount": 85,
+        "category": {
+         "id": 38,
+         "nameAr": "التربية الاسرية"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "emergency-12",
+     "ar": "لا تدخل، خطر حريق.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "لا",
+       "term": {
+        "id": 938,
+        "wordAr": "لا",
+        "wordEn": "No (Chapter of Religion)",
+        "category_id": 23,
+        "video": "لا.mp4",
+        "descriptionImage": null,
+        "description": "لا تعني الرفض أو النفي.",
+        "synonym": null,
+        "watchCount": 53,
+        "category": {
+         "id": 23,
+         "nameAr": "باب الدين"
+        }
+       }
+      },
+      {
+       "word": "خطر",
+       "term": {
+        "id": 2023,
+        "wordAr": "خطر",
+        "wordEn": "Danger",
+        "category_id": 26,
+        "video": "خطر.mp4",
+        "descriptionImage": "QtF9ViAk5o9dhCcs7P0GuKpOccewarYj.png",
+        "description": "الخطورة ضمن السياق العلمي التقني هي التعرض لأي عامل قد يسبب الضرر أو الأذى لما يتوجب حمايته سواء من الأشخاص أو الممتلكات.",
+        "synonym": "خطير",
+        "watchCount": 172,
+        "category": {
+         "id": 26,
+         "nameAr": "العلوم"
+        }
+       }
+      },
+      {
+       "word": "الحريق",
+       "term": {
+        "id": 4277,
+        "wordAr": "الحريق",
+        "wordEn": "Al- hariq",
+        "category_id": 21,
+        "video": "الحريق.mp4",
+        "descriptionImage": null,
+        "description": "الحريق هو اشتعال النار في مكان معين، قد يكون عرضيًا أو متعمدًا.",
+        "synonym": null,
+        "watchCount": 75,
+        "category": {
+         "id": 21,
+         "nameAr": "وطني"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "emergency-13",
+     "ar": "أحتاج سيارة إسعاف بسرعة.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أريد",
+       "term": {
+        "id": 5078,
+        "wordAr": "أريد",
+        "wordEn": "I Want",
+        "category_id": 5,
+        "video": "أراد.mp4",
+        "descriptionImage": "pDBShYV4RpmKEPTYKKdLiYSSUNPJegNW.jpeg",
+        "description": "أريد هو تعبير عن الرغبة في الحصول على شيء أو تحقيق هدف.",
+        "synonym": "اريد",
+        "watchCount": 857,
+        "category": {
+         "id": 5,
+         "nameAr": "صفات وحالات"
+        }
+       }
+      },
+      {
+       "word": "سيارة إسعاف",
+       "term": {
+        "id": 6513,
+        "wordAr": "سيارة إسعاف",
+        "wordEn": "Ambulance",
+        "category_id": 18,
+        "video": "سيارة اسعاف.mp4",
+        "descriptionImage": null,
+        "description": "سيارة إسعاف تستخدم لنقل المرضى والمصابين إلى المستشفيات بسرعة.",
+        "synonym": null,
+        "watchCount": 95,
+        "category": {
+         "id": 18,
+         "nameAr": "مرور ونقل"
+        }
+       }
+      },
+      {
+       "word": "بسرعة - سرعة",
+       "term": {
+        "id": 5309,
+        "wordAr": "بسرعة - سرعة",
+        "wordEn": "Quickly - Speed",
+        "category_id": 7,
+        "video": "بسرعة.mp4",
+        "descriptionImage": null,
+        "description": "الإجراء الذي يتم بسرعة، مما يدل على الفعالية والسرعة.",
+        "synonym": null,
+        "watchCount": 213,
+        "category": {
+         "id": 7,
+         "nameAr": "تعليم وتدريب"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "emergency-14",
+     "ar": "هناك حادث، تعال بسرعة.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "حادث",
+       "term": {
+        "id": 6500,
+        "wordAr": "حادث",
+        "wordEn": "Accident",
+        "category_id": 18,
+        "video": "حادث.mp4",
+        "descriptionImage": null,
+        "description": "حادثة تحدث نتيجة تصادم أو خطأ في القيادة.",
+        "synonym": null,
+        "watchCount": 162,
+        "category": {
+         "id": 18,
+         "nameAr": "مرور ونقل"
+        }
+       }
+      },
+      {
+       "word": "تعال بسرعة",
+       "term": {
+        "id": 5040,
+        "wordAr": "تعال بسرعة",
+        "wordEn": "Come Quickly",
+        "category_id": 14,
+        "video": "تعال بسرعة.mp4",
+        "descriptionImage": null,
+        "description": "طلب للحضور بسرعة، يُستخدم في حالات الطوارئ.",
+        "synonym": "تعال بسرعه",
+        "watchCount": 108,
+        "category": {
+         "id": 14,
+         "nameAr": "باب العلاقات الاجتماعية"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "emergency-15",
+     "ar": "أين الحريق؟",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أين",
+       "term": {
+        "id": 8425,
+        "wordAr": "أين",
+        "wordEn": "Ayna",
+        "category_id": 35,
+        "video": "أين.mp4",
+        "descriptionImage": null,
+        "description": "استفهام عن المكان أو الموقع.",
+        "synonym": "اين",
+        "watchCount": 331,
+        "category": {
+         "id": 35,
+         "nameAr": "اللغة العربية"
+        }
+       }
+      },
+      {
+       "word": "الحريق",
+       "term": {
+        "id": 4277,
+        "wordAr": "الحريق",
+        "wordEn": "Al- hariq",
+        "category_id": 21,
+        "video": "الحريق.mp4",
+        "descriptionImage": null,
+        "description": "الحريق هو اشتعال النار في مكان معين، قد يكون عرضيًا أو متعمدًا.",
+        "synonym": null,
+        "watchCount": 75,
+        "category": {
+         "id": 21,
+         "nameAr": "وطني"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "emergency-17",
+     "ar": "أحتاج مسعفاً.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أريد",
+       "term": {
+        "id": 5078,
+        "wordAr": "أريد",
+        "wordEn": "I Want",
+        "category_id": 5,
+        "video": "أراد.mp4",
+        "descriptionImage": "pDBShYV4RpmKEPTYKKdLiYSSUNPJegNW.jpeg",
+        "description": "أريد هو تعبير عن الرغبة في الحصول على شيء أو تحقيق هدف.",
+        "synonym": "اريد",
+        "watchCount": 857,
+        "category": {
+         "id": 5,
+         "nameAr": "صفات وحالات"
+        }
+       }
+      },
+      {
+       "word": "مسعف",
+       "term": {
+        "id": 11088,
+        "wordAr": "مسعف",
+        "wordEn": "Paramedic",
+        "category_id": 38,
+        "video": "مسعف.mp4",
+        "descriptionImage": null,
+        "description": "المسعف هو شخص مدرب على تقديم الإسعافات الأولية والرعاية الصحية الطارئة.",
+        "synonym": null,
+        "watchCount": 22,
+        "category": {
+         "id": 38,
+         "nameAr": "التربية الاسرية"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "emergency-18",
+     "ar": "هناك جرح، أحضر إسعافاً.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "جرح",
+       "term": {
+        "id": 5498,
+        "wordAr": "جرح",
+        "wordEn": "Wound",
+        "category_id": 13,
+        "video": "جرح.mp4",
+        "descriptionImage": null,
+        "description": "إصابة تحدث في الجلد أو الأنسجة نتيجة جرح أو حادث.",
+        "synonym": null,
+        "watchCount": 193,
+        "category": {
+         "id": 13,
+         "nameAr": "الصحة والمرض"
+        }
+       }
+      },
+      {
+       "word": "إسعاف",
+       "term": {
+        "id": 8320,
+        "wordAr": "إسعاف",
+        "wordEn": "First Aid",
+        "category_id": 35,
+        "video": "إسعاف.mp4",
+        "descriptionImage": null,
+        "description": "إسعاف هو تقديم المساعدة الطبية الفورية في حالات الطوارئ.",
+        "synonym": "اسعاف",
+        "watchCount": 88,
+        "category": {
+         "id": 35,
+         "nameAr": "اللغة العربية"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "emergency-19",
+     "ar": "انتبه، هناك خطر.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "انتباه",
+       "term": {
+        "id": 5120,
+        "wordAr": "انتباه",
+        "wordEn": "Attention",
+        "category_id": 5,
+        "video": "انتباه.mp4",
+        "descriptionImage": null,
+        "description": "انتباه يعني التركيز والانتباه لشيء ما.",
+        "synonym": null,
+        "watchCount": 271,
+        "category": {
+         "id": 5,
+         "nameAr": "صفات وحالات"
+        }
+       }
+      },
+      {
+       "word": "خطر",
+       "term": {
+        "id": 2023,
+        "wordAr": "خطر",
+        "wordEn": "Danger",
+        "category_id": 26,
+        "video": "خطر.mp4",
+        "descriptionImage": "QtF9ViAk5o9dhCcs7P0GuKpOccewarYj.png",
+        "description": "الخطورة ضمن السياق العلمي التقني هي التعرض لأي عامل قد يسبب الضرر أو الأذى لما يتوجب حمايته سواء من الأشخاص أو الممتلكات.",
+        "synonym": "خطير",
+        "watchCount": 172,
+        "category": {
+         "id": 26,
+         "nameAr": "العلوم"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "emergency-20",
+     "ar": "أين سيارة الإسعاف؟",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أين",
+       "term": {
+        "id": 8425,
+        "wordAr": "أين",
+        "wordEn": "Ayna",
+        "category_id": 35,
+        "video": "أين.mp4",
+        "descriptionImage": null,
+        "description": "استفهام عن المكان أو الموقع.",
+        "synonym": "اين",
+        "watchCount": 331,
+        "category": {
+         "id": 35,
+         "nameAr": "اللغة العربية"
+        }
+       }
+      },
+      {
+       "word": "سيارة إسعاف",
+       "term": {
+        "id": 6513,
+        "wordAr": "سيارة إسعاف",
+        "wordEn": "Ambulance",
+        "category_id": 18,
+        "video": "سيارة اسعاف.mp4",
+        "descriptionImage": null,
+        "description": "سيارة إسعاف تستخدم لنقل المرضى والمصابين إلى المستشفيات بسرعة.",
+        "synonym": null,
+        "watchCount": 95,
+        "category": {
+         "id": 18,
+         "nameAr": "مرور ونقل"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "emergency-21",
+     "ar": "اتصل بالطوارئ فوراً.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "طوارئ",
+       "term": {
+        "id": 11829,
+        "wordAr": "طوارئ",
+        "wordEn": "Emergency",
+        "category_id": 53,
+        "video": "oxFAe2jBS1EBzj2zfwm19wcyzgKOzPLZ.mp4",
+        "descriptionImage": null,
+        "description": "الطوارئ تشير إلى الحالة الصحية العاجلة التي تتطلب رعاية فورية.",
+        "synonym": null,
+        "watchCount": 155,
+        "category": {
+         "id": 53,
+         "nameAr": "مصطلحات في الصحة"
+        }
+       }
+      },
+      {
+       "word": "الآن - حالاً - حالية",
+       "term": {
+        "id": 10353,
+        "wordAr": "الآن - حالاً - حالية",
+        "wordEn": "Now",
+        "category_id": 37,
+        "video": "الآن.mp4",
+        "descriptionImage": null,
+        "description": "آن هو اللحظة بالنسبة للزمان، كالنقطة بالنسبة إلى المكان، لا امتداد لها ولا مدة، وإنما هي الحد المشترك بين مدتين متعاقبتين.",
+        "synonym": "الان حالا حاليه",
+        "watchCount": 216,
+        "category": {
+         "id": 37,
+         "nameAr": "رياضيات"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "emergency-24",
+     "ar": "أين الشرطة؟",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أين",
+       "term": {
+        "id": 8425,
+        "wordAr": "أين",
+        "wordEn": "Ayna",
+        "category_id": 35,
+        "video": "أين.mp4",
+        "descriptionImage": null,
+        "description": "استفهام عن المكان أو الموقع.",
+        "synonym": "اين",
+        "watchCount": 331,
+        "category": {
+         "id": 35,
+         "nameAr": "اللغة العربية"
+        }
+       }
+      },
+      {
+       "word": "شرطة",
+       "term": {
+        "id": 11211,
+        "wordAr": "شرطة",
+        "wordEn": "Police",
+        "category_id": 38,
+        "video": "شرطة.mp4",
+        "descriptionImage": null,
+        "description": "شرطة: جهة مسؤولة عن حفظ الأمن والنظام في المجتمع.",
+        "synonym": null,
+        "watchCount": 85,
+        "category": {
+         "id": 38,
+         "nameAr": "التربية الاسرية"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "emergency-25",
+     "ar": "أحتاج إسعافاً فوراً.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أريد",
+       "term": {
+        "id": 5078,
+        "wordAr": "أريد",
+        "wordEn": "I Want",
+        "category_id": 5,
+        "video": "أراد.mp4",
+        "descriptionImage": "pDBShYV4RpmKEPTYKKdLiYSSUNPJegNW.jpeg",
+        "description": "أريد هو تعبير عن الرغبة في الحصول على شيء أو تحقيق هدف.",
+        "synonym": "اريد",
+        "watchCount": 857,
+        "category": {
+         "id": 5,
+         "nameAr": "صفات وحالات"
+        }
+       }
+      },
+      {
+       "word": "إسعاف",
+       "term": {
+        "id": 8320,
+        "wordAr": "إسعاف",
+        "wordEn": "First Aid",
+        "category_id": 35,
+        "video": "إسعاف.mp4",
+        "descriptionImage": null,
+        "description": "إسعاف هو تقديم المساعدة الطبية الفورية في حالات الطوارئ.",
+        "synonym": "اسعاف",
+        "watchCount": 88,
+        "category": {
+         "id": 35,
+         "nameAr": "اللغة العربية"
+        }
+       }
+      },
+      {
+       "word": "الآن - حالاً - حالية",
+       "term": {
+        "id": 10353,
+        "wordAr": "الآن - حالاً - حالية",
+        "wordEn": "Now",
+        "category_id": 37,
+        "video": "الآن.mp4",
+        "descriptionImage": null,
+        "description": "آن هو اللحظة بالنسبة للزمان، كالنقطة بالنسبة إلى المكان، لا امتداد لها ولا مدة، وإنما هي الحد المشترك بين مدتين متعاقبتين.",
+        "synonym": "الان حالا حاليه",
+        "watchCount": 216,
+        "category": {
+         "id": 37,
+         "nameAr": "رياضيات"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "emergency-26",
+     "ar": "شكراً على المساعدة.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "شكراً",
+       "term": {
+        "id": 5018,
+        "wordAr": "شكراً",
+        "wordEn": "? Thank you",
+        "category_id": 14,
+        "video": "شكراً.mp4",
+        "descriptionImage": null,
+        "description": "الشكر كلمة لها عدة معاني ودوال. مادة (ش ك ر) تدل في اللغة على الثناء على المحسن، والمجازاة، وعرفان الإحسان، يقال: شَكَرَهُ وشَكَرَ له يَشْكُرُ شُكْراً وشُكُوراً وشُكْراناً.",
+        "synonym": "شكرا",
+        "watchCount": 1234,
+        "category": {
+         "id": 14,
+         "nameAr": "باب العلاقات الاجتماعية"
+        }
+       }
+      },
+      {
+       "word": "مساعدة - مساندة",
+       "term": {
+        "id": 11081,
+        "wordAr": "مساعدة - مساندة",
+        "wordEn": "Assistance",
+        "category_id": 38,
+        "video": "مساعدة.mp4",
+        "descriptionImage": null,
+        "description": "تقديم الدعم والمساعدة للآخرين.",
+        "synonym": null,
+        "watchCount": 360,
+        "category": {
+         "id": 38,
+         "nameAr": "التربية الاسرية"
+        }
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "shopping",
+   "title": "في السوق والتسوق",
+   "sentences": [
+    {
+     "id": "shopping-1",
+     "ar": "أريد الذهاب إلى السوق للتسوق.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أريد",
+       "term": {
+        "id": 5078,
+        "wordAr": "أريد",
+        "wordEn": "I Want",
+        "category_id": 5,
+        "video": "أراد.mp4",
+        "descriptionImage": "pDBShYV4RpmKEPTYKKdLiYSSUNPJegNW.jpeg",
+        "description": "أريد هو تعبير عن الرغبة في الحصول على شيء أو تحقيق هدف.",
+        "synonym": "اريد",
+        "watchCount": 857,
+        "category": {
+         "id": 5,
+         "nameAr": "صفات وحالات"
+        }
+       }
+      },
+      {
+       "word": "سوق / يتسوق",
+       "term": {
+        "id": 5856,
+        "wordAr": "سوق / يتسوق",
+        "wordEn": "Shopping",
+        "category_id": 4,
+        "video": "يتسوق.mp4",
+        "descriptionImage": "5I2nYYJEFIHy1SlpFeuy2tIPp5XgBVW5.jpg",
+        "description": "نشاط شراء السلع والخدمات من المتاجر.",
+        "synonym": "يتقضى، مقاضي",
+        "watchCount": 263,
+        "category": {
+         "id": 4,
+         "nameAr": "ادارة واقتصاد ومحاسبة"
+        }
+       }
+      },
+      {
+       "word": "تسوق",
+       "term": {
+        "id": 10738,
+        "wordAr": "تسوق",
+        "wordEn": "Shopping",
+        "category_id": 38,
+        "video": "تسوق.mp4",
+        "descriptionImage": "9DVPQyT5QPENNm4SWvk5KpQ1lVEdHwRU.png",
+        "description": "تسوق: عملية شراء السلع أو الخدمات.",
+        "synonym": "تبضع مشتريات شراء محل سوق",
+        "watchCount": 133,
+        "category": {
+         "id": 38,
+         "nameAr": "التربية الاسرية"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "shopping-2",
+     "ar": "أين السوق؟",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أين",
+       "term": {
+        "id": 8425,
+        "wordAr": "أين",
+        "wordEn": "Ayna",
+        "category_id": 35,
+        "video": "أين.mp4",
+        "descriptionImage": null,
+        "description": "استفهام عن المكان أو الموقع.",
+        "synonym": "اين",
+        "watchCount": 331,
+        "category": {
+         "id": 35,
+         "nameAr": "اللغة العربية"
+        }
+       }
+      },
+      {
+       "word": "سوق / يتسوق",
+       "term": {
+        "id": 5856,
+        "wordAr": "سوق / يتسوق",
+        "wordEn": "Shopping",
+        "category_id": 4,
+        "video": "يتسوق.mp4",
+        "descriptionImage": "5I2nYYJEFIHy1SlpFeuy2tIPp5XgBVW5.jpg",
+        "description": "نشاط شراء السلع والخدمات من المتاجر.",
+        "synonym": "يتقضى، مقاضي",
+        "watchCount": 263,
+        "category": {
+         "id": 4,
+         "nameAr": "ادارة واقتصاد ومحاسبة"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "shopping-3",
+     "ar": "أريد شراء ملابس.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أريد",
+       "term": {
+        "id": 5078,
+        "wordAr": "أريد",
+        "wordEn": "I Want",
+        "category_id": 5,
+        "video": "أراد.mp4",
+        "descriptionImage": "pDBShYV4RpmKEPTYKKdLiYSSUNPJegNW.jpeg",
+        "description": "أريد هو تعبير عن الرغبة في الحصول على شيء أو تحقيق هدف.",
+        "synonym": "اريد",
+        "watchCount": 857,
+        "category": {
+         "id": 5,
+         "nameAr": "صفات وحالات"
+        }
+       }
+      },
+      {
+       "word": "يشتري",
+       "term": {
+        "id": 5858,
+        "wordAr": "يشتري",
+        "wordEn": "Buying",
+        "category_id": 4,
+        "video": "يشتري.mp4",
+        "descriptionImage": "6bvlayELlZIEtuDsqFzZfoKRQ9AgthjH.jpg",
+        "description": "عملية شراء سلعة أو خدمة، تتضمن تبادل المال مقابل الحصول على منتج معين. الكلمة \"يشتري\" تبدأ بحرف الياء، وهي فعل يُستخدم في التذكير والتأنيث، بالإفراد والجمع. تُستخدم في مجالات التجارة والاقتصاد والمحاسبة.",
+        "synonym": null,
+        "watchCount": 167,
+        "category": {
+         "id": 4,
+         "nameAr": "ادارة واقتصاد ومحاسبة"
+        }
+       }
+      },
+      {
+       "word": "ملابس",
+       "term": {
+        "id": 4666,
+        "wordAr": "ملابس",
+        "wordEn": "Clothes",
+        "category_id": 10,
+        "video": "ملابس.mp4",
+        "descriptionImage": null,
+        "description": "ملابس تشمل جميع أنواع الأزياء.",
+        "synonym": null,
+        "watchCount": 128,
+        "category": {
+         "id": 10,
+         "nameAr": "المنزل"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "shopping-6",
+     "ar": "أريد تخفيض.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أريد",
+       "term": {
+        "id": 5078,
+        "wordAr": "أريد",
+        "wordEn": "I Want",
+        "category_id": 5,
+        "video": "أراد.mp4",
+        "descriptionImage": "pDBShYV4RpmKEPTYKKdLiYSSUNPJegNW.jpeg",
+        "description": "أريد هو تعبير عن الرغبة في الحصول على شيء أو تحقيق هدف.",
+        "synonym": "اريد",
+        "watchCount": 857,
+        "category": {
+         "id": 5,
+         "nameAr": "صفات وحالات"
+        }
+       }
+      },
+      {
+       "word": "تخفيض",
+       "term": {
+        "id": 10722,
+        "wordAr": "تخفيض",
+        "wordEn": "Reduction",
+        "category_id": 38,
+        "video": "تخفيض.mp4",
+        "descriptionImage": "ZfRgPedgXX2hOox34R7XosP4wc4SYjGO.png",
+        "description": "تخفيض: تقليل شيء ما، مثل السعر أو الكمية.",
+        "synonym": "دسكاون ديسكاوند",
+        "watchCount": 25,
+        "category": {
+         "id": 38,
+         "nameAr": "التربية الاسرية"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "shopping-8",
+     "ar": "أين أمين الصندوق؟",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أين",
+       "term": {
+        "id": 8425,
+        "wordAr": "أين",
+        "wordEn": "Ayna",
+        "category_id": 35,
+        "video": "أين.mp4",
+        "descriptionImage": null,
+        "description": "استفهام عن المكان أو الموقع.",
+        "synonym": "اين",
+        "watchCount": 331,
+        "category": {
+         "id": 35,
+         "nameAr": "اللغة العربية"
+        }
+       }
+      },
+      {
+       "word": "أمين صندوق",
+       "term": {
+        "id": 9512,
+        "wordAr": "أمين صندوق",
+        "wordEn": "Cashier",
+        "category_id": 19,
+        "video": "امين الصندوق.mp4",
+        "descriptionImage": null,
+        "description": "موظف يتعامل مع النقود ويقوم بإجراء المعاملات المالية.",
+        "synonym": "امين صندوق",
+        "watchCount": 179,
+        "category": {
+         "id": 19,
+         "nameAr": "وظائف ومهن"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "shopping-9",
+     "ar": "كم التكلفة؟",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "كم",
+       "term": {
+        "id": 12260,
+        "wordAr": "كم",
+        "wordEn": "other",
+        "category_id": 35,
+        "video": "4UUV8xlfezSsckykjC27dG7CoRJalZwZ.mp4",
+        "descriptionImage": null,
+        "description": null,
+        "synonym": null,
+        "watchCount": 189,
+        "category": {
+         "id": 35,
+         "nameAr": "اللغة العربية"
+        }
+       }
+      },
+      {
+       "word": "تكلفة",
+       "term": {
+        "id": 10399,
+        "wordAr": "تكلفة",
+        "wordEn": "Cost",
+        "category_id": 37,
+        "video": "تكلفة.mp4",
+        "descriptionImage": null,
+        "description": "كُلْفَة أو تَكْلِفَة (بالإنجليزية: Cost)‏ مصطلح اقتصادي يمثل أي شكل من أشكال التضحية في سبيل الحصول على منفعة. فإذا قيست بالنقود سميت نفقة نقدية وإذا قيست بالجهد أو الألم أو بما ضحي به في سبيلها من متاع سميت نفقة حقيقي.",
+        "synonym": "تكلفه",
+        "watchCount": 72,
+        "category": {
+         "id": 37,
+         "nameAr": "رياضيات"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "shopping-10",
+     "ar": "أريد خبزاً.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أريد",
+       "term": {
+        "id": 5078,
+        "wordAr": "أريد",
+        "wordEn": "I Want",
+        "category_id": 5,
+        "video": "أراد.mp4",
+        "descriptionImage": "pDBShYV4RpmKEPTYKKdLiYSSUNPJegNW.jpeg",
+        "description": "أريد هو تعبير عن الرغبة في الحصول على شيء أو تحقيق هدف.",
+        "synonym": "اريد",
+        "watchCount": 857,
+        "category": {
+         "id": 5,
+         "nameAr": "صفات وحالات"
+        }
+       }
+      },
+      {
+       "word": "الخبز",
+       "term": {
+        "id": 4850,
+        "wordAr": "الخبز",
+        "wordEn": "Bread",
+        "category_id": 10,
+        "video": "الخبز.mp4",
+        "descriptionImage": null,
+        "description": "الخبز منتج غذائي يُصنع من دقيق وماء، يُعتبر أساسياً في العديد من الثقافات.",
+        "synonym": null,
+        "watchCount": 121,
+        "category": {
+         "id": 10,
+         "nameAr": "المنزل"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "shopping-11",
+     "ar": "أين المخبز؟",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أين",
+       "term": {
+        "id": 8425,
+        "wordAr": "أين",
+        "wordEn": "Ayna",
+        "category_id": 35,
+        "video": "أين.mp4",
+        "descriptionImage": null,
+        "description": "استفهام عن المكان أو الموقع.",
+        "synonym": "اين",
+        "watchCount": 331,
+        "category": {
+         "id": 35,
+         "nameAr": "اللغة العربية"
+        }
+       }
+      },
+      {
+       "word": "مخبز",
+       "term": {
+        "id": 1861,
+        "wordAr": "مخبز",
+        "wordEn": "Bakery",
+        "category_id": 26,
+        "video": "مخبز.mp4",
+        "descriptionImage": "L13R1F6UnkN2gmjOwJJYl4byuDeq0Fln.png",
+        "description": "المَخبِز (الجمع: مَخَابِز) هو المنشأة التي تنتج وتبيع الأغذية المخبوزة.",
+        "synonym": null,
+        "watchCount": 26,
+        "category": {
+         "id": 26,
+         "nameAr": "العلوم"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "shopping-12",
+     "ar": "أريد حذاءً.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أريد",
+       "term": {
+        "id": 5078,
+        "wordAr": "أريد",
+        "wordEn": "I Want",
+        "category_id": 5,
+        "video": "أراد.mp4",
+        "descriptionImage": "pDBShYV4RpmKEPTYKKdLiYSSUNPJegNW.jpeg",
+        "description": "أريد هو تعبير عن الرغبة في الحصول على شيء أو تحقيق هدف.",
+        "synonym": "اريد",
+        "watchCount": 857,
+        "category": {
+         "id": 5,
+         "nameAr": "صفات وحالات"
+        }
+       }
+      },
+      {
+       "word": "حذاء",
+       "term": {
+        "id": 1999,
+        "wordAr": "حذاء",
+        "wordEn": "Shoe",
+        "category_id": 26,
+        "video": "حذاء.mp4",
+        "descriptionImage": "5040deloE7HrDkqfseQnCNWBn8uzPmHz.png",
+        "description": "الحِذاء (الجمع: أَحْذِيَة) أو النَّعْل (الجمع: نِعال) هو لباس للقدمين من أجل حمايتها من العوارض التي تكون على الأرض.",
+        "synonym": "نعال",
+        "watchCount": 63,
+        "category": {
+         "id": 26,
+         "nameAr": "العلوم"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "shopping-13",
+     "ar": "أريد شبشباً.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أريد",
+       "term": {
+        "id": 5078,
+        "wordAr": "أريد",
+        "wordEn": "I Want",
+        "category_id": 5,
+        "video": "أراد.mp4",
+        "descriptionImage": "pDBShYV4RpmKEPTYKKdLiYSSUNPJegNW.jpeg",
+        "description": "أريد هو تعبير عن الرغبة في الحصول على شيء أو تحقيق هدف.",
+        "synonym": "اريد",
+        "watchCount": 857,
+        "category": {
+         "id": 5,
+         "nameAr": "صفات وحالات"
+        }
+       }
+      },
+      {
+       "word": "شبشب",
+       "term": {
+        "id": 4621,
+        "wordAr": "شبشب",
+        "wordEn": "Slippers",
+        "category_id": 10,
+        "video": "شبشب.mp4",
+        "descriptionImage": "1hFtjxYN0rQL8yhVKW1aSCSkEKW38haq.jpg",
+        "description": "شبشب حذاء مريح يُستخدم في المنزل.",
+        "synonym": null,
+        "watchCount": 76,
+        "category": {
+         "id": 10,
+         "nameAr": "المنزل"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "shopping-14",
+     "ar": "أين البقالة؟",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أين",
+       "term": {
+        "id": 8425,
+        "wordAr": "أين",
+        "wordEn": "Ayna",
+        "category_id": 35,
+        "video": "أين.mp4",
+        "descriptionImage": null,
+        "description": "استفهام عن المكان أو الموقع.",
+        "synonym": "اين",
+        "watchCount": 331,
+        "category": {
+         "id": 35,
+         "nameAr": "اللغة العربية"
+        }
+       }
+      },
+      {
+       "word": "بقالة - تموين",
+       "term": {
+        "id": 10688,
+        "wordAr": "بقالة - تموين",
+        "wordEn": "Grocery - Supplies",
+        "category_id": 38,
+        "video": "بقالة.mp4",
+        "descriptionImage": "ORnRCCe6r1ckd4QVSKRNUnBmfct2FV6l.png",
+        "description": "بقالة هي متجر صغير يبيع المواد الغذائية والتموينات الأساسية للمستهلكين.",
+        "synonym": null,
+        "watchCount": 96,
+        "category": {
+         "id": 38,
+         "nameAr": "التربية الاسرية"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "shopping-15",
+     "ar": "أريد شراء من البقالة.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أريد",
+       "term": {
+        "id": 5078,
+        "wordAr": "أريد",
+        "wordEn": "I Want",
+        "category_id": 5,
+        "video": "أراد.mp4",
+        "descriptionImage": "pDBShYV4RpmKEPTYKKdLiYSSUNPJegNW.jpeg",
+        "description": "أريد هو تعبير عن الرغبة في الحصول على شيء أو تحقيق هدف.",
+        "synonym": "اريد",
+        "watchCount": 857,
+        "category": {
+         "id": 5,
+         "nameAr": "صفات وحالات"
+        }
+       }
+      },
+      {
+       "word": "يشتري",
+       "term": {
+        "id": 5858,
+        "wordAr": "يشتري",
+        "wordEn": "Buying",
+        "category_id": 4,
+        "video": "يشتري.mp4",
+        "descriptionImage": "6bvlayELlZIEtuDsqFzZfoKRQ9AgthjH.jpg",
+        "description": "عملية شراء سلعة أو خدمة، تتضمن تبادل المال مقابل الحصول على منتج معين. الكلمة \"يشتري\" تبدأ بحرف الياء، وهي فعل يُستخدم في التذكير والتأنيث، بالإفراد والجمع. تُستخدم في مجالات التجارة والاقتصاد والمحاسبة.",
+        "synonym": null,
+        "watchCount": 167,
+        "category": {
+         "id": 4,
+         "nameAr": "ادارة واقتصاد ومحاسبة"
+        }
+       }
+      },
+      {
+       "word": "بقالة - تموين",
+       "term": {
+        "id": 10688,
+        "wordAr": "بقالة - تموين",
+        "wordEn": "Grocery - Supplies",
+        "category_id": 38,
+        "video": "بقالة.mp4",
+        "descriptionImage": "ORnRCCe6r1ckd4QVSKRNUnBmfct2FV6l.png",
+        "description": "بقالة هي متجر صغير يبيع المواد الغذائية والتموينات الأساسية للمستهلكين.",
+        "synonym": null,
+        "watchCount": 96,
+        "category": {
+         "id": 38,
+         "nameAr": "التربية الاسرية"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "shopping-16",
+     "ar": "أنا مستهلك.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أنا",
+       "term": {
+        "id": 8385,
+        "wordAr": "أنا",
+        "wordEn": "Ana",
+        "category_id": 35,
+        "video": "أنا.mp4",
+        "descriptionImage": null,
+        "description": "ضمير يدل على المتحدث.",
+        "synonym": null,
+        "watchCount": 418,
+        "category": {
+         "id": 35,
+         "nameAr": "اللغة العربية"
+        }
+       }
+      },
+      {
+       "word": "مستهلك",
+       "term": {
+        "id": 9279,
+        "wordAr": "مستهلك",
+        "wordEn": "Consumer",
+        "category_id": 35,
+        "video": "مستهلك٢.mp4",
+        "descriptionImage": null,
+        "description": "مستهلك هو الشخص الذي يشتري أو يستخدم السلع والخدمات.",
+        "synonym": null,
+        "watchCount": 38,
+        "category": {
+         "id": 35,
+         "nameAr": "اللغة العربية"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "shopping-17",
+     "ar": "أريد الذهاب إلى الصيدلية.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أريد",
+       "term": {
+        "id": 5078,
+        "wordAr": "أريد",
+        "wordEn": "I Want",
+        "category_id": 5,
+        "video": "أراد.mp4",
+        "descriptionImage": "pDBShYV4RpmKEPTYKKdLiYSSUNPJegNW.jpeg",
+        "description": "أريد هو تعبير عن الرغبة في الحصول على شيء أو تحقيق هدف.",
+        "synonym": "اريد",
+        "watchCount": 857,
+        "category": {
+         "id": 5,
+         "nameAr": "صفات وحالات"
+        }
+       }
+      },
+      {
+       "word": "صيدلية",
+       "term": {
+        "id": 5548,
+        "wordAr": "صيدلية",
+        "wordEn": "Pharmacy",
+        "category_id": 13,
+        "video": "صيدلية.mp4",
+        "descriptionImage": null,
+        "description": "الصيدلية مكان يبيع الأدوية والمستلزمات الطبية.",
+        "synonym": null,
+        "watchCount": 150,
+        "category": {
+         "id": 13,
+         "nameAr": "الصحة والمرض"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "shopping-20",
+     "ar": "أريد حسم.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أريد",
+       "term": {
+        "id": 5078,
+        "wordAr": "أريد",
+        "wordEn": "I Want",
+        "category_id": 5,
+        "video": "أراد.mp4",
+        "descriptionImage": "pDBShYV4RpmKEPTYKKdLiYSSUNPJegNW.jpeg",
+        "description": "أريد هو تعبير عن الرغبة في الحصول على شيء أو تحقيق هدف.",
+        "synonym": "اريد",
+        "watchCount": 857,
+        "category": {
+         "id": 5,
+         "nameAr": "صفات وحالات"
+        }
+       }
+      },
+      {
+       "word": "حسم",
+       "term": {
+        "id": 10421,
+        "wordAr": "حسم",
+        "wordEn": "Discount",
+        "category_id": 37,
+        "video": "حسم.mp4",
+        "descriptionImage": null,
+        "description": "حسم هو تخفيض في السعر أو القيمة.",
+        "synonym": null,
+        "watchCount": 22,
+        "category": {
+         "id": 37,
+         "nameAr": "رياضيات"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "shopping-21",
+     "ar": "لو سمحت، أريد مساعدة.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "لو سمحت",
+       "term": {
+        "id": 11837,
+        "wordAr": "لو سمحت",
+        "wordEn": "Please",
+        "category_id": 53,
+        "video": "iMufIZphK4wi53zi2JEYfKXhBkpRzZts.mp4",
+        "descriptionImage": null,
+        "description": "لو سمحت تعبير يستخدم لطلب شيء بطريقة مهذبة.",
+        "synonym": null,
+        "watchCount": 133,
+        "category": {
+         "id": 53,
+         "nameAr": "مصطلحات في الصحة"
+        }
+       }
+      },
+      {
+       "word": "أريد",
+       "term": {
+        "id": 5078,
+        "wordAr": "أريد",
+        "wordEn": "I Want",
+        "category_id": 5,
+        "video": "أراد.mp4",
+        "descriptionImage": "pDBShYV4RpmKEPTYKKdLiYSSUNPJegNW.jpeg",
+        "description": "أريد هو تعبير عن الرغبة في الحصول على شيء أو تحقيق هدف.",
+        "synonym": "اريد",
+        "watchCount": 857,
+        "category": {
+         "id": 5,
+         "nameAr": "صفات وحالات"
+        }
+       }
+      },
+      {
+       "word": "مساعدة - مساندة",
+       "term": {
+        "id": 11081,
+        "wordAr": "مساعدة - مساندة",
+        "wordEn": "Assistance",
+        "category_id": 38,
+        "video": "مساعدة.mp4",
+        "descriptionImage": null,
+        "description": "تقديم الدعم والمساعدة للآخرين.",
+        "synonym": null,
+        "watchCount": 360,
+        "category": {
+         "id": 38,
+         "nameAr": "التربية الاسرية"
+        }
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "services",
+   "title": "في الدوائر والخدمات",
+   "sentences": [
+    {
+     "id": "services-1",
+     "ar": "أريد حجز موعد في مكتب الاستقبال.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أريد",
+       "term": {
+        "id": 5078,
+        "wordAr": "أريد",
+        "wordEn": "I Want",
+        "category_id": 5,
+        "video": "أراد.mp4",
+        "descriptionImage": "pDBShYV4RpmKEPTYKKdLiYSSUNPJegNW.jpeg",
+        "description": "أريد هو تعبير عن الرغبة في الحصول على شيء أو تحقيق هدف.",
+        "synonym": "اريد",
+        "watchCount": 857,
+        "category": {
+         "id": 5,
+         "nameAr": "صفات وحالات"
+        }
+       }
+      },
+      {
+       "word": "حجز موعد",
+       "term": {
+        "id": 11823,
+        "wordAr": "حجز موعد",
+        "wordEn": "Appointment Booking",
+        "category_id": 53,
+        "video": "uhczYYTQlWuXwDlisAU2C7fjaQFVBpl5.mp4",
+        "descriptionImage": null,
+        "description": "حجز موعد يعني عملية تحديد موعد للحصول على خدمة صحية.",
+        "synonym": null,
+        "watchCount": 252,
+        "category": {
+         "id": 53,
+         "nameAr": "مصطلحات في الصحة"
+        }
+       }
+      },
+      {
+       "word": "مكتب",
+       "term": {
+        "id": 10129,
+        "wordAr": "مكتب",
+        "wordEn": "Desk",
+        "category_id": 36,
+        "video": "مكتب.mp4",
+        "descriptionImage": "fnP57W8qW4gHOfhtL6lKhvudL1i2rtCf.png",
+        "description": "المَكْتِب (الجمع: مَكَاتِب)هو قطعة أثاث ونوع من المناضد التي تستخدم غالبًا للجلوس عليها في المدرسة أو المكتب لأجل القراءة أو الكتابة أو استخدام الحاسوب.",
+        "synonym": null,
+        "watchCount": 127,
+        "category": {
+         "id": 36,
+         "nameAr": "الفنية"
+        }
+       }
+      },
+      {
+       "word": "مستقبل - استقبال",
+       "term": {
+        "id": 1888,
+        "wordAr": "مستقبل - استقبال",
+        "wordEn": "Future",
+        "category_id": 26,
+        "video": "مستقبل.mp4",
+        "descriptionImage": "ttJ9uXOBcrpusgn9rlFZRbuhDoQw4cXf.png",
+        "description": "المُرَحِّب أو موظف الاستقبال هو موظف عادة ما يتم تنفيذ عمله في منطقة الانتظار مثل الردهة أو مكتب الاستقبال في مؤسسة أو شركة.",
+        "synonym": null,
+        "watchCount": 158,
+        "category": {
+         "id": 26,
+         "nameAr": "العلوم"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "services-2",
+     "ar": "أين مكتب الموظف؟",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أين",
+       "term": {
+        "id": 8425,
+        "wordAr": "أين",
+        "wordEn": "Ayna",
+        "category_id": 35,
+        "video": "أين.mp4",
+        "descriptionImage": null,
+        "description": "استفهام عن المكان أو الموقع.",
+        "synonym": "اين",
+        "watchCount": 331,
+        "category": {
+         "id": 35,
+         "nameAr": "اللغة العربية"
+        }
+       }
+      },
+      {
+       "word": "مكتب",
+       "term": {
+        "id": 10129,
+        "wordAr": "مكتب",
+        "wordEn": "Desk",
+        "category_id": 36,
+        "video": "مكتب.mp4",
+        "descriptionImage": "fnP57W8qW4gHOfhtL6lKhvudL1i2rtCf.png",
+        "description": "المَكْتِب (الجمع: مَكَاتِب)هو قطعة أثاث ونوع من المناضد التي تستخدم غالبًا للجلوس عليها في المدرسة أو المكتب لأجل القراءة أو الكتابة أو استخدام الحاسوب.",
+        "synonym": null,
+        "watchCount": 127,
+        "category": {
+         "id": 36,
+         "nameAr": "الفنية"
+        }
+       }
+      },
+      {
+       "word": "موظف",
+       "term": {
+        "id": 9549,
+        "wordAr": "موظف",
+        "wordEn": "Employee",
+        "category_id": 19,
+        "video": "موظف.mp4",
+        "descriptionImage": null,
+        "description": "الموظف هو الشخص الذي يعمل في مؤسسة أو منظمة ويتلقى راتباً مقابل عمله.",
+        "synonym": null,
+        "watchCount": 215,
+        "category": {
+         "id": 19,
+         "nameAr": "وظائف ومهن"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "services-3",
+     "ar": "شكراً على المساعدة.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "شكراً",
+       "term": {
+        "id": 5018,
+        "wordAr": "شكراً",
+        "wordEn": "? Thank you",
+        "category_id": 14,
+        "video": "شكراً.mp4",
+        "descriptionImage": null,
+        "description": "الشكر كلمة لها عدة معاني ودوال. مادة (ش ك ر) تدل في اللغة على الثناء على المحسن، والمجازاة، وعرفان الإحسان، يقال: شَكَرَهُ وشَكَرَ له يَشْكُرُ شُكْراً وشُكُوراً وشُكْراناً.",
+        "synonym": "شكرا",
+        "watchCount": 1234,
+        "category": {
+         "id": 14,
+         "nameAr": "باب العلاقات الاجتماعية"
+        }
+       }
+      },
+      {
+       "word": "مساعدة - مساندة",
+       "term": {
+        "id": 11081,
+        "wordAr": "مساعدة - مساندة",
+        "wordEn": "Assistance",
+        "category_id": 38,
+        "video": "مساعدة.mp4",
+        "descriptionImage": null,
+        "description": "تقديم الدعم والمساعدة للآخرين.",
+        "synonym": null,
+        "watchCount": 360,
+        "category": {
+         "id": 38,
+         "nameAr": "التربية الاسرية"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "services-4",
+     "ar": "أنا أنتظر في محطة الانتظار.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أنا",
+       "term": {
+        "id": 8385,
+        "wordAr": "أنا",
+        "wordEn": "Ana",
+        "category_id": 35,
+        "video": "أنا.mp4",
+        "descriptionImage": null,
+        "description": "ضمير يدل على المتحدث.",
+        "synonym": null,
+        "watchCount": 418,
+        "category": {
+         "id": 35,
+         "nameAr": "اللغة العربية"
+        }
+       }
+      },
+      {
+       "word": "انتظار",
+       "term": {
+        "id": 9651,
+        "wordAr": "انتظار",
+        "wordEn": "Waiting",
+        "category_id": 25,
+        "video": "انتظار.mp4",
+        "descriptionImage": null,
+        "description": "الانتظار يعني الترقب.",
+        "synonym": "إنتظار",
+        "watchCount": 160,
+        "category": {
+         "id": 25,
+         "nameAr": "الحاسوب"
+        }
+       }
+      },
+      {
+       "word": "محطة انتظار",
+       "term": {
+        "id": 6543,
+        "wordAr": "محطة انتظار",
+        "wordEn": "Waiting Station",
+        "category_id": 18,
+        "video": "محطة انتظار.mp4",
+        "descriptionImage": null,
+        "description": "منطقة مخصصة لانتظار المركبات قبل مواصلة الرحلة.",
+        "synonym": null,
+        "watchCount": 87,
+        "category": {
+         "id": 18,
+         "nameAr": "مرور ونقل"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "services-6",
+     "ar": "أريد إرسال بريد إلكتروني.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أريد",
+       "term": {
+        "id": 5078,
+        "wordAr": "أريد",
+        "wordEn": "I Want",
+        "category_id": 5,
+        "video": "أراد.mp4",
+        "descriptionImage": "pDBShYV4RpmKEPTYKKdLiYSSUNPJegNW.jpeg",
+        "description": "أريد هو تعبير عن الرغبة في الحصول على شيء أو تحقيق هدف.",
+        "synonym": "اريد",
+        "watchCount": 857,
+        "category": {
+         "id": 5,
+         "nameAr": "صفات وحالات"
+        }
+       }
+      },
+      {
+       "word": "إرسال",
+       "term": {
+        "id": 11319,
+        "wordAr": "إرسال",
+        "wordEn": "Sending",
+        "category_id": 39,
+        "video": "ارشاد.mp4",
+        "descriptionImage": "D4dlqv4FtZQpuZfqo9qXGukZzFuJds82.png",
+        "description": "عملية نقل المعلومات أو البيانات من مكان إلى آخر، سواء كانت عبر وسائل تكنولوجية مثل البريد الإلكتروني أو الرسائل النصية، أو بطرق تقليدية مثل إرسال الرسائل. الكلمة مؤنثة، وتبدأ بحرف الألف، وتستخدم في سياقات متعددة تتعلق بالتواصل.",
+        "synonym": "ارسال",
+        "watchCount": 438,
+        "category": {
+         "id": 39,
+         "nameAr": "الكلمات الشائعة"
+        }
+       }
+      },
+      {
+       "word": "البريد الألكتروني",
+       "term": {
+        "id": 11761,
+        "wordAr": "البريد الألكتروني",
+        "wordEn": "Email (Academic)",
+        "category_id": 52,
+        "video": "xNau5eHCukugHlSbvxn9mpH6mTbizaiV.mp4",
+        "descriptionImage": null,
+        "description": "وسيلة تواصل إلكترونية تُستخدم في تبادل المعلومات الأكاديمية.",
+        "synonym": null,
+        "watchCount": 106,
+        "category": {
+         "id": 52,
+         "nameAr": "أكاديمية"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "services-7",
+     "ar": "متى موعدك؟",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "متى",
+       "term": {
+        "id": 9204,
+        "wordAr": "متى",
+        "wordEn": "When",
+        "category_id": 35,
+        "video": "متى.mp4",
+        "descriptionImage": null,
+        "description": "متى: تستخدم للسؤال عن الزمن أو الوقت الذي يحدث فيه شيء ما.",
+        "synonym": null,
+        "watchCount": 269,
+        "category": {
+         "id": 35,
+         "nameAr": "اللغة العربية"
+        }
+       }
+      },
+      {
+       "word": "موعد",
+       "term": {
+        "id": 11254,
+        "wordAr": "موعد",
+        "wordEn": "Appointment",
+        "category_id": 38,
+        "video": "موعد.mp4",
+        "descriptionImage": null,
+        "description": "تحديد موعد معين للقاء أو حدث.",
+        "synonym": null,
+        "watchCount": 158,
+        "category": {
+         "id": 38,
+         "nameAr": "التربية الاسرية"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "services-8",
+     "ar": "أين مكتب البريد؟",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أين",
+       "term": {
+        "id": 8425,
+        "wordAr": "أين",
+        "wordEn": "Ayna",
+        "category_id": 35,
+        "video": "أين.mp4",
+        "descriptionImage": null,
+        "description": "استفهام عن المكان أو الموقع.",
+        "synonym": "اين",
+        "watchCount": 331,
+        "category": {
+         "id": 35,
+         "nameAr": "اللغة العربية"
+        }
+       }
+      },
+      {
+       "word": "مكتب",
+       "term": {
+        "id": 10129,
+        "wordAr": "مكتب",
+        "wordEn": "Desk",
+        "category_id": 36,
+        "video": "مكتب.mp4",
+        "descriptionImage": "fnP57W8qW4gHOfhtL6lKhvudL1i2rtCf.png",
+        "description": "المَكْتِب (الجمع: مَكَاتِب)هو قطعة أثاث ونوع من المناضد التي تستخدم غالبًا للجلوس عليها في المدرسة أو المكتب لأجل القراءة أو الكتابة أو استخدام الحاسوب.",
+        "synonym": null,
+        "watchCount": 127,
+        "category": {
+         "id": 36,
+         "nameAr": "الفنية"
+        }
+       }
+      },
+      {
+       "word": "بريد",
+       "term": {
+        "id": 10677,
+        "wordAr": "بريد",
+        "wordEn": "Mail",
+        "category_id": 38,
+        "video": "بريد.mp4",
+        "descriptionImage": "E9TaC7hliVRlxYkpzMwnQSxviGJfNfAk.png",
+        "description": "النظام البريدي هو أسلوب لنقل البيانات أو المواد الملموسة وتوزيعها — سواء كانت رسائل مكتوبة أو وثائق أو صناديق أو طرود",
+        "synonym": "جميل gmail هوتميل ياهو ماسنجر",
+        "watchCount": 60,
+        "category": {
+         "id": 38,
+         "nameAr": "التربية الاسرية"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "services-9",
+     "ar": "أريد ورقة للتوقيع.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أريد",
+       "term": {
+        "id": 5078,
+        "wordAr": "أريد",
+        "wordEn": "I Want",
+        "category_id": 5,
+        "video": "أراد.mp4",
+        "descriptionImage": "pDBShYV4RpmKEPTYKKdLiYSSUNPJegNW.jpeg",
+        "description": "أريد هو تعبير عن الرغبة في الحصول على شيء أو تحقيق هدف.",
+        "synonym": "اريد",
+        "watchCount": 857,
+        "category": {
+         "id": 5,
+         "nameAr": "صفات وحالات"
+        }
+       }
+      },
+      {
+       "word": "ورقة",
+       "term": {
+        "id": 2188,
+        "wordAr": "ورقة",
+        "wordEn": "Leaf",
+        "category_id": 26,
+        "video": "ورقة.mp4",
+        "descriptionImage": "NYzt7mbetryaNtWDobS4Jyb88ALPAakq.png",
+        "description": "الورق أو الكَاغِد، هو مادة رقيقة مسطحة تنتج من لب الورق المنتج عن طريق ضغط الألياف السيليلوزية للخضروات، الألياف تكون عادة طبيعية.",
+        "synonym": "ورقه",
+        "watchCount": 107,
+        "category": {
+         "id": 26,
+         "nameAr": "العلوم"
+        }
+       }
+      },
+      {
+       "word": "توقيع",
+       "term": {
+        "id": 3902,
+        "wordAr": "توقيع",
+        "wordEn": "Signature",
+        "category_id": 24,
+        "video": "توقيع.mp4",
+        "descriptionImage": null,
+        "description": "توقيع هو علامة أو كتابة تُستخدم للإشارة إلى الموافقة.",
+        "synonym": null,
+        "watchCount": 61,
+        "category": {
+         "id": 24,
+         "nameAr": "التربية الاجتماعية"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "services-10",
+     "ar": "أين أمين الصندوق؟",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أين",
+       "term": {
+        "id": 8425,
+        "wordAr": "أين",
+        "wordEn": "Ayna",
+        "category_id": 35,
+        "video": "أين.mp4",
+        "descriptionImage": null,
+        "description": "استفهام عن المكان أو الموقع.",
+        "synonym": "اين",
+        "watchCount": 331,
+        "category": {
+         "id": 35,
+         "nameAr": "اللغة العربية"
+        }
+       }
+      },
+      {
+       "word": "أمين صندوق",
+       "term": {
+        "id": 9512,
+        "wordAr": "أمين صندوق",
+        "wordEn": "Cashier",
+        "category_id": 19,
+        "video": "امين الصندوق.mp4",
+        "descriptionImage": null,
+        "description": "موظف يتعامل مع النقود ويقوم بإجراء المعاملات المالية.",
+        "synonym": "امين صندوق",
+        "watchCount": 179,
+        "category": {
+         "id": 19,
+         "nameAr": "وظائف ومهن"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "services-12",
+     "ar": "أنا أبحث عن مكتبة.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أنا",
+       "term": {
+        "id": 8385,
+        "wordAr": "أنا",
+        "wordEn": "Ana",
+        "category_id": 35,
+        "video": "أنا.mp4",
+        "descriptionImage": null,
+        "description": "ضمير يدل على المتحدث.",
+        "synonym": null,
+        "watchCount": 418,
+        "category": {
+         "id": 35,
+         "nameAr": "اللغة العربية"
+        }
+       }
+      },
+      {
+       "word": "مكتبة",
+       "term": {
+        "id": 5392,
+        "wordAr": "مكتبة",
+        "wordEn": "Library",
+        "category_id": 7,
+        "video": "مكتبة.mp4",
+        "descriptionImage": "UFsW4aNlQNbQhSfOxw9R7DsR7d82oqeo.jpeg",
+        "description": "مكان يحتوي على مجموعة من الكتب والمراجع للبحث والدراسة.",
+        "synonym": null,
+        "watchCount": 170,
+        "category": {
+         "id": 7,
+         "nameAr": "تعليم وتدريب"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "services-13",
+     "ar": "أريد موعداً مع الموظف.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أريد",
+       "term": {
+        "id": 5078,
+        "wordAr": "أريد",
+        "wordEn": "I Want",
+        "category_id": 5,
+        "video": "أراد.mp4",
+        "descriptionImage": "pDBShYV4RpmKEPTYKKdLiYSSUNPJegNW.jpeg",
+        "description": "أريد هو تعبير عن الرغبة في الحصول على شيء أو تحقيق هدف.",
+        "synonym": "اريد",
+        "watchCount": 857,
+        "category": {
+         "id": 5,
+         "nameAr": "صفات وحالات"
+        }
+       }
+      },
+      {
+       "word": "موعد",
+       "term": {
+        "id": 11254,
+        "wordAr": "موعد",
+        "wordEn": "Appointment",
+        "category_id": 38,
+        "video": "موعد.mp4",
+        "descriptionImage": null,
+        "description": "تحديد موعد معين للقاء أو حدث.",
+        "synonym": null,
+        "watchCount": 158,
+        "category": {
+         "id": 38,
+         "nameAr": "التربية الاسرية"
+        }
+       }
+      },
+      {
+       "word": "موظف",
+       "term": {
+        "id": 9549,
+        "wordAr": "موظف",
+        "wordEn": "Employee",
+        "category_id": 19,
+        "video": "موظف.mp4",
+        "descriptionImage": null,
+        "description": "الموظف هو الشخص الذي يعمل في مؤسسة أو منظمة ويتلقى راتباً مقابل عمله.",
+        "synonym": null,
+        "watchCount": 215,
+        "category": {
+         "id": 19,
+         "nameAr": "وظائف ومهن"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "services-14",
+     "ar": "أين محطة الانتظار؟",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أين",
+       "term": {
+        "id": 8425,
+        "wordAr": "أين",
+        "wordEn": "Ayna",
+        "category_id": 35,
+        "video": "أين.mp4",
+        "descriptionImage": null,
+        "description": "استفهام عن المكان أو الموقع.",
+        "synonym": "اين",
+        "watchCount": 331,
+        "category": {
+         "id": 35,
+         "nameAr": "اللغة العربية"
+        }
+       }
+      },
+      {
+       "word": "محطة انتظار",
+       "term": {
+        "id": 6543,
+        "wordAr": "محطة انتظار",
+        "wordEn": "Waiting Station",
+        "category_id": 18,
+        "video": "محطة انتظار.mp4",
+        "descriptionImage": null,
+        "description": "منطقة مخصصة لانتظار المركبات قبل مواصلة الرحلة.",
+        "synonym": null,
+        "watchCount": 87,
+        "category": {
+         "id": 18,
+         "nameAr": "مرور ونقل"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "services-16",
+     "ar": "أريد إدخال البيانات.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أريد",
+       "term": {
+        "id": 5078,
+        "wordAr": "أريد",
+        "wordEn": "I Want",
+        "category_id": 5,
+        "video": "أراد.mp4",
+        "descriptionImage": "pDBShYV4RpmKEPTYKKdLiYSSUNPJegNW.jpeg",
+        "description": "أريد هو تعبير عن الرغبة في الحصول على شيء أو تحقيق هدف.",
+        "synonym": "اريد",
+        "watchCount": 857,
+        "category": {
+         "id": 5,
+         "nameAr": "صفات وحالات"
+        }
+       }
+      },
+      {
+       "word": "إدخال البيانات",
+       "term": {
+        "id": 11754,
+        "wordAr": "إدخال البيانات",
+        "wordEn": "Data entry (Academic)",
+        "category_id": 52,
+        "video": "RKuxPyWqCwgCc3yK6WgprmxT2ZWmcqUt.mp4",
+        "descriptionImage": null,
+        "description": "عملية إدخال المعلومات والبيانات في الأنظمة الأكاديمية بشكل دقيق.",
+        "synonym": null,
+        "watchCount": 166,
+        "category": {
+         "id": 52,
+         "nameAr": "أكاديمية"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "services-17",
+     "ar": "أين مكتب الوزارة؟",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أين",
+       "term": {
+        "id": 8425,
+        "wordAr": "أين",
+        "wordEn": "Ayna",
+        "category_id": 35,
+        "video": "أين.mp4",
+        "descriptionImage": null,
+        "description": "استفهام عن المكان أو الموقع.",
+        "synonym": "اين",
+        "watchCount": 331,
+        "category": {
+         "id": 35,
+         "nameAr": "اللغة العربية"
+        }
+       }
+      },
+      {
+       "word": "مكتب",
+       "term": {
+        "id": 10129,
+        "wordAr": "مكتب",
+        "wordEn": "Desk",
+        "category_id": 36,
+        "video": "مكتب.mp4",
+        "descriptionImage": "fnP57W8qW4gHOfhtL6lKhvudL1i2rtCf.png",
+        "description": "المَكْتِب (الجمع: مَكَاتِب)هو قطعة أثاث ونوع من المناضد التي تستخدم غالبًا للجلوس عليها في المدرسة أو المكتب لأجل القراءة أو الكتابة أو استخدام الحاسوب.",
+        "synonym": null,
+        "watchCount": 127,
+        "category": {
+         "id": 36,
+         "nameAr": "الفنية"
+        }
+       }
+      },
+      {
+       "word": "وزارة",
+       "term": {
+        "id": 9489,
+        "wordAr": "وزارة",
+        "wordEn": "Ministry",
+        "category_id": 35,
+        "video": "وزارة.mp4",
+        "descriptionImage": null,
+        "description": null,
+        "synonym": null,
+        "watchCount": 109,
+        "category": {
+         "id": 35,
+         "nameAr": "اللغة العربية"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "services-18",
+     "ar": "أنا أصم.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أنا",
+       "term": {
+        "id": 8385,
+        "wordAr": "أنا",
+        "wordEn": "Ana",
+        "category_id": 35,
+        "video": "أنا.mp4",
+        "descriptionImage": null,
+        "description": "ضمير يدل على المتحدث.",
+        "synonym": null,
+        "watchCount": 418,
+        "category": {
+         "id": 35,
+         "nameAr": "اللغة العربية"
+        }
+       }
+      },
+      {
+       "word": "أصم",
+       "term": {
+        "id": 10632,
+        "wordAr": "أصم",
+        "wordEn": "Deaf",
+        "category_id": 38,
+        "video": "أصم.mp4",
+        "descriptionImage": null,
+        "description": "أصم هو الشخص الذي لا يستطيع السمع.",
+        "synonym": "اصم",
+        "watchCount": 171,
+        "category": {
+         "id": 38,
+         "nameAr": "التربية الاسرية"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "services-19",
+     "ar": "أين مكتب البريد السعودي؟",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أين",
+       "term": {
+        "id": 8425,
+        "wordAr": "أين",
+        "wordEn": "Ayna",
+        "category_id": 35,
+        "video": "أين.mp4",
+        "descriptionImage": null,
+        "description": "استفهام عن المكان أو الموقع.",
+        "synonym": "اين",
+        "watchCount": 331,
+        "category": {
+         "id": 35,
+         "nameAr": "اللغة العربية"
+        }
+       }
+      },
+      {
+       "word": "مكتب",
+       "term": {
+        "id": 10129,
+        "wordAr": "مكتب",
+        "wordEn": "Desk",
+        "category_id": 36,
+        "video": "مكتب.mp4",
+        "descriptionImage": "fnP57W8qW4gHOfhtL6lKhvudL1i2rtCf.png",
+        "description": "المَكْتِب (الجمع: مَكَاتِب)هو قطعة أثاث ونوع من المناضد التي تستخدم غالبًا للجلوس عليها في المدرسة أو المكتب لأجل القراءة أو الكتابة أو استخدام الحاسوب.",
+        "synonym": null,
+        "watchCount": 127,
+        "category": {
+         "id": 36,
+         "nameAr": "الفنية"
+        }
+       }
+      },
+      {
+       "word": "مؤسسة البريد السعودي",
+       "term": {
+        "id": 4532,
+        "wordAr": "مؤسسة البريد السعودي",
+        "wordEn": "Saudi Post Corporation",
+        "category_id": 21,
+        "video": "مؤسسة البريد السعودي.mp4",
+        "descriptionImage": null,
+        "description": "مؤسسة حكومية تقدم خدمات البريد والطرود في المملكة.",
+        "synonym": "سبل",
+        "watchCount": 58,
+        "category": {
+         "id": 21,
+         "nameAr": "وطني"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "services-20",
+     "ar": "أريد مترجم لغة إشارة.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أريد",
+       "term": {
+        "id": 5078,
+        "wordAr": "أريد",
+        "wordEn": "I Want",
+        "category_id": 5,
+        "video": "أراد.mp4",
+        "descriptionImage": "pDBShYV4RpmKEPTYKKdLiYSSUNPJegNW.jpeg",
+        "description": "أريد هو تعبير عن الرغبة في الحصول على شيء أو تحقيق هدف.",
+        "synonym": "اريد",
+        "watchCount": 857,
+        "category": {
+         "id": 5,
+         "nameAr": "صفات وحالات"
+        }
+       }
+      },
+      {
+       "word": "مترجم لغة اشارة",
+       "term": {
+        "id": 9538,
+        "wordAr": "مترجم لغة اشارة",
+        "wordEn": "Sign language interpreter",
+        "category_id": 19,
+        "video": "مترجم لغة اشارة.mp4",
+        "descriptionImage": null,
+        "description": "مترجم متخصص في لغة الإشارة لتسهيل التواصل.",
+        "synonym": null,
+        "watchCount": 340,
+        "category": {
+         "id": 19,
+         "nameAr": "وظائف ومهن"
+        }
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "daily",
+   "title": "المشاعر والاحتياجات اليومية",
+   "sentences": [
+    {
+     "id": "daily-1",
+     "ar": "أنا جائع.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أنا",
+       "term": {
+        "id": 8385,
+        "wordAr": "أنا",
+        "wordEn": "Ana",
+        "category_id": 35,
+        "video": "أنا.mp4",
+        "descriptionImage": null,
+        "description": "ضمير يدل على المتحدث.",
+        "synonym": null,
+        "watchCount": 418,
+        "category": {
+         "id": 35,
+         "nameAr": "اللغة العربية"
+        }
+       }
+      },
+      {
+       "word": "جائع",
+       "term": {
+        "id": 10786,
+        "wordAr": "جائع",
+        "wordEn": "Hungry",
+        "category_id": 38,
+        "video": "جائع.mp4",
+        "descriptionImage": "Cakr6gsfNVvVVgzrweGElf4ywHOUKrQU.jpg",
+        "description": "جائع يعني الشخص الذي يشعر بالحاجة إلى الطعام، وهو موضوع مهم في التربية الأسرية.",
+        "synonym": null,
+        "watchCount": 86,
+        "category": {
+         "id": 38,
+         "nameAr": "التربية الاسرية"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "daily-3",
+     "ar": "أنا تعبان.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أنا",
+       "term": {
+        "id": 8385,
+        "wordAr": "أنا",
+        "wordEn": "Ana",
+        "category_id": 35,
+        "video": "أنا.mp4",
+        "descriptionImage": null,
+        "description": "ضمير يدل على المتحدث.",
+        "synonym": null,
+        "watchCount": 418,
+        "category": {
+         "id": 35,
+         "nameAr": "اللغة العربية"
+        }
+       }
+      },
+      {
+       "word": "تعبان",
+       "term": {
+        "id": 11385,
+        "wordAr": "تعبان",
+        "wordEn": "Tired",
+        "category_id": 39,
+        "video": "تعبان.mp4",
+        "descriptionImage": "MPauNXA0qG20r9qiGAQ3lItsEjez7wWU.png",
+        "description": "يشير تعبان إلى الشعور بالإنهاك أو الإرهاق نتيجة الجهد البدني أو النفسي.",
+        "synonym": null,
+        "watchCount": 207,
+        "category": {
+         "id": 39,
+         "nameAr": "الكلمات الشائعة"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "daily-4",
+     "ar": "أنا سعيد.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أنا",
+       "term": {
+        "id": 8385,
+        "wordAr": "أنا",
+        "wordEn": "Ana",
+        "category_id": 35,
+        "video": "أنا.mp4",
+        "descriptionImage": null,
+        "description": "ضمير يدل على المتحدث.",
+        "synonym": null,
+        "watchCount": 418,
+        "category": {
+         "id": 35,
+         "nameAr": "اللغة العربية"
+        }
+       }
+      },
+      {
+       "word": "سعيد",
+       "term": {
+        "id": 5147,
+        "wordAr": "سعيد",
+        "wordEn": "Happy",
+        "category_id": 5,
+        "video": "سعيد.mp4",
+        "descriptionImage": null,
+        "description": "سعيد: حالة من الفرح والرضا، تعكس مشاعر إيجابية تجاه الحياة.",
+        "synonym": null,
+        "watchCount": 621,
+        "category": {
+         "id": 5,
+         "nameAr": "صفات وحالات"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "daily-5",
+     "ar": "أنا حزين.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أنا",
+       "term": {
+        "id": 8385,
+        "wordAr": "أنا",
+        "wordEn": "Ana",
+        "category_id": 35,
+        "video": "أنا.mp4",
+        "descriptionImage": null,
+        "description": "ضمير يدل على المتحدث.",
+        "synonym": null,
+        "watchCount": 418,
+        "category": {
+         "id": 35,
+         "nameAr": "اللغة العربية"
+        }
+       }
+      },
+      {
+       "word": "حزين",
+       "term": {
+        "id": 5142,
+        "wordAr": "حزين",
+        "wordEn": "Sad",
+        "category_id": 5,
+        "video": "حزين.mp4",
+        "descriptionImage": null,
+        "description": "حزين: حالة من الكآبة أو الشجن، تعكس مشاعر الفقد أو الخسارة.",
+        "synonym": null,
+        "watchCount": 563,
+        "category": {
+         "id": 5,
+         "nameAr": "صفات وحالات"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "daily-6",
+     "ar": "أنا خائف.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أنا",
+       "term": {
+        "id": 8385,
+        "wordAr": "أنا",
+        "wordEn": "Ana",
+        "category_id": 35,
+        "video": "أنا.mp4",
+        "descriptionImage": null,
+        "description": "ضمير يدل على المتحدث.",
+        "synonym": null,
+        "watchCount": 418,
+        "category": {
+         "id": 35,
+         "nameAr": "اللغة العربية"
+        }
+       }
+      },
+      {
+       "word": "خائف",
+       "term": {
+        "id": 5144,
+        "wordAr": "خائف",
+        "wordEn": "Fearful",
+        "category_id": 5,
+        "video": "خائف.mp4",
+        "descriptionImage": null,
+        "description": "خائف: حالة من القلق أو التوتر تجاه خطر محتمل، تعبر عن عدم الأمان.",
+        "synonym": null,
+        "watchCount": 204,
+        "category": {
+         "id": 5,
+         "nameAr": "صفات وحالات"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "daily-7",
+     "ar": "أريد أن أنام.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أريد",
+       "term": {
+        "id": 5078,
+        "wordAr": "أريد",
+        "wordEn": "I Want",
+        "category_id": 5,
+        "video": "أراد.mp4",
+        "descriptionImage": "pDBShYV4RpmKEPTYKKdLiYSSUNPJegNW.jpeg",
+        "description": "أريد هو تعبير عن الرغبة في الحصول على شيء أو تحقيق هدف.",
+        "synonym": "اريد",
+        "watchCount": 857,
+        "category": {
+         "id": 5,
+         "nameAr": "صفات وحالات"
+        }
+       }
+      },
+      {
+       "word": "نوم",
+       "term": {
+        "id": 2175,
+        "wordAr": "نوم",
+        "wordEn": "Sleep",
+        "category_id": 26,
+        "video": "نوم.mp4",
+        "descriptionImage": "oZsUA6mlLtW5St27qoIyfg6bgb1j80tH.png",
+        "description": "النَّوم هو حالة طبيعية من الاسترخاء العضلي عند الكائنات الحية، وانخفاض الاستجابة للمحفزات الخارجية.",
+        "synonym": "نام ينام",
+        "watchCount": 173,
+        "category": {
+         "id": 26,
+         "nameAr": "العلوم"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "daily-8",
+     "ar": "أين دورة المياه؟",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أين",
+       "term": {
+        "id": 8425,
+        "wordAr": "أين",
+        "wordEn": "Ayna",
+        "category_id": 35,
+        "video": "أين.mp4",
+        "descriptionImage": null,
+        "description": "استفهام عن المكان أو الموقع.",
+        "synonym": "اين",
+        "watchCount": 331,
+        "category": {
+         "id": 35,
+         "nameAr": "اللغة العربية"
+        }
+       }
+      },
+      {
+       "word": "دورة مياه - حمام",
+       "term": {
+        "id": 4609,
+        "wordAr": "دورة مياه - حمام",
+        "wordEn": "Bathroom",
+        "category_id": 10,
+        "video": "دورة مياه.mp4",
+        "descriptionImage": "xkCLhz3TLEbjdCvWvI0s6eaaT0DKaiYG.jpg",
+        "description": "غرفة خاصة تحتوي على مرافق الحمام.",
+        "synonym": null,
+        "watchCount": 272,
+        "category": {
+         "id": 10,
+         "nameAr": "المنزل"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "daily-10",
+     "ar": "أريد مساعدة.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أريد",
+       "term": {
+        "id": 5078,
+        "wordAr": "أريد",
+        "wordEn": "I Want",
+        "category_id": 5,
+        "video": "أراد.mp4",
+        "descriptionImage": "pDBShYV4RpmKEPTYKKdLiYSSUNPJegNW.jpeg",
+        "description": "أريد هو تعبير عن الرغبة في الحصول على شيء أو تحقيق هدف.",
+        "synonym": "اريد",
+        "watchCount": 857,
+        "category": {
+         "id": 5,
+         "nameAr": "صفات وحالات"
+        }
+       }
+      },
+      {
+       "word": "مساعدة - مساندة",
+       "term": {
+        "id": 11081,
+        "wordAr": "مساعدة - مساندة",
+        "wordEn": "Assistance",
+        "category_id": 38,
+        "video": "مساعدة.mp4",
+        "descriptionImage": null,
+        "description": "تقديم الدعم والمساعدة للآخرين.",
+        "synonym": null,
+        "watchCount": 360,
+        "category": {
+         "id": 38,
+         "nameAr": "التربية الاسرية"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "daily-12",
+     "ar": "أنا معك.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أنا",
+       "term": {
+        "id": 8385,
+        "wordAr": "أنا",
+        "wordEn": "Ana",
+        "category_id": 35,
+        "video": "أنا.mp4",
+        "descriptionImage": null,
+        "description": "ضمير يدل على المتحدث.",
+        "synonym": null,
+        "watchCount": 418,
+        "category": {
+         "id": 35,
+         "nameAr": "اللغة العربية"
+        }
+       }
+      },
+      {
+       "word": "مع",
+       "term": {
+        "id": 9311,
+        "wordAr": "مع",
+        "wordEn": "With",
+        "category_id": 35,
+        "video": "مع.mp4",
+        "descriptionImage": null,
+        "description": "مع تعني الارتباط أو المصاحبة بين شيئين.",
+        "synonym": null,
+        "watchCount": 247,
+        "category": {
+         "id": 35,
+         "nameAr": "اللغة العربية"
+        }
+       }
+      },
+      {
+       "word": "أنتَ",
+       "term": {
+        "id": 8390,
+        "wordAr": "أنتَ",
+        "wordEn": "Anta",
+        "category_id": 35,
+        "video": "أنتَ.mp4",
+        "descriptionImage": null,
+        "description": "ضمير يُستخدم للحديث عن المخاطب.",
+        "synonym": "أنت انت",
+        "watchCount": 323,
+        "category": {
+         "id": 35,
+         "nameAr": "اللغة العربية"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "daily-13",
+     "ar": "أريد أن آكل.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أريد",
+       "term": {
+        "id": 5078,
+        "wordAr": "أريد",
+        "wordEn": "I Want",
+        "category_id": 5,
+        "video": "أراد.mp4",
+        "descriptionImage": "pDBShYV4RpmKEPTYKKdLiYSSUNPJegNW.jpeg",
+        "description": "أريد هو تعبير عن الرغبة في الحصول على شيء أو تحقيق هدف.",
+        "synonym": "اريد",
+        "watchCount": 857,
+        "category": {
+         "id": 5,
+         "nameAr": "صفات وحالات"
+        }
+       }
+      },
+      {
+       "word": "أكل",
+       "term": {
+        "id": 1572,
+        "wordAr": "أكل",
+        "wordEn": "Eating",
+        "category_id": 26,
+        "video": "أكل.mp4",
+        "descriptionImage": "RJYvmCQAeJ0cVgVJiE6zQ4OpW7RZHZmq.png",
+        "description": "الأكل أو تناول الطعام هو ابتلاع الطعام لتوفير جميع الاحتياجات الغذائية أو الدوائية للكائنات الحية، لا سيما الطاقة والنمو.",
+        "synonym": "اكل طعام فطور غداء عشاء",
+        "watchCount": 318,
+        "category": {
+         "id": 26,
+         "nameAr": "العلوم"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "daily-16",
+     "ar": "أين أنت؟",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أين",
+       "term": {
+        "id": 8426,
+        "wordAr": "أين",
+        "wordEn": "Ayna",
+        "category_id": 35,
+        "video": "أين٢.mp4",
+        "descriptionImage": null,
+        "description": "استفهام عن المكان أو الموقع.",
+        "synonym": null,
+        "watchCount": 55,
+        "category": {
+         "id": 35,
+         "nameAr": "اللغة العربية"
+        }
+       }
+      },
+      {
+       "word": "أنتَ",
+       "term": {
+        "id": 8390,
+        "wordAr": "أنتَ",
+        "wordEn": "Anta",
+        "category_id": 35,
+        "video": "أنتَ.mp4",
+        "descriptionImage": null,
+        "description": "ضمير يُستخدم للحديث عن المخاطب.",
+        "synonym": "أنت انت",
+        "watchCount": 323,
+        "category": {
+         "id": 35,
+         "nameAr": "اللغة العربية"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "daily-19",
+     "ar": "أريد أن أستحم.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أريد",
+       "term": {
+        "id": 5078,
+        "wordAr": "أريد",
+        "wordEn": "I Want",
+        "category_id": 5,
+        "video": "أراد.mp4",
+        "descriptionImage": "pDBShYV4RpmKEPTYKKdLiYSSUNPJegNW.jpeg",
+        "description": "أريد هو تعبير عن الرغبة في الحصول على شيء أو تحقيق هدف.",
+        "synonym": "اريد",
+        "watchCount": 857,
+        "category": {
+         "id": 5,
+         "nameAr": "صفات وحالات"
+        }
+       }
+      },
+      {
+       "word": "استحمام",
+       "term": {
+        "id": 1547,
+        "wordAr": "استحمام",
+        "wordEn": "Bathing",
+        "category_id": 26,
+        "video": "استحمام.mp4",
+        "descriptionImage": "mpWcBXnkN2ZsSmtdnSpeqTgvIm6YFMtL.png",
+        "description": "الاستحمام هو غسل البدن بالكامل بسائل، يكون غالباً هو الماء، وذلك بهدف الحفاظ على النظافة الشخصية بشكل أساسي .",
+        "synonym": "غسل، استحمام، اغتسال، تنظيف",
+        "watchCount": 94,
+        "category": {
+         "id": 26,
+         "nameAr": "العلوم"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "daily-20",
+     "ar": "أنا مرح.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أنا",
+       "term": {
+        "id": 8385,
+        "wordAr": "أنا",
+        "wordEn": "Ana",
+        "category_id": 35,
+        "video": "أنا.mp4",
+        "descriptionImage": null,
+        "description": "ضمير يدل على المتحدث.",
+        "synonym": null,
+        "watchCount": 418,
+        "category": {
+         "id": 35,
+         "nameAr": "اللغة العربية"
+        }
+       }
+      },
+      {
+       "word": "مرح",
+       "term": {
+        "id": 11309,
+        "wordAr": "مرح",
+        "wordEn": "Fun",
+        "category_id": 39,
+        "video": "مرح.mp4",
+        "descriptionImage": "Uftbihn1wyR9ZEu7jx2CgvysYkkguRPQ.png",
+        "description": "حالة من البهجة والسرور، تُستخدم لوصف الأنشطة الممتعة والمسلية. تأتي الكلمة في صيغة مذكرة، وتستخدم في المفرد والجمع. تُستخدم في السياقات الاجتماعية والترفيهية للإشارة إلى الأوقات السعيدة والفعاليات الممتعة.",
+        "synonym": null,
+        "watchCount": 1162,
+        "category": {
+         "id": 39,
+         "nameAr": "الكلمات الشائعة"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "daily-21",
+     "ar": "أنا مذعور.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أنا",
+       "term": {
+        "id": 8385,
+        "wordAr": "أنا",
+        "wordEn": "Ana",
+        "category_id": 35,
+        "video": "أنا.mp4",
+        "descriptionImage": null,
+        "description": "ضمير يدل على المتحدث.",
+        "synonym": null,
+        "watchCount": 418,
+        "category": {
+         "id": 35,
+         "nameAr": "اللغة العربية"
+        }
+       }
+      },
+      {
+       "word": "مذعور",
+       "term": {
+        "id": 9249,
+        "wordAr": "مذعور",
+        "wordEn": "Frightened",
+        "category_id": 35,
+        "video": "مذعور.mp4",
+        "descriptionImage": null,
+        "description": "مذعور يعني خائف بشكل كبير.",
+        "synonym": null,
+        "watchCount": 15,
+        "category": {
+         "id": 35,
+         "nameAr": "اللغة العربية"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "daily-24",
+     "ar": "أنا أناني.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أنا",
+       "term": {
+        "id": 8385,
+        "wordAr": "أنا",
+        "wordEn": "Ana",
+        "category_id": 35,
+        "video": "أنا.mp4",
+        "descriptionImage": null,
+        "description": "ضمير يدل على المتحدث.",
+        "synonym": null,
+        "watchCount": 418,
+        "category": {
+         "id": 35,
+         "nameAr": "اللغة العربية"
+        }
+       }
+      },
+      {
+       "word": "أناني",
+       "term": {
+        "id": 5119,
+        "wordAr": "أناني",
+        "wordEn": "Selfish",
+        "category_id": 5,
+        "video": "اناني.mp4",
+        "descriptionImage": null,
+        "description": "أناني يشير إلى التفكير في الذات دون مراعاة الآخرين.",
+        "synonym": "اناني",
+        "watchCount": 251,
+        "category": {
+         "id": 5,
+         "nameAr": "صفات وحالات"
+        }
+       }
+      }
+     ]
+    },
+    {
+     "id": "daily-26",
+     "ar": "أنا لا أريد.",
+     "status": "approved",
+     "signs": [
+      {
+       "word": "أنا",
+       "term": {
+        "id": 8385,
+        "wordAr": "أنا",
+        "wordEn": "Ana",
+        "category_id": 35,
+        "video": "أنا.mp4",
+        "descriptionImage": null,
+        "description": "ضمير يدل على المتحدث.",
+        "synonym": null,
+        "watchCount": 418,
+        "category": {
+         "id": 35,
+         "nameAr": "اللغة العربية"
+        }
+       }
+      },
+      {
+       "word": "لا",
+       "term": {
+        "id": 938,
+        "wordAr": "لا",
+        "wordEn": "No (Chapter of Religion)",
+        "category_id": 23,
+        "video": "لا.mp4",
+        "descriptionImage": null,
+        "description": "لا تعني الرفض أو النفي.",
+        "synonym": null,
+        "watchCount": 53,
+        "category": {
+         "id": 23,
+         "nameAr": "باب الدين"
+        }
+       }
+      },
+      {
+       "word": "أريد",
+       "term": {
+        "id": 5078,
+        "wordAr": "أريد",
+        "wordEn": "I Want",
+        "category_id": 5,
+        "video": "أراد.mp4",
+        "descriptionImage": "pDBShYV4RpmKEPTYKKdLiYSSUNPJegNW.jpeg",
+        "description": "أريد هو تعبير عن الرغبة في الحصول على شيء أو تحقيق هدف.",
+        "synonym": "اريد",
+        "watchCount": 857,
+        "category": {
+         "id": 5,
+         "nameAr": "صفات وحالات"
+        }
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "preview": false
+}

@@ -1,0 +1,46 @@
+{
+ "mode": "full_decode",
+ "checks": {
+  "playable": {
+   "result": "8763/8763 decodable",
+   "passed": true,
+   "failures": []
+  },
+  "no_duplicates": {
+   "result": "8763 distinct hashes for 8763 files",
+   "passed": true,
+   "failures": []
+  },
+  "arabic_labels": {
+   "result": "8763/8763 have label_ar",
+   "passed": true,
+   "failures": []
+  },
+  "filenames_match": {
+   "result": "8763 matched",
+   "passed": true,
+   "failures": []
+  },
+  "categories": {
+   "result": "36 categories in use",
+   "passed": true,
+   "failures": []
+  },
+  "review_flags": {
+   "result": "208 rows flagged needs_manual_review",
+   "passed": true,
+   "failures": []
+  },
+  "counts": {
+   "result": {
+    "video_files": 8763,
+    "dataset_csv": 8763,
+    "dataset_json": 8763,
+    "labels_csv_total": 8763
+   },
+   "passed": true,
+   "failures": []
+  }
+ },
+ "all_passed": true
+}

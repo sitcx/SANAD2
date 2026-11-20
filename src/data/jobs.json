@@ -1,0 +1,35 @@
+[
+  {
+    "id": "analyst",
+    "title": "Data Analyst",
+    "title_ar": "محلل بيانات",
+    "company": "Buad Tech",
+    "city": "Riyadh",
+    "mode": "Hybrid",
+    "description": "Turn data into clear insights that help the team make better decisions.",
+    "skills": ["Excel", "SQL", "Data analysis"],
+    "skills_ar": {"Excel": "Excel", "SQL": "SQL", "Data analysis": "تحليل البيانات"}
+  },
+  {
+    "id": "support",
+    "title": "Digital Customer Support Specialist",
+    "title_ar": "أخصائي دعم عملاء رقمي",
+    "company": "Wesal",
+    "city": "Remote",
+    "mode": "Remote",
+    "description": "Help customers through written chat and email, and provide clear solutions.",
+    "skills": ["Written communication", "Problem solving", "CRM"],
+    "skills_ar": {"Written communication": "التواصل الكتابي", "Problem solving": "حل المشكلات", "CRM": "CRM"}
+  },
+  {
+    "id": "designer",
+    "title": "UI/UX Designer",
+    "title_ar": "مصمم تجربة وواجهة مستخدم",
+    "company": "Nuqta Studio",
+    "city": "Jeddah",
+    "mode": "Hybrid",
+    "description": "Design easy-to-use digital experiences that make products clearer for everyone.",
+    "skills": ["Figma", "User research", "Design"],
+    "skills_ar": {"Figma": "Figma", "User research": "بحث المستخدم", "Design": "التصميم"}
+  }
+]

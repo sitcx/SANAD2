@@ -1,0 +1,28 @@
+# Sanad settings — read by the agents (src/agent/core/config.py).
+# Secrets (API keys) go in .env, never here.
+
+llm:
+  model: claude-sonnet-5-5          # Claude model used by the agents
+
+job_agent:
+  recommended_jobs: 3               # number of recommended jobs shown
+  min_matches: 3                    # fewer matches than this -> widen the search
+  jobs_file: src/data/jobs.json
+
+interview_agent:
+  sentence_options: 3               # sentence options shown to the candidate (+ "None of these")
+  max_none_of_these: 5              # after 5 "None of these" -> forced switch to a human interpreter
+  none_counter: total               # total = whole interview | consecutive = in a row
+  interpreter_button: true          # "I need an interpreter" button always visible
+
+signs:
+  dataset_dir: src/data/dataset    # Saudi Sign Language dataset (videos via Git LFS)
+  vocabulary_size: 40
+  gallery_dir: src/data/sign_gallery
+
+database:
+  path: instance/sanad.db          # runtime data folder, not in git (see instance/README.md)
+
+logging:
+  level: INFO
+  file: src/logger/logs/sanad.log

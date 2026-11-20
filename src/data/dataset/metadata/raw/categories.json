@@ -1,0 +1,218 @@
+[
+ {
+  "id": 1,
+  "nameAr": "الحروف الأبجدية الإشارية",
+  "nameEn": "Signal alphabet letters",
+  "words_count": 38
+ },
+ {
+  "id": 2,
+  "nameAr": "الأرقام الإشارية",
+  "nameEn": "Signal numbers",
+  "words_count": 43
+ },
+ {
+  "id": 3,
+  "nameAr": "اتجاهات ومواضع",
+  "nameEn": "Directions and Positions",
+  "words_count": 16
+ },
+ {
+  "id": 4,
+  "nameAr": "ادارة واقتصاد ومحاسبة",
+  "nameEn": "Management, Economics And Accounting",
+  "words_count": 67
+ },
+ {
+  "id": 5,
+  "nameAr": "صفات وحالات",
+  "nameEn": "Adjectives And States",
+  "words_count": 229
+ },
+ {
+  "id": 6,
+  "nameAr": "أشكال والوان",
+  "nameEn": "Shapes And Colors",
+  "words_count": 28
+ },
+ {
+  "id": 7,
+  "nameAr": "تعليم وتدريب",
+  "nameEn": "Education And Training",
+  "words_count": 170
+ },
+ {
+  "id": 8,
+  "nameAr": "بيئة وطبيعة",
+  "nameEn": "Environment And Nature",
+  "words_count": 133
+ },
+ {
+  "id": 9,
+  "nameAr": "الفضاء",
+  "nameEn": "Space",
+  "words_count": 12
+ },
+ {
+  "id": 10,
+  "nameAr": "المنزل",
+  "nameEn": "HOME",
+  "words_count": 279
+ },
+ {
+  "id": 11,
+  "nameAr": "الأنظمة الإصلاحية والسجون",
+  "nameEn": "Correctional Systems and Prisons",
+  "words_count": 52
+ },
+ {
+  "id": 12,
+  "nameAr": "الاعداد الترتيبية الوصفية",
+  "nameEn": "Descriptive Ordinal Numbers",
+  "words_count": 30
+ },
+ {
+  "id": 13,
+  "nameAr": "الصحة والمرض",
+  "nameEn": "Health And Illness",
+  "words_count": 153
+ },
+ {
+  "id": 14,
+  "nameAr": "باب العلاقات الاجتماعية",
+  "nameEn": "Social relations",
+  "words_count": 207
+ },
+ {
+  "id": 15,
+  "nameAr": "الاسرة والمجتمع",
+  "nameEn": "Family and Society",
+  "words_count": 79
+ },
+ {
+  "id": 16,
+  "nameAr": "باب الضداد",
+  "nameEn": "The Opposite",
+  "words_count": 41
+ },
+ {
+  "id": 18,
+  "nameAr": "مرور ونقل",
+  "nameEn": "Traffic And Transportation",
+  "words_count": 125
+ },
+ {
+  "id": 19,
+  "nameAr": "وظائف ومهن",
+  "nameEn": "Jobs And Careers",
+  "words_count": 42
+ },
+ {
+  "id": 20,
+  "nameAr": "مقايسس وازمنة",
+  "nameEn": "Measures And Times",
+  "words_count": 61
+ },
+ {
+  "id": 21,
+  "nameAr": "وطني",
+  "nameEn": "National",
+  "words_count": 366
+ },
+ {
+  "id": 22,
+  "nameAr": "مصطلحات متنوعة",
+  "nameEn": "Variety Video",
+  "words_count": 8
+ },
+ {
+  "id": 23,
+  "nameAr": "باب الدين",
+  "nameEn": "Religion and worship",
+  "words_count": 1529
+ },
+ {
+  "id": 24,
+  "nameAr": "التربية الاجتماعية",
+  "nameEn": "Social Education",
+  "words_count": 471
+ },
+ {
+  "id": 25,
+  "nameAr": "الحاسوب",
+  "nameEn": "Coputer",
+  "words_count": 229
+ },
+ {
+  "id": 26,
+  "nameAr": "العلوم",
+  "nameEn": "Scince",
+  "words_count": 961
+ },
+ {
+  "id": 30,
+  "nameAr": "الرياضة و الفنون",
+  "nameEn": "Sports And Arts",
+  "words_count": 170
+ },
+ {
+  "id": 31,
+  "nameAr": "دول العالم ومدنها",
+  "nameEn": "Cities and States",
+  "words_count": 138
+ },
+ {
+  "id": 33,
+  "nameAr": "طيران ناس",
+  "nameEn": "flay",
+  "words_count": 9
+ },
+ {
+  "id": 35,
+  "nameAr": "اللغة العربية",
+  "nameEn": "Arabic Languge",
+  "words_count": 1421
+ },
+ {
+  "id": 36,
+  "nameAr": "الفنية",
+  "nameEn": "Art",
+  "words_count": 319
+ },
+ {
+  "id": 37,
+  "nameAr": "رياضيات",
+  "nameEn": "Math",
+  "words_count": 347
+ },
+ {
+  "id": 38,
+  "nameAr": "التربية الاسرية",
+  "nameEn": "Family Education",
+  "words_count": 796
+ },
+ {
+  "id": 39,
+  "nameAr": "الكلمات الشائعة",
+  "nameEn": "Common Words",
+  "words_count": 162
+ },
+ {
+  "id": 52,
+  "nameAr": "أكاديمية",
+  "nameEn": "Academy",
+  "words_count": 60
+ },
+ {
+  "id": 53,
+  "nameAr": "مصطلحات في الصحة",
+  "nameEn": "Health Terminology",
+  "words_count": 29
+ },
+ {
+  "id": 54,
+  "nameAr": "مفردات وتراكيب متعلقة بالجنة",
+  "nameEn": "مفردات وتراكيب متعلقة بالجنة",
+  "words_count": 2
+ }
+]

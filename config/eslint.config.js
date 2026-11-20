@@ -4,6 +4,12 @@ import globals from "globals";
 import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
 import tseslint from "typescript-eslint";
+import { readFileSync } from "node:fs";
+
+// Prettier settings live next to this file in config/.
+const prettierOptions = JSON.parse(
+  readFileSync(new URL("./.prettierrc", import.meta.url), "utf8"),
+);
 
 export default tseslint.config(
   { ignores: ["dist", ".output", ".vinxi"] },
@@ -37,4 +43,5 @@ export default tseslint.config(
     },
   },
   eslintPluginPrettier,
+  { rules: { "prettier/prettier": ["error", prettierOptions, { usePrettierrc: false }] } },
 );

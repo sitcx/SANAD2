@@ -33,3 +33,21 @@ dist-ssr
 .env
 .env.*
 !.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# Sanad runtime files
+instance/*
+!instance/README.md
+logs/
+
+# Shared VS Code settings (point extensions at config/)
+!.vscode/settings.json
+
+# Saudi Sign Language dataset videos: kept locally, never pushed to GitHub (metadata is pushed)
+src/data/dataset/videos/

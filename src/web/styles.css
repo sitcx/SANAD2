@@ -6,7 +6,7 @@
  *   src/routes/__root.tsx and name the family in a --font-* token in @theme inline below.
  */
 @import "tailwindcss" source(none);
-@source "../src";
+@source ".";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
