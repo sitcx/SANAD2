@@ -1,5 +1,5 @@
 ﻿import { useCallback, useContext, useEffect, useState, type ReactNode } from 'react';
-import { canUpdateApplication, communicationPreferences, scheduleConflict, interviewSchedules, jobs, previousReports, type ApplicationStatus, type CvStatus, type InterviewReport } from './sanad-data';
+import { canUpdateApplication, communicationPreferences, scheduleConflict, interviewSchedules, jobs, type ApplicationStatus, type CvStatus } from './sanad-data';
 import { SanadContext } from './sanad-state';
 import type { CareerTrackId } from './career-discovery';
 import { candidatePool, SELF_ID, type CompanyJob } from './company';
@@ -48,7 +48,6 @@ function SanadSessionProvider({ children, signOut }: { children: ReactNode; sign
   const [preferences, setPreferences] = useState<Record<string, string[]>>({});
   const [additionalCommunicationNeeds, setAdditionalNeeds] = useState<Record<string, string>>({});
   const [now, setNow] = useState<number>();
-  const [reports, setReports] = useState<InterviewReport[]>(previousReports);
   const [interpreterRequested, setInterpreterRequested] = useState(false);
   const [interviewCompleted, setInterviewCompleted] = useState(false);
   const [sentAnswers, setSentAnswers] = useState<string[]>([]);
@@ -181,14 +180,13 @@ function SanadSessionProvider({ children, signOut }: { children: ReactNode; sign
     if (!jobs.some(job => job.id === id)) return;
     setAdditionalNeeds(current => ({ ...current, [id]: value }));
   }
-  function finishInterview(questions?: string[], durationSeconds = 0) {
+  function finishInterview() {
     if (!['nominated', 'scheduled'].includes(applications[selectedJobId] ?? '')) return;
     setInterviewCompleted(true);
     updateApplication(selectedJobId, 'completed');
-    setReports(current => [{ id: `session-${Date.now()}`, jobId: selectedJobId, date: new Date().toISOString(), answers: [...sentAnswers], questions: questions ? [...questions] : [], durationSeconds }, ...current]);
     setSentAnswers([]);
   }
-  return <SanadContext.Provider value={{ termsAccepted, setTermsAccepted, trainingConsent, setTrainingConsent, darkMode, setDarkMode, largeText, setLargeText, candidateName, candidateEmail, signedIn, signIn, role, switchRole: setRole, companyName, companyJobs, addCompanyJob, jobMinYears, setJobMinYears: (id, years) => setMinYears(current => ({ ...current, [id]: years })), poolApplications, poolSchedules, companyUpdateCandidate, companySchedule, syncSelfApplication, communicationMode, setCommunicationMode, careerTrack, careerDecided, completeCareerDiscovery, skipCareerDiscovery: () => setCareerDecided(true), acceptOffer, supportTickets, submitSupportTicket, rateSupportTicket, updateProfile, signOut, guideOpen, openGuide: () => setGuideOpen(true), closeGuide: () => setGuideOpen(false), schedules, scheduleInterview, applicationDates, applicationHistory, updateApplication, jobSkills, setJobSkills: (id, skills) => setSkills(current => ({ ...current, [id]: skills })), selectedJobId, selectJob, cvName, setCvName, cvStatus, setCvStatus, applications, applyToJob, nominateJob, reviewedPlans, reviewPlan, preferences, setJobPreferences, additionalCommunicationNeeds, setAdditionalCommunicationNeeds, now, reports, finishInterview, interpreterRequested, setInterpreterRequested, interviewCompleted, setInterviewCompleted, sentAnswers, setSentAnswers }}>{children}</SanadContext.Provider>;
+  return <SanadContext.Provider value={{ termsAccepted, setTermsAccepted, trainingConsent, setTrainingConsent, darkMode, setDarkMode, largeText, setLargeText, candidateName, candidateEmail, signedIn, signIn, role, switchRole: setRole, companyName, companyJobs, addCompanyJob, jobMinYears, setJobMinYears: (id, years) => setMinYears(current => ({ ...current, [id]: years })), poolApplications, poolSchedules, companyUpdateCandidate, companySchedule, syncSelfApplication, communicationMode, setCommunicationMode, careerTrack, careerDecided, completeCareerDiscovery, skipCareerDiscovery: () => setCareerDecided(true), acceptOffer, supportTickets, submitSupportTicket, rateSupportTicket, updateProfile, signOut, guideOpen, openGuide: () => setGuideOpen(true), closeGuide: () => setGuideOpen(false), schedules, scheduleInterview, applicationDates, applicationHistory, updateApplication, jobSkills, setJobSkills: (id, skills) => setSkills(current => ({ ...current, [id]: skills })), selectedJobId, selectJob, cvName, setCvName, cvStatus, setCvStatus, applications, applyToJob, nominateJob, reviewedPlans, reviewPlan, preferences, setJobPreferences, additionalCommunicationNeeds, setAdditionalCommunicationNeeds, now, finishInterview, interpreterRequested, setInterpreterRequested, interviewCompleted, setInterviewCompleted, sentAnswers, setSentAnswers }}>{children}</SanadContext.Provider>;
 }
 export function useSanad() {
   const context = useContext(SanadContext);

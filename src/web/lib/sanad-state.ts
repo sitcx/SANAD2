@@ -1,5 +1,5 @@
 import { createContext, type Context } from 'react';
-import type { ApplicationStatus, CvStatus, InterviewReport } from './sanad-data';
+import type { ApplicationStatus, CvStatus } from './sanad-data';
 import type { CareerTrackId } from './career-discovery';
 import type { CompanyJob } from './company';
 import type { CommunicationMode, SupportCategory, SupportTicket } from './support-tickets';
@@ -71,8 +71,8 @@ export interface SanadState {
   additionalCommunicationNeeds: Record<string, string>;
   setAdditionalCommunicationNeeds: (id: string, value: string) => void;
   now: number | undefined;
-  reports: InterviewReport[];
-  finishInterview: (questions?: string[], durationSeconds?: number) => void;
+  /** Ends the interview: the application becomes 'completed' and waits for the company. */
+  finishInterview: () => void;
   interpreterRequested: boolean;
   setInterpreterRequested: (requested: boolean) => void;
   interviewCompleted: boolean;

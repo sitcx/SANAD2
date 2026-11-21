@@ -59,24 +59,17 @@ describe('Candidate session journey', () => {
     expect(result.current.preferences['designer']).toEqual(['text', 'hearing-aid']);
     expect(result.current.preferences['analyst']).toEqual(['sign']);
   });
-  it('keeps only approved answers in the report for the completed interview', () => {
+  it('ends the interview by waiting for the company decision', () => {
     const { result } = renderHook(() => useSanad(), { wrapper: SanadProvider });
-    const draft = 'مسودة لم أعتمدها';
-    const approved = approveAnswer('أستخدم المحادثة لحل مشكلات العملاء', true);
-    expect(approveAnswer(draft, false)).toBeNull();
+    expect(approveAnswer('مسودة لم أعتمدها', false)).toBeNull();
     act(() => result.current.selectJob('support'));
-    if (approved === null) throw new Error('Expected approved answer');
-    act(() => result.current.setSentAnswers([approved]));
+    act(() => result.current.setSentAnswers(['أستخدم المحادثة لحل مشكلات العملاء']));
     act(() => result.current.finishInterview());
-    expect(result.current.reports[0]?.jobId).toBe('support');
-    expect(result.current.reports[0]?.answers).toEqual(['أستخدم المحادثة لحل مشكلات العملاء']);
-    expect(result.current.reports[0]?.answers).not.toContain(draft);
-    expect(result.current.sentAnswers).toEqual([]);
     expect(result.current.applications['support']).toBe('completed');
-    act(() => result.current.selectJob('designer'));
+    expect(result.current.interviewCompleted).toBe(true);
     expect(result.current.sentAnswers).toEqual([]);
+    act(() => result.current.selectJob('designer'));
     expect(result.current.interviewCompleted).toBe(false);
-    expect(result.current.reports[0]?.answers).toEqual(['أستخدم المحادثة لحل مشكلات العملاء']);
   });
   it('records application dates and updates in the linked tracker', () => {
     const { result } = renderHook(() => useSanad(), { wrapper: SanadProvider });
@@ -93,13 +86,10 @@ describe('Candidate session journey', () => {
     expect(result.current.schedules['support']).toBe('2026-11-22T11:00:00+03:00');
     expect(result.current.jobSkills['support']).toEqual(['CRM', 'التواصل الكتابي']);
   });
-  it('snapshots approved questions and measured duration with the answers', () => {
+  it('lets the company accept after the interview', () => {
     const { result } = renderHook(() => useSanad(), { wrapper: SanadProvider });
     act(() => result.current.selectJob('support'));
-    act(() => result.current.setSentAnswers(['حللت مشكلة العميل في CRM.']));
-    act(() => result.current.finishInterview(['كيف ساعدت العميل؟'], 95));
-    expect(result.current.reports[0]?.questions).toEqual(['كيف ساعدت العميل؟']);
-    expect(result.current.reports[0]?.durationSeconds).toBe(95);
+    act(() => result.current.finishInterview());
     act(() => result.current.updateApplication('support', 'accepted'));
     expect(result.current.applications['support']).toBe('accepted');
   });

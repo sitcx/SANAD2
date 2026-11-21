@@ -16,7 +16,7 @@ describe('Simulated candidate sign-out', () => {
     expect(result.current.candidateName).toBe('نورة');
   });
 
-  it('removes candidate preferences, consent, CV changes, applications, appointments and reports', () => {
+  it('removes candidate preferences, consent, CV changes, applications and appointments', () => {
     const { result } = renderHook(() => useSanad(), { wrapper: SanadProvider });
     const initial = result.current;
     act(() => {
@@ -33,8 +33,8 @@ describe('Simulated candidate sign-out', () => {
       result.current.scheduleInterview('analyst', '2026-11-20T13:00:00+03:00');
       result.current.setSentAnswers(['إجابة سارة المعتمدة']);
     });
-    act(() => result.current.finishInterview(['سؤال سارة'], 60));
-    expect(result.current.reports[0]?.answers).toEqual(['إجابة سارة المعتمدة']);
+    act(() => result.current.finishInterview());
+    expect(result.current.applications['analyst']).toBe('completed');
     act(() => result.current.signOut());
     expect(result.current.preferences).toEqual({});
     expect(result.current.additionalCommunicationNeeds).toEqual({});
@@ -48,7 +48,6 @@ describe('Simulated candidate sign-out', () => {
     expect(result.current.applications).toEqual(initial.applications);
     expect(result.current.applicationHistory).toEqual(initial.applicationHistory);
     expect(result.current.applicationDates).toEqual(initial.applicationDates);
-    expect(result.current.reports).toEqual(initial.reports);
     expect(result.current.sentAnswers).toEqual([]);
     expect(result.current.interviewCompleted).toBe(false);
     expect(result.current.interpreterRequested).toBe(false);

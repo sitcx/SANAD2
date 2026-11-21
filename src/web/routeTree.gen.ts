@@ -19,7 +19,6 @@ import { Route as EmployerRouteImport } from './routes/employer'
 import { Route as InterviewRouteImport } from './routes/interview'
 import { Route as JobsRouteImport } from './routes/jobs'
 import { Route as LoginRouteImport } from './routes/login'
-import { Route as ReportRouteImport } from './routes/report'
 import { Route as SupportRouteImport } from './routes/support'
 import { Route as JobsJobIdRouteImport } from './routes/jobs_.$jobId'
 
@@ -73,11 +72,6 @@ const LoginRoute = LoginRouteImport.update({
   path: '/login',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ReportRoute = ReportRouteImport.update({
-  id: '/report',
-  path: '/report',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const SupportRoute = SupportRouteImport.update({
   id: '/support',
   path: '/support',
@@ -100,7 +94,6 @@ export interface FileRoutesByFullPath {
   '/interview': typeof InterviewRoute
   '/jobs': typeof JobsRoute
   '/login': typeof LoginRoute
-  '/report': typeof ReportRoute
   '/support': typeof SupportRoute
   '/jobs/$jobId': typeof JobsJobIdRoute
 }
@@ -115,7 +108,6 @@ export interface FileRoutesByTo {
   '/interview': typeof InterviewRoute
   '/jobs': typeof JobsRoute
   '/login': typeof LoginRoute
-  '/report': typeof ReportRoute
   '/support': typeof SupportRoute
   '/jobs/$jobId': typeof JobsJobIdRoute
 }
@@ -131,7 +123,6 @@ export interface FileRoutesById {
   '/interview': typeof InterviewRoute
   '/jobs': typeof JobsRoute
   '/login': typeof LoginRoute
-  '/report': typeof ReportRoute
   '/support': typeof SupportRoute
   '/jobs_/$jobId': typeof JobsJobIdRoute
 }
@@ -148,7 +139,6 @@ export interface FileRouteTypes {
     | '/interview'
     | '/jobs'
     | '/login'
-    | '/report'
     | '/support'
     | '/jobs/$jobId'
   fileRoutesByTo: FileRoutesByTo
@@ -163,7 +153,6 @@ export interface FileRouteTypes {
     | '/interview'
     | '/jobs'
     | '/login'
-    | '/report'
     | '/support'
     | '/jobs/$jobId'
   id:
@@ -178,7 +167,6 @@ export interface FileRouteTypes {
     | '/interview'
     | '/jobs'
     | '/login'
-    | '/report'
     | '/support'
     | '/jobs_/$jobId'
   fileRoutesById: FileRoutesById
@@ -194,7 +182,6 @@ export interface RootRouteChildren {
   InterviewRoute: typeof InterviewRoute
   JobsRoute: typeof JobsRoute
   LoginRoute: typeof LoginRoute
-  ReportRoute: typeof ReportRoute
   SupportRoute: typeof SupportRoute
   JobsJobIdRoute: typeof JobsJobIdRoute
 }
@@ -271,13 +258,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LoginRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/report': {
-      id: '/report'
-      path: '/report'
-      fullPath: '/report'
-      preLoaderRoute: typeof ReportRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/support': {
       id: '/support'
       path: '/support'
@@ -306,7 +286,6 @@ const rootRouteChildren: RootRouteChildren = {
   InterviewRoute: InterviewRoute,
   JobsRoute: JobsRoute,
   LoginRoute: LoginRoute,
-  ReportRoute: ReportRoute,
   SupportRoute: SupportRoute,
   JobsJobIdRoute: JobsJobIdRoute,
 }

@@ -41,7 +41,7 @@ export const statusLabels: Record<ApplicationStatus, string> = {
 };
 export const applicationSteps: ApplicationStatus[] = ['applied', 'reviewing', 'nominated', 'scheduled', 'completed', 'accepted', 'hired', 'rejected', 'withdrawn'];
 export const nextSteps: Record<ApplicationStatus, string> = {
-  available: 'راجع التهيئة ثم قدّم طلبك.', applied: 'انتظر مراجعة الشركة لطلبك.', reviewing: 'ستظهر نتيجة مراجعة الطلب هنا.', nominated: 'راجع موعد المقابلة واستعد لها.', scheduled: 'راجع التقويم واستعد لموعد المقابلة.', completed: 'راجع التقرير وانتظر قرار الشركة.', accepted: 'اقبل العرض الوظيفي لتبدأ عملك.', hired: 'إذا واجهت صعوبة في عملك، ارفع طلب دعم إلى سند.', rejected: 'اكتشف فرصًا أخرى مناسبة لمهاراتك.', withdrawn: 'تم الانسحاب من الطلب. يمكنك استكشاف وظائف أخرى.',
+  available: 'راجع التهيئة ثم قدّم طلبك.', applied: 'انتظر مراجعة الشركة لطلبك.', reviewing: 'ستظهر نتيجة مراجعة الطلب هنا.', nominated: 'راجع موعد المقابلة واستعد لها.', scheduled: 'راجع التقويم واستعد لموعد المقابلة.', completed: 'انتظر قرار الجهة.', accepted: 'اقبل العرض الوظيفي لتبدأ عملك.', hired: 'إذا واجهت صعوبة في عملك، ارفع طلب دعم إلى سند.', rejected: 'اكتشف فرصًا أخرى مناسبة لمهاراتك.', withdrawn: 'تم الانسحاب من الطلب. يمكنك استكشاف وظائف أخرى.',
 };
 export function canUpdateApplication(current: ApplicationStatus, next: ApplicationStatus): boolean {
   const transitions: Record<ApplicationStatus, ApplicationStatus[]> = {
@@ -64,18 +64,6 @@ export const accommodationItems = [
   { id: 'video', title: 'اتصال مرئي مناسب', detail: 'إضاءة واضحة ومساحة لليدين والوجه، مع إمكانية استخدام جهاز ثانٍ.' },
   { id: 'followup', title: 'تواصل كتابي في العمل', detail: 'التقديم والمتابعة عبر البريد أو المحادثة، واجتماعات مدعومة بالنص.' },
 ] as const;
-export interface InterviewReport {
-  id: string;
-  jobId: string;
-  date: string;
-  answers: string[];
-  questions?: string[];
-  durationSeconds?: number;
-}
-export const previousReports: InterviewReport[] = [{
-  id: 'previous-analyst', jobId: 'analyst', date: '2026-11-10T10:00:00+03:00',
-  answers: ['جمعت بيانات المبيعات ونظفتها باستخدام Excel، ثم حللتها باستخدام SQL لمساعدة الفريق على اتخاذ قرار أفضل.'],
-}];
 export function canJoinInterview(status: ApplicationStatus, startsAt: string | undefined, now: number | undefined): boolean {
   if (!['nominated', 'scheduled'].includes(status) || !startsAt || now === undefined) return false;
   const starts = Date.parse(startsAt);
