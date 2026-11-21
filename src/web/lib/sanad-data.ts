@@ -4,24 +4,24 @@ export const jobs = [
   { id: 'designer', title: 'مصمم تجربة وواجهة مستخدم', english: 'UI/UX Designer', company: 'استوديو نقطة', mark: 'ن', match: 89, location: 'جدة', mode: 'هجين', salary: '٩٬٠٠٠ – ١٤٬٠٠٠ ر.س', description: 'صمّم تجارب رقمية سهلة الاستخدام تجعل المنتجات أكثر وضوحًا للجميع.', skills: ['Figma', 'بحث المستخدم', 'التصميم'], tone: 'peach' },
 ] as const;
 export type Job = (typeof jobs)[number];
-export const journeySteps = [
-  { title: 'رفع السيرة الذاتية', detail: 'أضف سيرتك وخبراتك.' },
-  { title: 'تحليل المهارات', detail: 'راجع مهاراتك وخبراتك.' },
-  { title: 'ترشيح الوظائف', detail: 'اكتشف الوظائف المناسبة.' },
-  { title: 'اختيار الوظيفة', detail: 'اطّلع على خطة التهيئة.' },
-  { title: 'التدريب على المقابلة', detail: 'تدرّب على أسئلة واضحة.' },
-  { title: 'المقابلة المباشرة', detail: 'تواصل بالمترجم الذكي.' },
-];
-export const coachQuestions = [
-  { original: 'حدثنا عن نفسك وعن أبرز خبراتك المهنية.', simple: 'من أنت؟ وما المهارات والخبرات التي لديك؟' },
-  { original: 'ما الذي جذبك إلى هذه الوظيفة؟', simple: 'لماذا تريد العمل في هذه الوظيفة؟' },
-  { original: 'كيف تعاملت مع تحدٍ واجهك أثناء تحليل البيانات؟', simple: 'احكِ لنا عن مشكلة في عملك. كيف حللتها؟' },
-  { original: 'كيف تضمن دقة النتائج التي تقدمها؟', simple: 'كيف تتأكد أن نتائج عملك صحيحة؟' },
-  { original: 'كيف تتعاون مع أعضاء الفريق لتحقيق هدف مشترك؟', simple: 'كيف تعمل مع فريقك لإنجاز مهمة؟' },
-  { original: 'ما هي أبرز نقاط قوتك المهنية؟', simple: 'ما الأشياء التي تجيدها في العمل؟' },
-  { original: 'أين ترى نفسك مهنيًا خلال السنوات القادمة؟', simple: 'ما الذي تريد تعلمه أو تحقيقه في المستقبل؟' },
-  { original: 'هل لديك أي أسئلة حول الفريق أو بيئة العمل؟', simple: 'ماذا تريد أن تعرف عن الشركة والعمل؟' },
+/** "How Sanad works": the full mechanism for both users (landing page). */
+export const companyJourney = [
+  { icon: 'account', title: 'حساب الجهة', detail: 'أنشئ حساب جهة التوظيف.' },
+  { icon: 'post', title: 'نشر الوظيفة', detail: 'حدد المهارات وسنوات الخبرة المطلوبة.' },
+  { icon: 'filter', title: 'اختيار المرشحين', detail: 'فلترة حسب احتياجك ونسبة توافق لكل مرشح.' },
+  { icon: 'calendar', title: 'المقابلة', detail: 'حدد الموعد؛ بمترجم إشارة أو مقابلة صوتية.' },
+  { icon: 'decision', title: 'القرار والمؤشرات', detail: 'اقبل المرشح وتابع التوظيف ونسبة الاستمرار.' },
 ] as const;
+export const candidateJourney = [
+  { icon: 'account', title: 'إنشاء الحساب', detail: 'اختر التواصل بلغة الإشارة أو بالصوت.' },
+  { icon: 'compass', title: 'اكتشاف المسار', detail: 'أسئلة عن ميولك تقترح مسارك المهني (اختياري).' },
+  { icon: 'cv', title: 'السيرة والمهارات', detail: 'ارفع سيرتك ويستخرج سند مهاراتك.' },
+  { icon: 'jobs', title: 'الوظائف المناسبة', detail: 'وظائف مرتبة حسب نسبة التوافق مع مهاراتك.' },
+  { icon: 'track', title: 'التقديم والمتابعة', detail: 'تابع حالة طلبك حتى ترشيحك وموعد المقابلة.' },
+  { icon: 'interview', title: 'المقابلة', detail: 'مترجم إشارة ذكي أو بشري، أو مقابلة صوتية.' },
+  { icon: 'support', title: 'التوظيف والدعم', detail: 'بعد قبولك، ارفع طلب دعم متى احتجت.' },
+] as const;
+export type JourneyIcon = (typeof companyJourney)[number]['icon'] | (typeof candidateJourney)[number]['icon'];
 export const liveQuestions = [
   'حدثنا عن مشروع استخدمت فيه البيانات لحل مشكلة.',
   'كيف تتأكد من دقة البيانات قبل تحليلها؟',
@@ -41,7 +41,7 @@ export const statusLabels: Record<ApplicationStatus, string> = {
 };
 export const applicationSteps: ApplicationStatus[] = ['applied', 'reviewing', 'nominated', 'scheduled', 'completed', 'accepted', 'hired', 'rejected', 'withdrawn'];
 export const nextSteps: Record<ApplicationStatus, string> = {
-  available: 'راجع التهيئة ثم قدّم طلبك.', applied: 'انتظر مراجعة الشركة لطلبك.', reviewing: 'ستظهر نتيجة مراجعة الطلب هنا.', nominated: 'راجع الموعد واستعد بالتدريب.', scheduled: 'راجع التقويم واستعد لموعد المقابلة.', completed: 'راجع التقرير وانتظر قرار الشركة.', accepted: 'اقبل العرض الوظيفي لتبدأ عملك.', hired: 'إذا واجهت صعوبة في عملك، ارفع طلب دعم إلى سند.', rejected: 'اكتشف فرصًا أخرى مناسبة لمهاراتك.', withdrawn: 'تم الانسحاب من الطلب. يمكنك استكشاف وظائف أخرى.',
+  available: 'راجع التهيئة ثم قدّم طلبك.', applied: 'انتظر مراجعة الشركة لطلبك.', reviewing: 'ستظهر نتيجة مراجعة الطلب هنا.', nominated: 'راجع موعد المقابلة واستعد لها.', scheduled: 'راجع التقويم واستعد لموعد المقابلة.', completed: 'راجع التقرير وانتظر قرار الشركة.', accepted: 'اقبل العرض الوظيفي لتبدأ عملك.', hired: 'إذا واجهت صعوبة في عملك، ارفع طلب دعم إلى سند.', rejected: 'اكتشف فرصًا أخرى مناسبة لمهاراتك.', withdrawn: 'تم الانسحاب من الطلب. يمكنك استكشاف وظائف أخرى.',
 };
 export function canUpdateApplication(current: ApplicationStatus, next: ApplicationStatus): boolean {
   const transitions: Record<ApplicationStatus, ApplicationStatus[]> = {

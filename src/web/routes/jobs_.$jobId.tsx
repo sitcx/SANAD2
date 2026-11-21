@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from '@tanstack/react-router';
-import { ArrowLeft, ArrowRight, BriefcaseBusiness, Building2, CalendarDays, Check, ClipboardCheck, Clock3, Mail, MapPin, MessageSquareText, Target, Video } from 'lucide-react';
+import { ArrowLeft, ArrowRight, BriefcaseBusiness, Building2, CalendarDays, Check, ClipboardCheck, Clock3, Mail, MapPin, MessageSquareText, Video } from 'lucide-react';
 import { useState } from 'react';
 import { EmployerControls } from '@/components/employer-controls';
 import { JobCommunicationPreferences } from '@/components/job-communication-preferences';
@@ -40,7 +40,7 @@ function JobDetail() {
       {['nominated', 'scheduled'].includes(status) && <><div className="section-title"><h2><CalendarDays />تم ترشيحك للمقابلة</h2></div><p className="text-sm mb-2">{formatInterviewDate((state.schedules[job.id] ?? ''))}</p><p className="text-xs text-muted-foreground mb-5">بتوقيت الرياض · مقابلة تجريبية · تفضيلاتك وخطة التهيئة أعلاه متاحة للمقابلة.</p><div className="flex flex-wrap gap-3">{allowed ? <Button asChild><Link to="/interview" onClick={() => state.selectJob(job.id)}><Video />الدخول للمقابلة<ArrowLeft /></Link></Button> : <Button disabled><Clock3 />الدخول للمقابلة</Button>}</div>{!allowed && <p className="text-xs text-muted-foreground mt-3">{remainingTime(state.schedules[job.id] ?? '', state.now)}</p>}</>}
       {['completed', 'accepted', 'rejected', 'withdrawn'].includes(status) && <><h2 className="font-semibold text-lg">{statusLabels[status]}</h2><p className="text-sm text-muted-foreground mt-3">{nextSteps[status]}</p><Button asChild variant="outline" className="mt-5"><Link to="/applications">تتبع تقديماتي<ArrowLeft /></Link></Button></>}
     </section>
-    <section className="workspace-section"><div className="section-title"><h2><Video />تجربة التدريب والمقابلة</h2></div><p className="text-sm text-muted-foreground mb-4">التجربة متاحة الآن دون ترشيح أو انتظار الموعد؛ لا تغيّر حالة الطلب ولا تُرسل إلى الشركة.</p><div className="flex flex-wrap gap-3"><Button asChild variant="outline"><Link to="/coach" onClick={() => state.selectJob(job.id)}><Target />التدريب على المقابلة</Link></Button><Button asChild><Link to="/interview" search={{ preview: true }} onClick={() => state.selectJob(job.id)}><Video />تجربة المقابلة والكاميرا</Link></Button></div></section>
+    <section className="workspace-section"><div className="section-title"><h2><Video />تجربة المقابلة</h2></div><p className="text-sm text-muted-foreground mb-4">التجربة متاحة الآن دون ترشيح أو انتظار الموعد؛ لا تغيّر حالة الطلب ولا تُرسل إلى الشركة.</p><div className="flex flex-wrap gap-3"><Button asChild><Link to="/interview" search={{ preview: true }} onClick={() => state.selectJob(job.id)}><Video />تجربة المقابلة والكاميرا</Link></Button></div></section>
     {employer && <EmployerControls job={job} />}
   </Workspace>;
 }

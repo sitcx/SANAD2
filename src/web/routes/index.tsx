@@ -1,30 +1,38 @@
-import { createFileRoute, Link } from '@tanstack/react-router';
-import { ArrowLeft, BriefcaseBusiness, ClipboardCheck, FileUser, HandMetal, MoveUpRight, Search, Target } from 'lucide-react';
+﻿import { createFileRoute, Link } from '@tanstack/react-router';
+import type { AccountRole } from '@/lib/sanad-state';
+import { ArrowLeft, Building2, BriefcaseBusiness, UserRound, ClipboardCheck, FileUser, HandMetal, Search, CalendarDays, Compass, Filter, LifeBuoy, TrendingUp, UserPlus } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { SiteFooter } from '@/components/sanad-layout';
 import { LandingDock } from '@/components/landing-dock';
 import { FeatureIllustration } from '@/components/landing-illustrations';
 import { ScrollReveal } from '@/components/scroll-reveal';
-import { journeySteps } from '@/lib/sanad-data';
+import { HeroPreview } from '@/components/hero-preview';
+import { candidateJourney, companyJourney, type JourneyIcon } from '@/lib/sanad-data';
+import { useState } from 'react';
 import { useSanad } from '@/lib/sanad-context';
 import { pageHead } from '@/lib/page-head';
-import gateway from '@/assets/sanad-gateway.jpg';
 
 // A bundled gateway has no absolute public URL; hosting supplies the social preview.
 export const Route = createFileRoute("/")({
-  head: () => pageHead('سَند.. حيث تلتقي الكفاءة بالفرصة', 'منصة توظيف ذكية وتفاعلية مصممة خصيصًا للصم وضعاف السمع، تربط بين الكفاءات الوطنية وجهات التوظيف، وتدعم رحلتهم المهنية.'),
+  head: () => pageHead('سَند.. حيث تلتقي الكفاءة بالفرصة', 'منصة توظيف ذكية تمكّن الصم والمكفوفين من الوصول إلى الفرص المناسبة لمهاراتهم، وتُمكّن جهات التوظيف من استقطاب كفاءاتهم، من التقديم حتى ما بعد التوظيف.'),
   component: Index,
 });
 
-type LandingFeature = { kind: 'jobs' | 'coach' | 'interview'; title: string; text: string; soon?: boolean };
+type LandingFeature = { kind: 'jobs' | 'support' | 'interview'; title: string; text: string; soon?: boolean };
 const features: LandingFeature[] = [
   { kind: 'jobs', title: 'الوظائف المناسبة وخطة التهيئة', text: 'تحليل سيرتك، وترشيح وظائف تناسب مهاراتك، مع عرض التسهيلات المطلوبة لكل وظيفة.' },
-  { kind: 'coach', title: 'التدريب الذكي على المقابلات', text: 'تدرّب على أسئلة مبسطة، واحصل على ملاحظات تساعدك على تحسين إجاباتك.', soon: true },
-  { kind: 'interview', title: 'المقابلة الذكية', text: 'عرض أسئلة المقابلة نصيًا، وتحويل إجابات المرشح بلغة الإشارة إلى نص مكتوب، مع إتاحة مراجعة الإجابات وتعديلها واعتمادها قبل إرسالها.' },
+  { kind: 'interview', title: 'المقابلة الذكية', text: 'مقابلة بلغة الإشارة بمترجم ذكي أو بشري، يختار فيها المرشح الجملة الصحيحة قبل إرسالها، أو مقابلة صوتية للمكفوفين.' },
+  { kind: 'support', title: 'الدعم بعد التوظيف', text: 'ارفع طلب دعم متى احتجت، مثل مترجم إشارة لاجتماع أو تهيئة مستند للقراءة الصوتية، ويتابعه فريق سند حتى يُحل.' },
 ];
-const stepIcons = [FileUser, Search, BriefcaseBusiness, ClipboardCheck, Target, HandMetal];
+const journeyIcons: Record<JourneyIcon, typeof Search> = { account: UserPlus, post: BriefcaseBusiness, filter: Filter, calendar: CalendarDays, decision: TrendingUp, compass: Compass, cv: FileUser, jobs: Search, track: ClipboardCheck, interview: HandMetal, support: LifeBuoy };
 function Index() {
-  const { signedIn } = useSanad();
+  const { signedIn, switchRole } = useSanad();
+  const [track, setTrack] = useState<'company' | 'candidate'>('company');
+  const steps = track === 'company' ? companyJourney : candidateJourney;
+  const choices: { role: AccountRole; label: string; Icon: typeof Building2 }[] = [
+    { role: 'company', label: 'لجهات التوظيف', Icon: Building2 },
+    { role: 'candidate', label: 'للباحثين عن عمل', Icon: UserRound },
+  ];
   return <div className="sanad-landing">
     <section id="home" className="landing-hero" aria-labelledby="hero-heading">
       <span className="landing-sweep landing-sweep--hero-top" aria-hidden="true" />
@@ -33,12 +41,12 @@ function Index() {
         <div className="landing-hero-copy">
           <h1 id="hero-heading" className="landing-hero-title"><strong>سَند..</strong><span>حيث تلتقي الكفاءة بالفرصة.</span></h1>
           <span className="landing-accent-line" aria-hidden="true" />
-          <p className="landing-hero-description">منصة توظيف ذكية وتفاعلية مصممة خصيصًا للصم وضعاف السمع، تربط بين الكفاءات الوطنية وجهات التوظيف، وتدعم رحلتهم المهنية من اكتشاف الفرص الوظيفية إلى اجتياز المقابلات.</p>
-          <Button variant="landing" size="lg" asChild>{signedIn
-            ? <Link to="/dashboard" className="landing-start"><span>ابدأ الآن</span><ArrowLeft aria-hidden="true" /></Link>
-            : <Link to="/login" search={{ mode: 'signup' }} className="landing-start"><span>ابدأ الآن</span><ArrowLeft aria-hidden="true" /></Link>}</Button>
+          <p className="landing-hero-description">منصة توظيف ذكية تمكّن الصم والمكفوفين من الوصول إلى الفرص المناسبة لمهاراتهم، وتُمكّن جهات التوظيف من استقطاب كفاءاتهم، من التقديم حتى ما بعد التوظيف.</p>
+          <div className="flex flex-wrap gap-3" role="group" aria-label="اختر نوع حسابك">{choices.map(({ role, label, Icon }) => <Button key={role} variant="landing" size="lg" asChild>{signedIn
+            ? <Link to={role === 'company' ? '/company' : '/dashboard'} className="landing-start" onClick={() => switchRole(role)}><Icon aria-hidden="true" /><span>{label}</span><ArrowLeft aria-hidden="true" /></Link>
+            : <Link to="/login" search={{ mode: 'signup', account: role }} className="landing-start"><Icon aria-hidden="true" /><span>{label}</span><ArrowLeft aria-hidden="true" /></Link>}</Button>)}</div>
         </div>
-        <div className="landing-gateway"><img src={gateway} width={1024} height={1024} alt="بوابة سَند المفتوحة، تجمع رمز لغة الإشارة وحقيبة العمل" fetchPriority="high" /></div>
+        <HeroPreview />
       </div>
     </section>
     <ScrollReveal className="landing-features" label="features-heading">
@@ -59,12 +67,13 @@ function Index() {
       <span className="landing-sweep landing-sweep--section-top" aria-hidden="true" />
       <span className="landing-sweep landing-sweep--section-bottom" aria-hidden="true" />
       <div className="landing-container" id="how-it-works">
-        <div className="landing-section-heading reveal-heading"><p className="landing-eyebrow">خطوات العمل</p><h2 id="how-heading">كيف يعمل سَند؟</h2></div>
-        <ol className="landing-journey">{journeySteps.map((step, index) => { const Icon = stepIcons[index]; return <li className="landing-step reveal-item" key={step.title}>
-          <span className="landing-step-number" aria-hidden="true">{index + 1}</span>
-          <span className="landing-step-icon" aria-hidden="true">{Icon && <Icon strokeWidth={1.6} />}{index === 1 && <span className="step-analysis-bars"><i /><i /><i /></span>}{index === 4 && <MoveUpRight className="step-target-arrow" />}{index === 5 && <span className="step-laptop-frame" />}</span>
+        <div className="landing-section-heading reveal-heading"><h2 id="how-heading">كيف يعمل سَند؟</h2></div>
+        <div className="landing-journey-tabs" role="tablist" aria-label="اختر المسار">{([{ id: 'company', label: 'لجهات التوظيف', Icon: Building2 }, { id: 'candidate', label: 'للباحثين عن عمل', Icon: UserRound }] as const).map(({ id, label, Icon }) => <button key={id} type="button" role="tab" aria-selected={track === id} className="landing-journey-tab" onClick={() => setTrack(id)}><Icon aria-hidden="true" />{label}</button>)}</div>
+        <ol className="landing-journey" data-count={steps.length} role="tabpanel">{steps.map((step, index) => { const Icon = journeyIcons[step.icon]; return <li className="landing-step reveal-item" key={step.title}>
+          <span className="landing-step-number" aria-hidden="true">{(index + 1).toLocaleString('ar-SA')}</span>
+          <span className="landing-step-icon" aria-hidden="true"><Icon strokeWidth={1.6} /></span>
           <h3>{step.title}</h3><p>{step.detail}</p>
-          {index < journeySteps.length - 1 && <ArrowLeft className="landing-step-arrow" aria-hidden="true" />}
+          {index < steps.length - 1 && <ArrowLeft className="landing-step-arrow" aria-hidden="true" />}
         </li>; })}</ol>
       </div>
     </ScrollReveal>

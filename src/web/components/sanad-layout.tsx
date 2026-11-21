@@ -1,5 +1,5 @@
 import { Link, useLocation } from '@tanstack/react-router';
-import { BookOpen, LayoutDashboard, Mail, ShieldCheck, Volume2 } from 'lucide-react';
+import { BarChart3, BookOpen, BriefcaseBusiness, LayoutDashboard, Mail, ShieldCheck, Users, Volume2 } from 'lucide-react';
 import { useContext, useEffect, useState, type ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
 import { AccountMenu } from '@/components/account-menu';
@@ -14,7 +14,7 @@ export function Brand() {
 }
 export function SiteHeader() {
   const state = useSanad();
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
   const isLanding = pathname === '/';
   const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
@@ -28,7 +28,9 @@ export function SiteHeader() {
     <Brand />
     {isLanding && <nav className="landing-nav" aria-label="أقسام الصفحة"><a href="#home">الرئيسية</a><a href="#features">مميزات سَند</a><a href="#how-it-works">كيف يعمل سَند؟</a></nav>}
     {pathname !== '/' && pathname !== '/login' && <nav className="desktop-nav" aria-label="التنقل الرئيسي">
-      {(state.role === 'company' ? companyLinks : workspaceLinks).map(item => <Link key={item.to} className="nav-link" data-active={pathname === item.to} aria-current={pathname === item.to ? 'page' : undefined} to={item.to}><item.icon />{item.label}</Link>)}
+      {state.role === 'company'
+        ? companyLinks.map(item => { const active = pathname === '/company' && hash.replace(/^#/, '') === item.hash; return <Link key={item.hash} className="nav-link" data-active={active} aria-current={active ? 'location' : undefined} to="/company" hash={item.hash} onClick={() => window.setTimeout(() => document.getElementById(item.hash)?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50)}><item.icon />{item.label}</Link>; })
+        : workspaceLinks.map(item => <Link key={item.to} className="nav-link" data-active={pathname === item.to} aria-current={pathname === item.to ? 'page' : undefined} to={item.to}><item.icon />{item.label}</Link>)}
     </nav>}
     <div className="header-actions">
       {isLanding ? <><Button variant="ghost" className="knowledge-guide" onClick={state.openGuide}><BookOpen aria-hidden="true" />الدليل المعرفي</Button><Button variant="ghost" size="icon" className="mobile-knowledge-guide" aria-label="الدليل المعرفي" title="الدليل المعرفي" onClick={state.openGuide}><BookOpen aria-hidden="true" /></Button></> : <Button variant="ghost" size="icon" aria-label="مشاهدة الدليل" title="مشاهدة الدليل" onClick={state.openGuide}><BookOpen aria-hidden="true" /></Button>}
@@ -37,7 +39,12 @@ export function SiteHeader() {
   </div></header>;
 }
 const workspaceLinks = workspaceNavigation.map(item => ({ ...item, icon: LayoutDashboard }));
-const companyLinks = [{ to: '/company', label: 'لوحة الجهة', icon: LayoutDashboard }] as const;
+/** The company has one page, so its links jump to the dashboard sections. */
+const companyLinks = [
+  { hash: 'company-kpis', label: 'المؤشرات', icon: BarChart3 },
+  { hash: 'company-jobs', label: 'الوظائف', icon: BriefcaseBusiness },
+  { hash: 'company-candidates', label: 'المرشحون', icon: Users },
+] as const;
 export function Workspace({ children }: { children: ReactNode }) {
   return <div className="workspace"><div className="site-container"><div className="min-w-0 entry-animate">{children}</div></div>
   </div>;

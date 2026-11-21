@@ -27,6 +27,7 @@ from pydantic import ValidationError
 from src.agent.interview_agent.graph import InterviewSession, build_interview_graph
 from src.agent.schemas import ErrorReply, StartedReply, StartMessage, StateReply, event_message_adapter
 from src.agent.job_agent.graph import recommend_jobs
+from src.agent.company_api import router as company_router
 from src.database import db
 from src.logger import get_logger, new_run_id, set_run_id
 
@@ -45,6 +46,7 @@ async def lifespan(_app: FastAPI):
 
 
 app = FastAPI(title="Sanad Agents", lifespan=lifespan)
+app.include_router(company_router)
 app.add_middleware(
     CORSMiddleware,
     # An empty SANAD_WEB_ORIGINS= in .env means "use the default", not "allow nobody".

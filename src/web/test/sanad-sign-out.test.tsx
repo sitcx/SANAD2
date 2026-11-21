@@ -27,7 +27,6 @@ describe('Simulated candidate sign-out', () => {
       result.current.setAdditionalCommunicationNeeds('analyst', 'إضاءة واضحة');
       result.current.setCvName('سارة.pdf');
       result.current.setCvStatus('uploaded');
-      for (let index = 0; index < 8; index++) result.current.completeTrainingQuestion('analyst', index);
       result.current.setInterpreterRequested(true);
       result.current.reviewPlan('analyst');
       result.current.setJobSkills('analyst', ['مهارة معدلة']);
@@ -52,8 +51,6 @@ describe('Simulated candidate sign-out', () => {
     expect(result.current.reports).toEqual(initial.reports);
     expect(result.current.sentAnswers).toEqual([]);
     expect(result.current.interviewCompleted).toBe(false);
-    expect(result.current.practiceCompleted).toBe(false);
-    expect(result.current.trainingProgress).toEqual({});
     expect(result.current.interpreterRequested).toBe(false);
     expect(result.current.guideOpen).toBe(false);
   });

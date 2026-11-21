@@ -12,7 +12,6 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ApplicationsRouteImport } from './routes/applications'
 import { Route as CharterRouteImport } from './routes/charter'
-import { Route as CoachRouteImport } from './routes/coach'
 import { Route as CompanyRouteImport } from './routes/company'
 import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as DiscoverRouteImport } from './routes/discover'
@@ -37,11 +36,6 @@ const ApplicationsRoute = ApplicationsRouteImport.update({
 const CharterRoute = CharterRouteImport.update({
   id: '/charter',
   path: '/charter',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CoachRoute = CoachRouteImport.update({
-  id: '/coach',
-  path: '/coach',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CompanyRoute = CompanyRouteImport.update({
@@ -99,7 +93,6 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/applications': typeof ApplicationsRoute
   '/charter': typeof CharterRoute
-  '/coach': typeof CoachRoute
   '/company': typeof CompanyRoute
   '/dashboard': typeof DashboardRoute
   '/discover': typeof DiscoverRoute
@@ -115,7 +108,6 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/applications': typeof ApplicationsRoute
   '/charter': typeof CharterRoute
-  '/coach': typeof CoachRoute
   '/company': typeof CompanyRoute
   '/dashboard': typeof DashboardRoute
   '/discover': typeof DiscoverRoute
@@ -132,7 +124,6 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/applications': typeof ApplicationsRoute
   '/charter': typeof CharterRoute
-  '/coach': typeof CoachRoute
   '/company': typeof CompanyRoute
   '/dashboard': typeof DashboardRoute
   '/discover': typeof DiscoverRoute
@@ -150,7 +141,6 @@ export interface FileRouteTypes {
     | '/'
     | '/applications'
     | '/charter'
-    | '/coach'
     | '/company'
     | '/dashboard'
     | '/discover'
@@ -166,7 +156,6 @@ export interface FileRouteTypes {
     | '/'
     | '/applications'
     | '/charter'
-    | '/coach'
     | '/company'
     | '/dashboard'
     | '/discover'
@@ -182,7 +171,6 @@ export interface FileRouteTypes {
     | '/'
     | '/applications'
     | '/charter'
-    | '/coach'
     | '/company'
     | '/dashboard'
     | '/discover'
@@ -199,7 +187,6 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ApplicationsRoute: typeof ApplicationsRoute
   CharterRoute: typeof CharterRoute
-  CoachRoute: typeof CoachRoute
   CompanyRoute: typeof CompanyRoute
   DashboardRoute: typeof DashboardRoute
   DiscoverRoute: typeof DiscoverRoute
@@ -233,13 +220,6 @@ declare module '@tanstack/react-router' {
       path: '/charter'
       fullPath: '/charter'
       preLoaderRoute: typeof CharterRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/coach': {
-      id: '/coach'
-      path: '/coach'
-      fullPath: '/coach'
-      preLoaderRoute: typeof CoachRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/company': {
@@ -319,7 +299,6 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ApplicationsRoute: ApplicationsRoute,
   CharterRoute: CharterRoute,
-  CoachRoute: CoachRoute,
   CompanyRoute: CompanyRoute,
   DashboardRoute: DashboardRoute,
   DiscoverRoute: DiscoverRoute,

@@ -1,6 +1,5 @@
 import { createContext, type Context } from 'react';
 import type { ApplicationStatus, CvStatus, InterviewReport } from './sanad-data';
-import type { TrainingProgress } from './training-readiness';
 import type { CareerTrackId } from './career-discovery';
 import type { CompanyJob } from './company';
 import type { CommunicationMode, SupportCategory, SupportTicket } from './support-tickets';
@@ -24,6 +23,8 @@ export interface SanadState {
   poolSchedules: Record<string, string>;
   companyUpdateCandidate: (candidateId: string, jobId: string, status: ApplicationStatus) => void;
   companySchedule: (candidateId: string, jobId: string, date: string) => string | null;
+  /** Mirror a status already saved by the API for the signed-in candidate. */
+  syncSelfApplication: (jobId: string, status: ApplicationStatus, interviewAt?: string | null) => void;
   communicationMode: CommunicationMode;
   setCommunicationMode: (mode: CommunicationMode) => void;
   careerTrack: CareerTrackId | null;
@@ -74,9 +75,6 @@ export interface SanadState {
   finishInterview: (questions?: string[], durationSeconds?: number) => void;
   interpreterRequested: boolean;
   setInterpreterRequested: (requested: boolean) => void;
-  practiceCompleted: boolean;
-  trainingProgress: TrainingProgress;
-  completeTrainingQuestion: (jobId: string, questionIndex: number) => void;
   interviewCompleted: boolean;
   setInterviewCompleted: (completed: boolean) => void;
   sentAnswers: string[];

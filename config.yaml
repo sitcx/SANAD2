@@ -11,7 +11,7 @@ job_agent:
 
 interview_agent:
   sentence_options: 3               # sentence options shown to the candidate (+ "None of these")
-  max_none_of_these: 5              # after 5 "None of these" -> forced switch to a human interpreter
+  max_none_of_these: 3              # after 3 "None of these" -> forced switch to a human interpreter
   none_counter: total               # total = whole interview | consecutive = in a row
   interpreter_button: true          # "I need an interpreter" button always visible
 

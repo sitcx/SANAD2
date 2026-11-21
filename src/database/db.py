@@ -34,6 +34,8 @@ def init_db() -> None:
                 " VALUES (?, ?, ?, ?, ?, ?, ?)",
                 (job["id"], job["title"], job.get("company"), job.get("city"), job.get("mode"),
                  job.get("description"), json.dumps(job.get("skills", []), ensure_ascii=False)))
+        from src.database.company_db import seed   # local import: company_db imports this module
+        seed(conn)
 
 
 @log_step(summary=lambda cid: f"candidate_id={cid}")

@@ -16,7 +16,11 @@ export default defineConfig({
     tanstackStart({ srcDirectory: 'src/web', server: { entry: 'server' } }),
     react(),
     tailwindcss(),
-    nitro({ preset: 'node-server' }),
+    nitro({
+      preset: 'node-server',
+      // The browser only talks to port 3000; /api/* is forwarded to the agents API (python run.py).
+      routeRules: { '/api/**': { proxy: `http://localhost:${process.env['SANAD_API_PORT'] ?? '8010'}/**` } },
+    }),
   ],
   resolve: { dedupe: ['react', 'react-dom', '@tanstack/react-router'] },
   server: { port: 3000 },

@@ -1,5 +1,5 @@
 import { Link, useNavigate } from '@tanstack/react-router';
-import { ArrowLeftRight, Building2, ChevronDown, ClipboardList, Compass, LifeBuoy, LogOut, Moon, Save, Settings, Sun, Target, UserRound } from 'lucide-react';
+import { ArrowLeftRight, Building2, ChevronDown, ClipboardList, Compass, LifeBuoy, LogOut, Moon, Save, Settings, Sun, UserRound } from 'lucide-react';
 import { useState, type FormEvent } from 'react';
 import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
@@ -37,7 +37,6 @@ export function AccountMenu() {
         <DropdownMenuItem onSelect={() => void navigate({ to: '/company' })}><Building2 aria-hidden="true" />لوحة الجهة</DropdownMenuItem>
         <DropdownMenuItem onSelect={() => { state.switchRole('candidate'); void navigate({ to: '/applications' }); }}><ArrowLeftRight aria-hidden="true" />التبديل إلى حساب المرشح (تجربة)</DropdownMenuItem>
       </> : <>
-        <DropdownMenuItem onSelect={() => void navigate({ to: '/coach' })}><Target aria-hidden="true" />ابدأ التدريب</DropdownMenuItem>
         <DropdownMenuItem onSelect={() => void navigate({ to: '/applications' })}><ClipboardList aria-hidden="true" />تتبع تقديماتي</DropdownMenuItem>
         <DropdownMenuItem onSelect={() => void navigate({ to: '/discover' })}><Compass aria-hidden="true" />اكتشف مسارك المهني</DropdownMenuItem>
         <DropdownMenuItem onSelect={() => void navigate({ to: '/support' })}><LifeBuoy aria-hidden="true" />دعم سند بعد التوظيف</DropdownMenuItem>
