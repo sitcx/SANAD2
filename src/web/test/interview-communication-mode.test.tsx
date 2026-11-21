@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
 import { InterviewPreparation, interviewCommunicationChoices } from '@/components/interview-preparation';
 import { MeetingRoom } from '@/components/meeting-room';
@@ -54,14 +54,16 @@ describe('Interview communication without audio', () => {
     expect((notice!.compareDocumentPosition(captions!) & Node.DOCUMENT_POSITION_FOLLOWING) > 0).toBe(true);
   });
 
-  it('has no human support entry and an opt-in Arabic microphone control in the room', () => {
+  it('has no human support entry and starts live Arabic captions with the room', async () => {
     window.scrollTo = vi.fn();
-    const getUserMedia = vi.fn();
+    const getUserMedia = vi.fn().mockRejectedValue(new DOMException('Denied', 'NotAllowedError'));
     vi.stubGlobal('navigator', { ...navigator, mediaDevices: { getUserMedia } });
+    vi.stubGlobal('AudioContext', class { state = 'running'; sampleRate = 48000; close() { return Promise.resolve(); } });
     render(<SanadProvider><TooltipProvider><MeetingRoom job={jobs[0]} preview media={cameraOnlyMedia} candidateName="رند" communication="sign" /></TooltipProvider></SanadProvider>);
     expect(screen.queryByText(/دعم بشري/)).toBeNull();
-    expect(screen.getByRole('button', { name: 'تشغيل الميكروفون لكلام مسؤول التوظيف بالعربية' })).toHaveAttribute('aria-pressed', 'false');
-    expect(getUserMedia).not.toHaveBeenCalled();
+    await waitFor(() => expect(getUserMedia).toHaveBeenCalledOnce());
+    expect(await screen.findByText(/لم يُسمح بالوصول إلى الميكروفون/)).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'الترجمة المباشرة غير متاحة' })).toBeDisabled();
     expect(screen.queryByRole('button', { name: /مترجم/ })).not.toBeNull();
     vi.unstubAllGlobals();
   });

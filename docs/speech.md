@@ -1,60 +1,77 @@
 # Speech-to-text (Arabic only)
 
-The recruiter's spoken question becomes Arabic text for the deaf candidate and for the Interview Agent.
+Two paths turn speech into Arabic text for the deaf candidate and the Interview Agent:
+
+| Path | Used by | Engine |
+|---|---|---|
+| **Live captions** | the interview room (default) | Whisper Large-v3 on OpenRouter, `src/agent/speech/live.py` + `openrouter.py` |
+| Recorded question (`audio_b64`) | API clients | local Whisper Large-v3, `src/agent/speech/speech.py` |
+
+## Live captions
 
 ```mermaid
 sequenceDiagram
-    participant M as Meeting room (browser)
+    participant B as Meeting room (browser)
     participant A as API · WS /interview/{session}
+    participant L as LiveCaptions (speech/live.py)
+    participant O as OpenRouter · whisper-large-v3
     participant I as Interview Agent
-    participant W as Whisper Large-v3 (src/agent/speech)
-    M->>M: microphone button → record (MediaRecorder, webm/opus)
-    M->>M: button again (or 115 s) → stop, microphone released
-    M->>A: {"type": "question", "audio_b64": "..."}
-    A->>I: event {type: question, audio}
-    I->>W: speech_to_text → transcribe(audio)  language="ar", task="transcribe"
-    W-->>I: Arabic text
-    I-->>A: state.last_question (kept for compose_sentence)
-    A-->>M: {"type": "state", "last_question": "..."} → captions + conversation
+    B->>B: room opens → microphone permission → AudioWorklet, 16 kHz mono
+    loop every 100 ms
+        B->>A: binary frame (PCM16)
+        A->>L: feed()
+    end
+    L->>L: Silero VAD: speech starts
+    loop about every 1 s while speaking
+        L->>O: sentence so far
+        O-->>L: text + spoken language
+        L-->>B: {"type":"caption","final":false,"text":…}  (caption grows)
+    end
+    L->>L: 0.7 s of silence: sentence ends
+    L->>O: whole sentence
+    O-->>L: text, language = ar
+    L-->>B: {"type":"caption","final":true,"text":…}
+    L->>I: {"type":"question","text":…}
+    I-->>B: {"type":"state","last_question":…}
 ```
+
+- Starts automatically when the candidate joins the room; the browser asks for microphone permission once.
+  The toolbar microphone button mutes it (and finishes the sentence in progress); there is no record or send button.
+- **OpenRouter has no streaming speech-to-text API** (its transcription endpoint takes a complete clip).
+  Live captions therefore re-transcribe the sentence in progress about once a second
+  (`speech.live.partial_interval_s`). A provider with a true streaming API can replace
+  `LiveCaptions._transcribe` without changing the browser or the agent.
+- Only finished sentences go to the Interview Agent; partial captions are display only.
+- Key: `OPENROUTER_API_KEY` in `.env`, read on the server only (never sent to the browser, never logged).
+- `provider.zdr = true`: only providers that do not retain the audio are used. Audio is not stored by Sanad.
+- Measured on this project (synthetic Arabic voice, Edge, OpenRouter): first caption ~1.4 s after speech starts,
+  refreshed ~1 s, final sentence ~1.5–2 s after the speaker stops; 3 of 3 Arabic sentences word-exact.
 
 ## Arabic only
 
-`src/agent/speech/speech.py` fixes everything in code:
-
-- `language="ar"` on every call; Whisper's language detection is never used.
-- `task="transcribe"`; Whisper's `translate` task (English output) is never used.
-- `transcribe(..., language="en")` raises `ValueError`.
-- Spoken-language gate: Whisper's language detector only *checks* the recording; speech confidently
-  detected as another language (Arabic < 20 %) is rejected as `non_arabic_speech`. Without it, Whisper
-  forced to Arabic turns English speech into an invented Arabic paraphrase (seen in testing).
-- A transcript with no Arabic word, or less than `speech.min_arabic_ratio` (50 %) of its words in Arabic script, is rejected as
-  `non_arabic_speech`. An Arabic sentence with a short foreign term ("خبرتك في Excel") is kept.
-- Silence is removed with the built-in VAD, and phrases Whisper is known to invent on silence
-  ("ترجمة نانسي قنقر", "اشتركوا في القناة", …) are dropped.
+- Live: Whisper reports the spoken language (`verbose_json`); a sentence is accepted only when it is Arabic.
+  `language` is **not** forced to `ar`, because forced Arabic turns English speech into an invented Arabic
+  paraphrase that cannot be detected (seen in testing). Whisper's `translate` task is never used.
+- Local: `language="ar"` and `task="transcribe"` are fixed; a language-detection pass rejects clearly
+  non-Arabic speech; `transcribe(..., language="en")` raises `ValueError`.
+- Both: the text must be mostly Arabic script (`speech.min_arabic_ratio`), and phrases Whisper invents on
+  silence ("ترجمة نانسي قنقر", "اشتركوا في القناة", …) are dropped.
 
 ## Errors (shown in Arabic in the meeting room)
 
 | Code | When |
 |---|---|
-| `no_speech` | nothing but silence/noise was recorded |
-| `non_arabic_speech` | the speech was not Arabic |
-| `invalid_audio` | the recording could not be decoded, or is longer than `speech.max_seconds` |
-| `speech_model_unavailable` | `faster-whisper` is missing or the model could not load |
+| `non_arabic_speech` | the sentence was not Arabic (it is not sent to the agent) |
+| `speech_not_configured` | `OPENROUTER_API_KEY` is missing |
+| `speech_service_unavailable` | OpenRouter unreachable, invalid key (401), no credit (402), rate limit (429) |
+| `no_speech`, `invalid_audio`, `speech_model_unavailable` | local path (`audio_b64`) |
 
-Browser-side errors (microphone permission denied, no microphone, microphone busy, no
-`MediaRecorder`, server not reachable) are explained in Arabic by `src/web/hooks/use-arabic-speech.ts`.
+Browser side (`src/web/hooks/use-arabic-speech.ts`): microphone permission denied, no microphone,
+microphone busy or unplugged, unsupported browser, connection lost (automatic reconnect), and a hint to
+tap the page if the browser blocks audio until a click.
 
-## Running
+## Local Whisper
 
-`python run.py setup` installs `faster-whisper`. On the first start the model (~3 GB) downloads to
-the Hugging Face cache; `run.py` loads it in the background when the API starts
-(`GET /speech/status` shows `loading` → `ready`). On a CPU without a usable GPU, expect roughly
-real-time or slower transcription (a 5 s question takes several seconds).
-
-Privacy: the microphone is requested only when the button is pressed, and every track stops when
-recording stops or the room is left. Audio goes only to the Sanad API and is not stored; logs
-contain durations and character counts, not the text.
-
-Live test: open <http://localhost:3000/interview?preview=true>, join, press the microphone button
-in the toolbar, speak an Arabic question, press it again.
+`pip install faster-whisper` (in `requirements.txt`). The model (~3 GB) downloads on first use. On a CPU
+it takes 40–60 s per question, so it is not used for live captions. `SANAD_SPEECH_PRELOAD=1` loads it
+when the API starts.

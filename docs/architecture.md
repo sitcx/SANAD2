@@ -28,7 +28,7 @@ flowchart LR
 | Job Agent | `src/agent/job_agent/` | LangGraph | CV → profile → matching jobs → ranked recommendations |
 | Interview Agent | `src/agent/interview_agent/` | LangGraph | Recruiter speech → text; candidate signs → sentence options; interpreter switch |
 | Inference | `src/agent/inference/` | Claude, numpy | LLM client, sign matching (DTW) |
-| Speech | `src/agent/speech/` | Whisper Large-v3 (faster-whisper) | Recruiter's microphone → Arabic text (Arabic only) |
+| Speech | `src/agent/speech/` | Whisper Large-v3 (OpenRouter live, faster-whisper local), Silero VAD | Live microphone → Arabic captions → Interview Agent (Arabic only) |
 | Shared types | `src/agent/schemas.py` | pydantic | Enums, validated Claude responses, WebSocket message models |
 | Database | `src/database/` | SQLite | Candidates, jobs, interviews |
 | Logger | `src/logger/` | logging | Shared, tagged logs with request ids |

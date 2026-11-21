@@ -20,7 +20,7 @@ signs:
   vocabulary_size: 40
   gallery_dir: src/data/sign_gallery
 
-speech:                            # recruiter's microphone -> Arabic text (src/agent/speech/speech.py)
+speech:                            # Arabic speech-to-text. Settings above `live` = local Whisper (audio_b64 questions)
   whisper_model: large-v3          # Whisper Large-v3 (faster-whisper); language is fixed to Arabic in code
   device: auto                     # auto = GPU if it works, else CPU | cpu | cuda
   compute_type: auto               # auto = int8_float16 on GPU, int8 on CPU
@@ -28,6 +28,12 @@ speech:                            # recruiter's microphone -> Arabic text (src/
   max_seconds: 120                 # longest accepted recording
   min_arabic_ratio: 0.5            # share of words in Arabic script; less = rejected as not Arabic
   reject_other_languages: true     # reject speech clearly in another language (detection only gates; output stays Arabic)
+  live:                            # live captions in the interview room (src/agent/speech/live.py)
+    openrouter_model: openai/whisper-large-v3   # via OpenRouter; key: OPENROUTER_API_KEY in .env
+    zero_data_retention: true      # only providers that do not keep the audio
+    partial_interval_s: 1.0        # refresh the caption of the sentence in progress this often
+    end_silence_ms: 700            # this much silence ends a sentence (-> Interview Agent)
+    max_utterance_s: 20            # longer sentences are cut here
 
 database:
   path: instance/sanad.db          # runtime data folder, not in git (see instance/README.md)

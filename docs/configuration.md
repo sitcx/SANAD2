@@ -25,6 +25,11 @@ values (not in git; copy from `.env.example`).
 | `speech.max_seconds` | `120` | longest accepted recording |
 | `speech.min_arabic_ratio` | `0.5` | transcripts with a smaller share of Arabic-script words are rejected as non-Arabic |
 | `speech.reject_other_languages` | `true` | reject a recording whose spoken language is clearly not Arabic (`other_language_min_prob` 0.5, `arabic_max_prob_to_reject` 0.2) |
+| `speech.live.openrouter_model` | `openai/whisper-large-v3` | model for live captions (OpenRouter) |
+| `speech.live.zero_data_retention` | `true` | only OpenRouter providers that do not retain audio |
+| `speech.live.partial_interval_s` | `1.0` | how often the caption of the sentence in progress is refreshed |
+| `speech.live.end_silence_ms` | `700` | silence that ends a sentence (then it goes to the Interview Agent) |
+| `speech.live.max_utterance_s` | `20` | longest sentence before it is cut |
 | `database.path` | `instance/sanad.db` | SQLite file |
 | `logging.level` | `INFO` | log level |
 | `logging.file` | `src/logger/logs/sanad.log` | log file |
@@ -36,12 +41,13 @@ Restart the API after changing `config.yaml` (`run.py` restarts it automatically
 | Variable | Side | Meaning |
 |---|---|---|
 | `ANTHROPIC_API_KEY` | server | enables Claude; empty = rule-based fallbacks |
+| `OPENROUTER_API_KEY` | server | live Arabic captions in the interview room; empty = captions off (Arabic message in the room) |
 | `VITE_SANAD_API_URL` | browser (public) | API address used by the web UI; default `http://localhost:8010` |
 | `SANAD_API_PORT` | launcher | port `run.py` starts the API on; default `8010` |
 | `SANAD_WEB_ORIGINS` | server | browser origins allowed to call the API (comma-separated) |
 | `SANAD_LOG_FILE` | server | log file path; `none` = console only; empty = `config.yaml` value |
 | `SIGN_DATASET_DIR` | server | dataset location if not in `src/data/dataset` |
-| `SANAD_SPEECH_PRELOAD` | launcher | `1` (default in `run.py`) loads Whisper when the API starts; `0` = on the first microphone question |
+| `SANAD_SPEECH_PRELOAD` | launcher | `1` loads the local Whisper model when the API starts; `0` (default) = on the first `audio_b64` question. Live captions do not use it |
 
 Anything starting with `VITE_` is visible in the browser: never put secrets there.
 An empty value (`NAME=`) means "use the default". The optional variables are commented out in `.env.example`.
