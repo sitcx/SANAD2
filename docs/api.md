@@ -11,6 +11,14 @@ Allowed browser origins: `SANAD_WEB_ORIGINS` (default `http://localhost:3000`).
 {"status": "ok"}
 ```
 
+## `GET /speech/status`
+
+```json
+{"model": "large-v3", "language": "ar", "task": "transcribe", "state": "ready", "device": "cpu", "compute_type": "int8", "error": null}
+```
+
+`state`: `idle` (not loaded yet) · `loading` · `ready` · `unavailable` (see `error`).
+
 ## `POST /jobs/recommend`
 
 Runs the Job Agent. Body is `multipart/form-data`:
@@ -78,11 +86,13 @@ Reply: `{"type": "started", "interview_id": 5, "mode": "ai"}`
 | Message | Meaning |
 |---|---|
 | `{"type": "question", "text": "حدثنا عن خبرتك"}` | recruiter's words (from the browser's speech recognition) |
-| `{"type": "question", "audio_b64": "..."}` | recruiter's audio instead of text (needs `faster-whisper`) |
+| `{"type": "question", "audio_b64": "..."}` | recruiter's microphone recording (webm/ogg/wav/mp4, max 120 s); transcribed by Whisper Large-v3, Arabic only — see [Speech-to-text](speech.md) |
 | `{"type": "signs", "segments": [[[[x, y], ...], ...], ...]}` | candidate's signs; see [keypoint format](sign-recognition.md#keypoint-format) |
 | `{"type": "choose", "index": 0}` | candidate picked option 1 (0-based) |
 | `{"type": "choose", "index": null}` | "None of these" |
 | `{"type": "interpreter"}` | "I need an interpreter" button |
+| *binary frame* | live microphone audio: 16 kHz mono 16-bit little-endian PCM (100 ms per frame) → live captions, see [Speech-to-text](speech.md) |
+| `{"type": "audio_end"}` | microphone muted: finish the live sentence in progress |
 
 **3. Reply to every event:**
 
@@ -107,6 +117,10 @@ Reply: `{"type": "started", "interview_id": 5, "mode": "ai"}`
 - A message that does not match the protocol gets
   `{"type": "error", "error": "invalid_message", "details": ["index: Input should be a valid integer"]}`
   and the interview continues. Unknown fields are rejected too.
+- If a microphone question cannot be transcribed the reply is `{"type": "error", "error": "<code>", "details": ["<Arabic message>"]}`
+  with code `no_speech`, `non_arabic_speech`, `invalid_audio` or `speech_model_unavailable`; the interview continues.
+- Live captions: `{"type": "caption", "utterance": 1, "text": "...", "final": false}` while a sentence is spoken;
+  `final: true` when it is finished, followed by the `state` reply of the Interview Agent for that sentence.
 - On a server error the reply is `{"type": "error", "error": "<ExceptionName>", "details": []}` and the interview continues.
 - Every message is validated with the models in `src/agent/schemas.py` (`StartMessage`, `EventMessage`,
   `StartedReply`, `StateReply`, `ErrorReply`).

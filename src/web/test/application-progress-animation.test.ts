@@ -26,7 +26,7 @@ describe('Recorded application journey animation', () => {
   });
   it('activates only the saved nominated stage and never checks or advances into future stages', () => {
     const frames = getApplicationJourney(getApplicationProgress('nominated', history));
-    expect(frames.at(-1)?.steps.map(step => step.node)).toEqual(['checked', 'checked', 'active', 'muted', 'muted', 'muted']);
+    expect(frames.at(-1)?.steps.map(step => step.node)).toEqual(['checked', 'checked', 'active', 'muted', 'muted', 'muted', 'muted']);
     expect(frames.every(frame => frame.steps.slice(3).every(step => step.node !== 'checked' && step.node !== 'active' && step.connector !== 'drawing'))).toBe(true);
     expect(frames.every(frame => frame.steps[2]?.connector !== 'drawing')).toBe(true);
   });
@@ -34,13 +34,13 @@ describe('Recorded application journey animation', () => {
     const previous = getApplicationProgress('nominated', history);
     const updated = getApplicationProgress('scheduled', [...history, { status: 'scheduled', date: '2026-11-17T09:00:00+03:00' }]);
     const frames = getApplicationJourney(updated, previous);
-    expect(frames[0]?.steps.map(step => step.node)).toEqual(['checked', 'checked', 'visible', 'hidden', 'hidden', 'hidden']);
-    expect(frames.at(-1)?.steps.map(step => step.node)).toEqual(['checked', 'checked', 'checked', 'active', 'muted', 'muted']);
+    expect(frames[0]?.steps.map(step => step.node)).toEqual(['checked', 'checked', 'visible', 'hidden', 'hidden', 'hidden', 'hidden']);
+    expect(frames.at(-1)?.steps.map(step => step.node)).toEqual(['checked', 'checked', 'checked', 'active', 'muted', 'muted', 'muted']);
   });
   it('never assigns a check to stages absent from the saved history', () => {
     const frames = getApplicationJourney(getApplicationProgress('accepted', [...history, { status: 'accepted', date: '2026-11-17T09:00:00+03:00' }]));
     expect(frames.every(frame => frame.steps[3]?.node !== 'checked' && frame.steps[4]?.node !== 'checked')).toBe(true);
-    expect(frames.at(-1)?.steps.map(step => step.node)).toEqual(['checked', 'checked', 'checked', 'muted', 'muted', 'active']);
+    expect(frames.at(-1)?.steps.map(step => step.node)).toEqual(['checked', 'checked', 'checked', 'muted', 'muted', 'active', 'muted']);
   });
   it.each(['rejected', 'withdrawn'] as const)('stops at the saved %s outcome without future stages', status => {
     const progress = getApplicationProgress(status, [...history, { status, date: '2026-11-17T09:00:00+03:00' }]);

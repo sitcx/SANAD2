@@ -56,7 +56,7 @@ describe('Candidate journey rules', () => {
 
 describe('Final prototype rules', () => {
   it('tracks the expanded application outcomes while retaining completed interviews', () => {
-    expect(applicationSteps).toEqual(['applied', 'reviewing', 'nominated', 'scheduled', 'completed', 'accepted', 'rejected', 'withdrawn']);
+    expect(applicationSteps).toEqual(['applied', 'reviewing', 'nominated', 'scheduled', 'completed', 'accepted', 'hired', 'rejected', 'withdrawn']);
     expect(canUpdateApplication('applied', 'reviewing')).toBe(true);
     expect(canUpdateApplication('reviewing', 'nominated')).toBe(true);
     expect(canUpdateApplication('nominated', 'completed')).toBe(true);

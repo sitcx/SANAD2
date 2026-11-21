@@ -16,7 +16,7 @@ from src.agent.core.config import get_config
 from src.logger import get_logger
 
 from .state import JobAgentState, ScoreTask
-from .tools.read_cv import missing_fields, read_cv
+from .tools.read_cv import cv_text, missing_fields, read_cv
 from .tools.score_job import score_job
 from .tools.search_jobs import search_jobs
 
@@ -29,6 +29,9 @@ def _settings() -> dict:
 
 def read_cv_node(state: JobAgentState) -> dict:
     profile = dict(state["profile"]) if state.get("profile") else read_cv(state["cv_file"])
+    text = state.get("cv_text") or ""
+    if not text and state.get("cv_file") and not state["cv_file"].lower().endswith(".json"):
+        text = cv_text(state["cv_file"])
     for key, value in (state.get("answers") or {}).items():
         if value not in (None, "", []):
             profile[key] = value
@@ -39,7 +42,7 @@ def read_cv_node(state: JobAgentState) -> dict:
         log.info("[DECISION] missing %s -> stop and ask the candidate", missing)
     else:
         log.info("[DECISION] profile complete -> search jobs")
-    return {"profile": profile, "missing_info": missing}
+    return {"profile": profile, "missing_info": missing, "cv_text": text}
 
 
 def after_read_cv(state: JobAgentState) -> str:
@@ -69,11 +72,11 @@ def _fan_out(state: JobAgentState):
         log.info("[DECISION] no jobs found -> nothing to score")
         return "rank"
     log.info("[DECISION] scoring %d jobs in parallel", len(jobs))
-    return [Send("score_job", {"profile": state["profile"], "job": job}) for job in jobs]
+    return [Send("score_job", {"profile": state["profile"], "job": job, "cv_text": state.get("cv_text", "")}) for job in jobs]
 
 
 def score_node(task: ScoreTask) -> dict:
-    return {"scored_jobs": [score_job(task["profile"], task["job"])]}
+    return {"scored_jobs": [score_job(task["profile"], task["job"], task.get("cv_text", ""))]}
 
 
 def rank_node(state: JobAgentState) -> dict:
@@ -104,9 +107,11 @@ def build_job_graph():
     return graph.compile()
 
 
-def recommend_jobs(cv_file: str | None = None, answers: dict | None = None, profile: dict | None = None) -> dict:
+def recommend_jobs(cv_file: str | None = None, answers: dict | None = None, profile: dict | None = None, cv_text: str = "") -> dict:
     """Run the Job Agent once. Returns the final state (check "missing_info" first)."""
     state: JobAgentState = {"answers": answers or {}}
+    if cv_text:   # a stored CV text (re-matching later): job keywords are looked up in it like an ATS
+        state["cv_text"] = cv_text
     if profile:
         state["profile"] = profile
     elif cv_file:

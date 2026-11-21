@@ -1,20 +1,19 @@
-"""Tool: score_job — gives one job a match percentage, city and reason.
+"""Tool: score_job — gives one job a match percentage, city, reason and the skill gaps.
 
-The agent runs it on all jobs in parallel. The reason is in Arabic (shown in the UI).
+The agent runs it on all jobs in parallel. The percentage is the teammate's ATS-style comparison
+(requirements 55%, related experience 20%, level 10%, degree 5%, place 10%): deterministic and explainable,
+so Claude does not change it. The reason is in Arabic (shown in the UI) and names the gaps.
 """
 from __future__ import annotations
-
-import json
 
 from langchain_core.tools import StructuredTool
 from pydantic import BaseModel, Field
 
-from src.agent.inference.llm import ask_claude, llm_available
-from src.agent.schemas import JobScoreResponse
+from src.agent.job_agent.ats.matching import match_job
+from src.agent.text.arabic import normalize_arabic, unique_strings
 from src.logger import get_logger, log_step
 
-from ._text import canonical_city
-from .search_jobs import skill_overlap
+from ._text import CITY_ALIASES, canonical_city
 
 log = get_logger("job_agent.score_job")
 
@@ -23,60 +22,48 @@ class ScoreJobInput(BaseModel):
     """Parameters of score_job."""
     profile: dict = Field(description="Candidate profile from read_cv")
     job: dict = Field(description="One job from search_jobs (needs id, title, city, skills)")
+    cv_text: str = Field(default="", description="Full CV text: job keywords are also looked up here, like an ATS")
 
 
-_PROMPT = """You match a deaf or hard-of-hearing job seeker to a job.
-Candidate profile: {profile}
-Job: {job}
-Rule-based estimate: {estimate}%
-
-Give a match percentage and one short reason in simple Arabic.
-Base the match on skills, experience and city. Never consider disability against the candidate."""
-
-
-def rule_score(profile: dict, job: dict) -> tuple[int, list[str]]:
-    """70% skills covered + 20% same city/remote + 10% experience (3+ years = full)."""
-    shared = skill_overlap(profile, job)
-    required = job.get("skills") or []
-    skill_part = len(shared) / len(required) if required else 0.5
-    job_city = canonical_city(job.get("city"))
+def match_profile(profile: dict) -> dict:
+    """The profile matching works on: the ATS reading when there is one, else the short profile."""
+    ats = profile.get("ats_profile")
+    base = dict(ats) if ats else {
+        "skills": [], "languages": [], "jobTitles": [], "suggestedRoles": [], "searchKeywords": [], "experience": [],
+        "education": [profile["major"]] if profile.get("major") else [], "yearsExperience": None, "ats": None,
+    }
+    base["skills"] = unique_strings([*base.get("skills", []), *profile.get("skills", [])])   # skills the candidate typed in count too
+    if base.get("yearsExperience") is None:
+        base["yearsExperience"] = profile.get("experience_years")
     city = canonical_city(profile.get("city"))
-    city_part = 1.0 if job_city == "remote" or (city and city == job_city) else 0.3
-    years = profile.get("experience_years") or 0
-    exp_part = min(years / 3, 1.0)
-    score = round(100 * (0.7 * skill_part + 0.2 * city_part + 0.1 * exp_part))
-    return max(0, min(100, score)), shared
+    if city:   # every spelling of the city, so «الرياض» and «Riyadh» job locations both match
+        contact = dict((base.get("ats") or {}).get("contact") or {})
+        contact["city"] = " ".join(normalize_arabic(alias) for alias in CITY_ALIASES.get(city, [city]))
+        base["ats"] = {**(base.get("ats") or {}), "contact": contact}
+    return base
 
 
-def _rule_reason(shared: list[str], job: dict) -> str:
-    title = job.get("title_ar") or job.get("title", "")
-    skills = job.get("skills_ar") or {}
-    if shared:
-        return f"مهاراتك في {'، '.join(skills.get(s, s) for s in shared)} تناسب متطلبات وظيفة {title}."
-    return f"وظيفة {title} قريبة من مجالك ويمكنك تطوير مهاراتها."
+def as_match_job(job: dict) -> dict:
+    """A catalogue job (jobs.json or postings) in the shape matching expects."""
+    arabic_title = job.get("title_ar")
+    return {
+        "title": arabic_title or job.get("title", ""),
+        "english": job.get("english") or (job.get("title", "") if arabic_title else ""),
+        "description": job.get("description_ar") or job.get("description") or "",
+        "skills": list(job.get("skills") or []),
+        "location": job.get("city") or "",
+        "mode": job.get("mode") or "",
+    }
 
 
-@log_step(summary=lambda r: f"job={r['job_id']} match={r['match']}% via={r['via']}")
-def score_job(profile: dict, job: dict) -> dict:
-    """Return {"job_id": ..., "match": 0-100, "city": ..., "reason": ..., "via": "llm"|"rules"}."""
-    estimate, shared = rule_score(profile, job)
-    result = {"job_id": job["id"], "match": estimate, "city": job.get("city"),
-              "matched_skills": shared, "reason": _rule_reason(shared, job), "via": "rules"}
-    if llm_available():
-        try:
-            prompt = _PROMPT.format(profile=json.dumps(profile, ensure_ascii=False),
-                                    job=json.dumps(job, ensure_ascii=False), estimate=estimate)
-            reply = ask_claude(prompt, JobScoreResponse)
-            result["match"] = reply.match
-            result["reason"] = reply.reason.strip()
-            result["via"] = "llm"
-        except Exception as exc:  # noqa: BLE001 - keep the rule-based score
-            log.warning("[FALLBACK] Claude failed for %s (%s) -> rule score", job["id"], type(exc).__name__)
-    else:
-        log.info("[FALLBACK] no ANTHROPIC_API_KEY -> rule score")
-    return result
+@log_step(summary=lambda r: f"job={r['job_id']} match={r['match']}% gaps={len(r['missing_skills'])}")
+def score_job(profile: dict, job: dict, cv_text: str = "") -> dict:
+    """Return {"job_id", "match": 0-100, "city", "matched_skills", "missing_skills", "reason", "via": "ats"}."""
+    result = match_job(match_profile(profile), as_match_job(job), cv_text)
+    return {"job_id": job["id"], "match": result["score"], "city": job.get("city"), "matched_skills": result["matchedSkills"],
+            "missing_skills": result["missingSkills"], "reason": result["reason"], "via": "ats"}
 
 
 score_job_tool = StructuredTool.from_function(
     score_job, name="score_job", args_schema=ScoreJobInput,
-    description="Score how well one job fits the candidate: match 0-100, city and a short Arabic reason.")
+    description="Score how well one job fits the candidate: match 0-100, city, the skill gaps and a short Arabic reason.")

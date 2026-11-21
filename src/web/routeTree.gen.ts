@@ -12,13 +12,14 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ApplicationsRouteImport } from './routes/applications'
 import { Route as CharterRouteImport } from './routes/charter'
-import { Route as CoachRouteImport } from './routes/coach'
+import { Route as CompanyRouteImport } from './routes/company'
 import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as DiscoverRouteImport } from './routes/discover'
 import { Route as EmployerRouteImport } from './routes/employer'
 import { Route as InterviewRouteImport } from './routes/interview'
 import { Route as JobsRouteImport } from './routes/jobs'
 import { Route as LoginRouteImport } from './routes/login'
-import { Route as ReportRouteImport } from './routes/report'
+import { Route as SupportRouteImport } from './routes/support'
 import { Route as JobsJobIdRouteImport } from './routes/jobs_.$jobId'
 
 const IndexRoute = IndexRouteImport.update({
@@ -36,14 +37,19 @@ const CharterRoute = CharterRouteImport.update({
   path: '/charter',
   getParentRoute: () => rootRouteImport,
 } as any)
-const CoachRoute = CoachRouteImport.update({
-  id: '/coach',
-  path: '/coach',
+const CompanyRoute = CompanyRouteImport.update({
+  id: '/company',
+  path: '/company',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DashboardRoute = DashboardRouteImport.update({
   id: '/dashboard',
   path: '/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DiscoverRoute = DiscoverRouteImport.update({
+  id: '/discover',
+  path: '/discover',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EmployerRoute = EmployerRouteImport.update({
@@ -66,9 +72,9 @@ const LoginRoute = LoginRouteImport.update({
   path: '/login',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ReportRoute = ReportRouteImport.update({
-  id: '/report',
-  path: '/report',
+const SupportRoute = SupportRouteImport.update({
+  id: '/support',
+  path: '/support',
   getParentRoute: () => rootRouteImport,
 } as any)
 const JobsJobIdRoute = JobsJobIdRouteImport.update({
@@ -81,26 +87,28 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/applications': typeof ApplicationsRoute
   '/charter': typeof CharterRoute
-  '/coach': typeof CoachRoute
+  '/company': typeof CompanyRoute
   '/dashboard': typeof DashboardRoute
+  '/discover': typeof DiscoverRoute
   '/employer': typeof EmployerRoute
   '/interview': typeof InterviewRoute
   '/jobs': typeof JobsRoute
   '/login': typeof LoginRoute
-  '/report': typeof ReportRoute
+  '/support': typeof SupportRoute
   '/jobs/$jobId': typeof JobsJobIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/applications': typeof ApplicationsRoute
   '/charter': typeof CharterRoute
-  '/coach': typeof CoachRoute
+  '/company': typeof CompanyRoute
   '/dashboard': typeof DashboardRoute
+  '/discover': typeof DiscoverRoute
   '/employer': typeof EmployerRoute
   '/interview': typeof InterviewRoute
   '/jobs': typeof JobsRoute
   '/login': typeof LoginRoute
-  '/report': typeof ReportRoute
+  '/support': typeof SupportRoute
   '/jobs/$jobId': typeof JobsJobIdRoute
 }
 export interface FileRoutesById {
@@ -108,13 +116,14 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/applications': typeof ApplicationsRoute
   '/charter': typeof CharterRoute
-  '/coach': typeof CoachRoute
+  '/company': typeof CompanyRoute
   '/dashboard': typeof DashboardRoute
+  '/discover': typeof DiscoverRoute
   '/employer': typeof EmployerRoute
   '/interview': typeof InterviewRoute
   '/jobs': typeof JobsRoute
   '/login': typeof LoginRoute
-  '/report': typeof ReportRoute
+  '/support': typeof SupportRoute
   '/jobs_/$jobId': typeof JobsJobIdRoute
 }
 export interface FileRouteTypes {
@@ -123,39 +132,42 @@ export interface FileRouteTypes {
     | '/'
     | '/applications'
     | '/charter'
-    | '/coach'
+    | '/company'
     | '/dashboard'
+    | '/discover'
     | '/employer'
     | '/interview'
     | '/jobs'
     | '/login'
-    | '/report'
+    | '/support'
     | '/jobs/$jobId'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/applications'
     | '/charter'
-    | '/coach'
+    | '/company'
     | '/dashboard'
+    | '/discover'
     | '/employer'
     | '/interview'
     | '/jobs'
     | '/login'
-    | '/report'
+    | '/support'
     | '/jobs/$jobId'
   id:
     | '__root__'
     | '/'
     | '/applications'
     | '/charter'
-    | '/coach'
+    | '/company'
     | '/dashboard'
+    | '/discover'
     | '/employer'
     | '/interview'
     | '/jobs'
     | '/login'
-    | '/report'
+    | '/support'
     | '/jobs_/$jobId'
   fileRoutesById: FileRoutesById
 }
@@ -163,13 +175,14 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ApplicationsRoute: typeof ApplicationsRoute
   CharterRoute: typeof CharterRoute
-  CoachRoute: typeof CoachRoute
+  CompanyRoute: typeof CompanyRoute
   DashboardRoute: typeof DashboardRoute
+  DiscoverRoute: typeof DiscoverRoute
   EmployerRoute: typeof EmployerRoute
   InterviewRoute: typeof InterviewRoute
   JobsRoute: typeof JobsRoute
   LoginRoute: typeof LoginRoute
-  ReportRoute: typeof ReportRoute
+  SupportRoute: typeof SupportRoute
   JobsJobIdRoute: typeof JobsJobIdRoute
 }
 
@@ -196,11 +209,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CharterRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/coach': {
-      id: '/coach'
-      path: '/coach'
-      fullPath: '/coach'
-      preLoaderRoute: typeof CoachRouteImport
+    '/company': {
+      id: '/company'
+      path: '/company'
+      fullPath: '/company'
+      preLoaderRoute: typeof CompanyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/dashboard': {
@@ -208,6 +221,13 @@ declare module '@tanstack/react-router' {
       path: '/dashboard'
       fullPath: '/dashboard'
       preLoaderRoute: typeof DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/discover': {
+      id: '/discover'
+      path: '/discover'
+      fullPath: '/discover'
+      preLoaderRoute: typeof DiscoverRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/employer': {
@@ -238,11 +258,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LoginRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/report': {
-      id: '/report'
-      path: '/report'
-      fullPath: '/report'
-      preLoaderRoute: typeof ReportRouteImport
+    '/support': {
+      id: '/support'
+      path: '/support'
+      fullPath: '/support'
+      preLoaderRoute: typeof SupportRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/jobs_/$jobId': {
@@ -259,13 +279,14 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ApplicationsRoute: ApplicationsRoute,
   CharterRoute: CharterRoute,
-  CoachRoute: CoachRoute,
+  CompanyRoute: CompanyRoute,
   DashboardRoute: DashboardRoute,
+  DiscoverRoute: DiscoverRoute,
   EmployerRoute: EmployerRoute,
   InterviewRoute: InterviewRoute,
   JobsRoute: JobsRoute,
   LoginRoute: LoginRoute,
-  ReportRoute: ReportRoute,
+  SupportRoute: SupportRoute,
   JobsJobIdRoute: JobsJobIdRoute,
 }
 export const routeTree = rootRouteImport

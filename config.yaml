@@ -2,16 +2,30 @@
 # Secrets (API keys) go in .env, never here.
 
 llm:
-  model: claude-sonnet-5-5          # Claude model used by the agents
+  provider: openrouter              # all agents: openrouter (OPENROUTER_API_KEY) | anthropic (ANTHROPIC_API_KEY)
+  model: anthropic/claude-sonnet-5.5   # OpenRouter id; with provider anthropic use claude-sonnet-5-5
+  effort: medium                    # low | medium | high: thinking depth (time and cost per call)
+  max_tokens: 4096                  # covers thinking + reply for short agent calls (the CV reading asks for 12000)
+  timeout: 60                       # seconds per call (the CV reading allows 180)
 
 job_agent:
+  # llm:                            # optional: a different provider/model for the job agent only (default: the llm block above)
+  #   provider: anthropic           # key ANTHROPIC_API_KEY in .env
+  #   model: claude-opus-5-5
   recommended_jobs: 3               # number of recommended jobs shown
+  web_search:                       # Claude web search for jobs (costs credits: every turn re-sends the pages read)
+    enabled: true
+    max_searches: 5                 # web_search calls per run
+    max_fetches: 5                  # job pages opened per run
+    max_jobs: 6                     # postings recorded per run
+    max_turns: 12                   # tool-loop turns per run
+    effort: low
   min_matches: 3                    # fewer matches than this -> widen the search
   jobs_file: src/data/jobs.json
 
 interview_agent:
   sentence_options: 3               # sentence options shown to the candidate (+ "None of these")
-  max_none_of_these: 5              # after 5 "None of these" -> forced switch to a human interpreter
+  max_none_of_these: 3              # after 3 "None of these" -> forced switch to a human interpreter
   none_counter: total               # total = whole interview | consecutive = in a row
   interpreter_button: true          # "I need an interpreter" button always visible
 
@@ -19,6 +33,21 @@ signs:
   dataset_dir: src/data/dataset    # Saudi Sign Language dataset (videos via Git LFS)
   vocabulary_size: 40
   gallery_dir: src/data/sign_gallery
+
+speech:                            # Arabic speech-to-text. Settings above `live` = local Whisper (audio_b64 questions)
+  whisper_model: large-v3          # Whisper Large-v3 (faster-whisper); language is fixed to Arabic in code
+  device: auto                     # auto = GPU if it works, else CPU | cpu | cuda
+  compute_type: auto               # auto = int8_float16 on GPU, int8 on CPU
+  beam_size: 5
+  max_seconds: 120                 # longest accepted recording
+  min_arabic_ratio: 0.5            # share of words in Arabic script; less = rejected as not Arabic
+  reject_other_languages: true     # reject speech clearly in another language (detection only gates; output stays Arabic)
+  live:                            # live captions in the interview room (src/agent/speech/live.py)
+    openrouter_model: openai/whisper-large-v3   # via OpenRouter; key: OPENROUTER_API_KEY in .env
+    zero_data_retention: true      # only providers that do not keep the audio
+    partial_interval_s: 1.0        # refresh the caption of the sentence in progress this often
+    end_silence_ms: 700            # this much silence ends a sentence (-> Interview Agent)
+    max_utterance_s: 20            # longer sentences are cut here
 
 database:
   path: instance/sanad.db          # runtime data folder, not in git (see instance/README.md)

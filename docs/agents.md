@@ -95,7 +95,7 @@ automatically and logs `[FALLBACK]`.
 |---|---|
 | Enums | `Mode` (human, ai) · `EventType` · `InterpreterReason` (button, none_limit) · `Notice` · `MissingField` |
 | Claude responses | `CvProfileResponse` · `JobScoreResponse` · `SentenceOptionsResponse` |
-| WebSocket messages | `StartMessage` · `QuestionMessage` · `SignsMessage` · `ChooseMessage` · `InterpreterMessage` → replies `StartedReply` · `StateReply` · `ErrorReply` |
+| WebSocket messages | `StartMessage` · `QuestionMessage` · `SignsMessage` · `ChooseMessage` · `InterpreterMessage` · `AudioEndMessage` (+ binary live audio) → replies `StartedReply` · `StateReply` · `CaptionReply` · `ErrorReply` |
 
 The enums are `str` enums, so `Mode.AI == "ai"` and they appear in JSON as plain strings.
 

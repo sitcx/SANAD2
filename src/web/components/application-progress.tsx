@@ -1,17 +1,17 @@
-import { CalendarDays, Check, CheckCheck, ClipboardCheck, FileCheck2, Flag, Search, X } from 'lucide-react';
+import { BriefcaseBusiness, CalendarDays, Check, CheckCheck, ClipboardCheck, FileCheck2, Flag, Search, X } from 'lucide-react';
 import { useMemo } from 'react';
 import { useApplicationJourney } from '@/hooks/use-application-journey';
 import { ApplicationInterviewDate } from '@/components/application-interview-date';
 import { getApplicationProgress, type ApplicationEvent } from '@/lib/application-progress';
 import { statusLabels, type ApplicationStatus } from '@/lib/sanad-data';
 
-const icons = { available: FileCheck2, applied: FileCheck2, reviewing: Search, nominated: ClipboardCheck, scheduled: CalendarDays, completed: CheckCheck, accepted: Flag, rejected: X, withdrawn: X };
+const icons = { available: FileCheck2, applied: FileCheck2, reviewing: Search, nominated: ClipboardCheck, scheduled: CalendarDays, completed: CheckCheck, accepted: Flag, hired: BriefcaseBusiness, rejected: X, withdrawn: X };
 const labels = { completed: 'مكتملة', current: 'المرحلة الحالية', upcoming: 'قادمة', skipped: 'لم تمر بهذه المرحلة' };
 
 export function ApplicationProgress({ status, history, paused = false, interviewAt = null }: { status: ApplicationStatus; history: readonly ApplicationEvent[]; paused?: boolean; interviewAt?: string | null }) {
   const progress = useMemo(() => getApplicationProgress(status, history), [status, history]);
   const journey = useApplicationJourney(progress, paused);
-  const ended = status === 'accepted' || status === 'rejected' || status === 'withdrawn';
+  const ended = status === 'hired' || status === 'rejected' || status === 'withdrawn';
   return <ol ref={journey.ref} className="application-progress" aria-label="مراحل الطلب" data-settled={journey.settled}>
     {progress.map((step, index) => {
       const Icon = icons[step.status];

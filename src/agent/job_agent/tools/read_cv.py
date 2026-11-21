@@ -1,7 +1,8 @@
 """Tool: read_cv — extracts skills, major, experience and city from the CV.
 
 Supports .pdf, .txt/.md and .json (already-structured profile).
-Uses Claude when available; otherwise keyword rules. Never logs CV contents.
+Reads the CV like an ATS (teammate's reader, ported): roles by kind, education, projects, skills and an ATS score;
+Claude's reading is added and verified against the text when a key is set. Never logs CV contents.
 """
 from __future__ import annotations
 
@@ -12,8 +13,8 @@ from pathlib import Path
 from langchain_core.tools import StructuredTool
 from pydantic import BaseModel, Field
 
-from src.agent.inference.llm import ask_claude, llm_available
-from src.agent.schemas import CvProfileResponse, MissingField
+from src.agent.job_agent.ats.reader import read_profile
+from src.agent.schemas import MissingField
 from src.logger import get_logger, log_step
 
 from ._text import CITY_ALIASES, canonical_city, known_skill_terms, normalize
@@ -25,15 +26,6 @@ log = get_logger("job_agent.read_cv")
 class ReadCvInput(BaseModel):
     """Parameters of read_cv."""
     cv_file: str = Field(description="Path of the uploaded CV file: .pdf, .docx, .txt, .md or .json")
-
-
-_PROMPT = """Extract the candidate profile from this CV (Arabic or English).
-Leave a field empty when the CV does not say. Do not invent information.
-
-CV:
-<<<
-{cv}
->>>"""
 
 
 def cv_text(cv_file: str) -> str:
@@ -51,6 +43,21 @@ def cv_text(cv_file: str) -> str:
         with zipfile.ZipFile(path) as docx:
             root = ElementTree.fromstring(docx.read("word/document.xml"))
         return "\n".join("".join(t.text or "" for t in p.iter(f"{ns}t")) for p in root.iter(f"{ns}p"))
+    if suffix == ".doc":   # legacy Word: text is stored as UTF-16LE runs; keep runs of readable characters
+        import unicodedata
+
+        decoded = path.read_bytes().decode("utf-16-le", errors="ignore")
+        runs, current = [], []
+        for char in decoded:
+            if char.isalnum() or char.isspace() or unicodedata.category(char).startswith("P"):
+                current.append(char)
+                continue
+            if len(current) >= 4:
+                runs.append("".join(current))
+            current = []
+        if len(current) >= 4:
+            runs.append("".join(current))
+        return "\n".join(run for run in runs if re.search(r"[^\W\d_]{3,}", run))
     return path.read_text(encoding="utf-8", errors="ignore")
 
 
@@ -109,16 +116,20 @@ def read_cv(cv_file: str) -> dict:
     if not text.strip():
         log.warning("[WARN] CV has no readable text (scanned PDF?) -> empty profile")
         return _empty_profile()
-    if llm_available():
-        try:
-            reply = ask_claude(_PROMPT.format(cv=text[:12000]), CvProfileResponse)
-            log.info("[LLM] profile extracted by Claude (validated)")
-            return _clean(reply.model_dump())
-        except Exception as exc:  # noqa: BLE001 - fall back to rules (incl. pydantic ValidationError)
-            log.warning("[FALLBACK] Claude failed (%s) -> keyword rules", type(exc).__name__)
-    else:
-        log.info("[FALLBACK] no ANTHROPIC_API_KEY -> keyword rules")
-    return _clean(_rules(text))
+    # The ATS reader (offline, plus Claude verified against the text when a key is set) gives the full profile:
+    # roles by kind, education, projects, skills and the ATS report. The short fields below stay for the agent's
+    # own decisions (missing city / skills) and for the catalogue search.
+    ats, reading = read_profile(text, Path(cv_file).name)
+    profile = _clean(_rules(text))
+    if profile["experience_years"] is None and ats.get("yearsExperience") is not None:
+        profile["experience_years"] = float(ats["yearsExperience"])
+    if not profile["city"]:
+        profile["city"] = canonical_city((ats.get("ats") or {}).get("contact", {}).get("city"))
+    if not profile["major"] and ats.get("education"):
+        profile["major"] = ats["education"][0].split(" · ")[0]
+    profile["ats_profile"] = ats
+    profile["reading"] = {name: {"status": status, "detail": detail} for name, (status, detail) in reading.items()}
+    return profile
 
 
 def missing_fields(profile: dict) -> list[MissingField]:

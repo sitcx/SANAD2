@@ -1,6 +1,6 @@
 import type { ApplicationStatus } from './sanad-data';
 
-export const applicationProgressStages = ['applied', 'reviewing', 'nominated', 'scheduled', 'completed', 'accepted'] as const;
+export const applicationProgressStages = ['applied', 'reviewing', 'nominated', 'scheduled', 'completed', 'accepted', 'hired'] as const;
 export type ProgressState = 'completed' | 'current' | 'upcoming' | 'skipped';
 export type ApplicationEvent = { status: ApplicationStatus; date: string };
 
