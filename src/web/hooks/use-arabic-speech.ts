@@ -32,7 +32,9 @@ const CONNECTION_FAILED = 'تعذّر الاتصال بخدمة الترجمة �
 const UNSUPPORTED = 'هذا المتصفح لا يدعم الترجمة المباشرة. استخدم إصدارًا حديثًا من Chrome أو Edge أو Firefox عبر localhost أو https.';
 
 function apiBase(): string {
-  const url = (import.meta.env['VITE_SANAD_API_URL'] as string | undefined) || 'http://localhost:8010';
+  const configured = (import.meta.env['VITE_SANAD_API_URL'] as string | undefined) || 'http://localhost:8010';
+  // A relative value such as "/api" (production) is resolved against the page's own origin.
+  const url = typeof window === 'undefined' ? configured : new URL(configured, window.location.href).href;
   return url.replace(/\/+$/, '').replace(/^http/, 'ws');
 }
 

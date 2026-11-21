@@ -1,0 +1,15 @@
+node_modules
+.output
+.nitro
+.tanstack
+.venv
+venv
+.git
+.env
+.env.*
+!.env.example
+instance/*
+!instance/README.md
+**/__pycache__
+**/*.log
+src/data/dataset/videos
