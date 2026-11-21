@@ -20,7 +20,7 @@ export function InterviewPreparation({ media, name, setName, interpreter, setInt
       </div>
       <div className="flex flex-wrap gap-2 mt-3"><Button variant="outline" disabled={media.busy} onClick={media.toggleCamera}>{media.camera ? <VideoOff /> : <Camera />}{media.camera ? 'إيقاف الكاميرا' : 'تشغيل الكاميرا'}</Button></div>
       {media.error && <p role="alert" className="text-sm text-destructive mt-3">{media.error}</p>}
-      <p className="text-xs text-muted-foreground mt-4">الكاميرا محلية فقط؛ دون تسجيل أو إرسال. لا يُستخدم الميكروفون لأن تواصلك يتم بلغة الإشارة.</p>
+      <p className="text-xs text-muted-foreground mt-4">الكاميرا محلية فقط؛ دون تسجيل أو إرسال. لا يُستخدم الميكروفون في هذه الصفحة. عند الانضمام يطلب المتصفح إذن الميكروفون لعرض ترجمة عربية مباشرة للكلام، ويمكن كتمه في أي وقت.</p>
     </div>
     <div className="preparation-options"><label htmlFor="interview-name" className="block text-sm font-medium mb-2">اسمك</label><Input id="interview-name" value={name} onChange={event => setName(event.target.value)} autoComplete="off" />
       <div className="mt-5 text-sm"><p className="text-muted-foreground">المقابلة</p><p className="font-medium mt-1">{job.title} · {job.company}</p>{!preview && schedule && <p className="mt-2">{formatInterviewDate(schedule)} · بتوقيت الرياض</p>}</div>

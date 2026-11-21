@@ -1,13 +1,14 @@
 """Tool: speech_to_text — the recruiter's speech as Arabic text for the candidate.
 
-Main path: the browser (Web Speech API) sends the text; fallback: inference.speech.
+Text: typed by the recruiter in the browser. Audio: the recruiter's microphone recording, transcribed
+on the server by Whisper Large-v3 in Arabic only (src/agent/speech/speech.py).
 """
 from __future__ import annotations
 
 from langchain_core.tools import StructuredTool
 from pydantic import BaseModel, Field
 
-from src.agent.inference.speech import transcribe
+from src.agent.speech.speech import transcribe
 from src.logger import get_logger, log_step
 
 log = get_logger("interview_agent.speech_to_text")
@@ -23,7 +24,7 @@ class SpeechToTextInput(BaseModel):
 def speech_to_text(text_or_audio) -> str:
     """Return the recruiter's question as text (the graph stores it as last_question)."""
     if isinstance(text_or_audio, (bytes, bytearray)):
-        log.info("[INPUT] audio, %d bytes -> server transcription", len(text_or_audio))
+        log.info("[INPUT] audio, %d bytes -> Whisper Large-v3 (Arabic only)", len(text_or_audio))
         return transcribe(bytes(text_or_audio))
     log.info("[INPUT] text from the browser")
     return " ".join(str(text_or_audio or "").split())

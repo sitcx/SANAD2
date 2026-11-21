@@ -197,7 +197,10 @@ def start(api: bool = True, web: bool = True) -> int:
             services.append(Service("api", [sys.executable, "-m", "uvicorn", "src.agent.api:app",
                                             "--port", str(API_PORT), "--reload", "--reload-dir", "src",
                                             "--log-level", "warning"],
-                                    env={"PYTHONUNBUFFERED": "1", "PYTHONIOENCODING": "utf-8"}))
+                                    env={"PYTHONUNBUFFERED": "1", "PYTHONIOENCODING": "utf-8",
+                                         # 1 = load the local Whisper model (audio_b64 questions) at start-up;
+                                         # live captions use OpenRouter and do not need it
+                                         "SANAD_SPEECH_PRELOAD": os.getenv("SANAD_SPEECH_PRELOAD", "0")}))
             threading.Thread(target=_wait_for_api, daemon=True).start()
         if web:
             services.append(Service("web", [npm(), "run", "dev"],

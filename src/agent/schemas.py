@@ -120,6 +120,14 @@ class InterpreterMessage(_ClientMessage):
     type: Literal["interpreter"]
 
 
+class AudioEndMessage(_ClientMessage):
+    """The microphone was muted: finish the live sentence in progress. Not an Interview Agent event.
+
+    Live audio itself is sent as binary WebSocket frames: 16 kHz mono 16-bit little-endian PCM.
+    """
+    type: Literal["audio_end"]
+
+
 EventMessage = Annotated[Union[QuestionMessage, SignsMessage, ChooseMessage, InterpreterMessage],
                          Field(discriminator="type")]
 event_message_adapter: TypeAdapter[EventMessage] = TypeAdapter(EventMessage)
@@ -143,6 +151,16 @@ class StateReply(BaseModel):
     interpreter_called: bool = False
     interpreter: dict | None = None
     notice: Notice | None = None
+
+
+class CaptionReply(BaseModel):
+    """Live Arabic caption of the microphone stream. final=False: the sentence is still being spoken
+    (the text may change); final=True: the sentence is finished and was sent to the Interview Agent
+    (a StateReply with last_question follows)."""
+    type: Literal["caption"] = "caption"
+    utterance: int
+    text: str
+    final: bool
 
 
 class ErrorReply(BaseModel):

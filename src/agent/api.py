@@ -3,17 +3,23 @@
 Run from the project root:  uvicorn src.agent.api:app --reload --port 8010
 
     GET  /health
+    GET  /speech/status         Whisper Large-v3 (Arabic only): idle | loading | ready | unavailable
     POST /jobs/recommend        multipart: cv (pdf/docx/txt/md/json file) | profile (JSON), answers (JSON), name
     WS   /interview/{session}   first message {"type": "start", "mode": "ai"|"human", "job_id"?, "candidate_id"?}
-                                then events: {"type": "question", "text"} | {"type": "signs", "segments"}
+                                then events: {"type": "question", "text" | "audio_b64"} | {"type": "signs", "segments"}
                                              {"type": "choose", "index": 0..2 | null} | {"type": "interpreter"}
+                                binary frames: live microphone audio (16 kHz mono PCM16) -> Arabic
+                                captions {"type": "caption", "text", "final"}; final sentences go to the agent
 """
 from __future__ import annotations
 
+import asyncio
 import base64
+import binascii
 import json
 import os
 import tempfile
+import threading
 import time
 from contextlib import asynccontextmanager
 from pathlib import Path
@@ -25,7 +31,10 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import ValidationError
 
 from src.agent.interview_agent.graph import InterviewSession, build_interview_graph
-from src.agent.schemas import ErrorReply, StartedReply, StartMessage, StateReply, event_message_adapter
+from src.agent.speech import InvalidAudio, SpeechError, model_status, warm_up
+from src.agent.speech.live import LiveCaptions
+from src.agent.speech.openrouter import api_key as openrouter_key
+from src.agent.schemas import CaptionReply, ErrorReply, EventType, StartedReply, StartMessage, StateReply, event_message_adapter
 from src.agent.job_agent.graph import recommend_jobs
 from src.agent.company_api import router as company_router
 from src.database import db
@@ -36,11 +45,14 @@ log = get_logger("api")
 CV_SUFFIXES = {".pdf", ".docx", ".txt", ".md", ".json"}
 MAX_CV_BYTES = 10 * 1024 * 1024
 _interview_graph = build_interview_graph()   # one graph; state kept per session (thread_id)
+_NO_LIVE = object()                          # live audio refused for this connection (no OpenRouter key)
 
 
 @asynccontextmanager
 async def lifespan(_app: FastAPI):
     db.init_db()
+    if os.getenv("SANAD_SPEECH_PRELOAD") == "1":   # set by run.py: load Whisper now, not on the first question
+        threading.Thread(target=warm_up, name="whisper-warm-up", daemon=True).start()
     log.info("[OK]    database ready, API listening")
     yield
 
@@ -77,6 +89,12 @@ async def log_requests(request, call_next):
 @app.get("/health")
 def health() -> dict:
     return {"status": "ok"}
+
+
+@app.get("/speech/status")
+def speech_status() -> dict:
+    """State of the Arabic-only Whisper Large-v3 model (language is always "ar", task "transcribe")."""
+    return model_status()
 
 
 def _json_form(value: str | None, field: str) -> dict:
@@ -148,7 +166,10 @@ def _event_from_message(message) -> dict:
     if message.type == "choose":
         event["index"] = message.index          # keep None = "None of these"
     if getattr(message, "audio_b64", None):
-        event["audio"] = base64.b64decode(message.audio_b64)
+        try:
+            event["audio"] = base64.b64decode(message.audio_b64, validate=True)
+        except (binascii.Error, ValueError) as exc:
+            raise InvalidAudio(detail="audio_b64 is not valid base64") from exc
     return event
 
 
@@ -161,6 +182,14 @@ async def interview(websocket: WebSocket, session_id: str) -> None:
     set_run_id(f"int-{session_id[:5]}")
     await websocket.accept()
     log.info("[REQUEST] WS /interview/%s connected", session_id)
+    send_lock = asyncio.Lock()     # live captions and events reply from different tasks
+    agent_lock = asyncio.Lock()    # one Interview Agent event at a time
+    live: LiveCaptions | None = None
+
+    async def send(reply) -> None:
+        async with send_lock:
+            await _send(websocket, reply)
+
     try:
         try:
             start = StartMessage.model_validate(await websocket.receive_json())
@@ -173,28 +202,79 @@ async def interview(websocket: WebSocket, session_id: str) -> None:
         session = InterviewSession(session_id, start.mode, graph=_interview_graph)
         interview_id = await run_in_threadpool(
             db.start_interview, start.candidate_id, start.job_id, start.mode.value)
-        await _send(websocket, StartedReply(interview_id=interview_id, mode=start.mode))
+        await send(StartedReply(interview_id=interview_id, mode=start.mode))
+
+        async def handle_event(event: dict) -> None:
+            """Run one event through the Interview Agent and send the visible state back."""
+            async with agent_lock:
+                try:
+                    result = await run_in_threadpool(session.send, event)
+                except SpeechError as exc:   # microphone question not understood: Arabic message for the UI
+                    log.warning("[FAIL]  speech -> %s (%s)", exc.code, exc.detail)
+                    await send(ErrorReply(error=exc.code, details=[exc.message]))
+                    return
+                except Exception as exc:  # noqa: BLE001 - keep the interview going
+                    log.exception("interview event failed: session=%s", session_id)
+                    await send(ErrorReply(error=type(exc).__name__))
+                    return
+                reply = StateReply.model_validate({k: v for k, v in result.items() if v is not None})
+                fields = {"mode": reply.mode.value, "none_count": reply.none_count,
+                          "interpreter_called": reply.interpreter_called}
+                if reply.interpreter:
+                    fields["interpreter_reason"] = reply.interpreter["reason"]
+                await run_in_threadpool(db.update_interview, interview_id, **fields)
+                await send(reply)
+
+        async def on_partial(utterance: int, text: str) -> None:
+            await send(CaptionReply(utterance=utterance, text=text, final=False))
+
+        async def on_final(utterance: int, text: str) -> None:
+            await send(CaptionReply(utterance=utterance, text=text, final=True))
+            await handle_event({"type": EventType.QUESTION, "text": text})   # finished sentence -> agent
+
+        async def on_error(exc: SpeechError) -> None:
+            await send(ErrorReply(error=exc.code, details=[exc.message]))
 
         while True:
-            raw = await websocket.receive_json()
+            frame = await websocket.receive()
+            if frame["type"] == "websocket.disconnect":
+                raise WebSocketDisconnect(frame.get("code", 1000))
+            if frame.get("bytes") is not None:      # live microphone audio (16 kHz mono PCM16)
+                if live is None:
+                    try:
+                        openrouter_key()
+                    except SpeechError as exc:
+                        await on_error(exc)
+                        live = _NO_LIVE
+                        continue
+                    live = LiveCaptions(on_partial=on_partial, on_final=on_final, on_error=on_error)
+                    log.info("[RUN]   live captions started: session=%s", session_id)
+                if live is not _NO_LIVE:
+                    await live.feed(frame["bytes"])
+                continue
+            try:
+                raw = json.loads(frame.get("text") or "")
+            except json.JSONDecodeError:
+                await send(ErrorReply(error="invalid_message", details=["message must be JSON or binary audio"]))
+                continue
+            if isinstance(raw, dict) and raw.get("type") == "audio_end":
+                if live is not None and live is not _NO_LIVE:
+                    await live.end()
+                continue
             try:
                 message = event_message_adapter.validate_python(raw)
             except ValidationError as exc:
                 log.warning("[FAIL]  invalid interview message -> %s", _problems(exc))
-                await _send(websocket, ErrorReply(error="invalid_message", details=_problems(exc)))
+                await send(ErrorReply(error="invalid_message", details=_problems(exc)))
                 continue
             try:
-                result = await run_in_threadpool(session.send, _event_from_message(message))
-            except Exception as exc:  # noqa: BLE001 - keep the interview going
-                log.exception("interview event failed: session=%s", session_id)
-                await _send(websocket, ErrorReply(error=type(exc).__name__))
+                event = _event_from_message(message)
+            except SpeechError as exc:
+                await on_error(exc)
                 continue
-            reply = StateReply.model_validate({k: v for k, v in result.items() if v is not None})
-            fields = {"mode": reply.mode.value, "none_count": reply.none_count,
-                      "interpreter_called": reply.interpreter_called}
-            if reply.interpreter:
-                fields["interpreter_reason"] = reply.interpreter["reason"]
-            await run_in_threadpool(db.update_interview, interview_id, **fields)
-            await _send(websocket, reply)
+            await handle_event(event)
     except WebSocketDisconnect:
         log.info("interview disconnected: session=%s", session_id)
+    finally:
+        if live is not None and live is not _NO_LIVE:
+            await live.close()
