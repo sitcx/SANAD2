@@ -1,6 +1,10 @@
-import { useCallback, useContext, useEffect, useState, type ReactNode } from 'react';
+﻿import { useCallback, useContext, useEffect, useState, type ReactNode } from 'react';
 import { canUpdateApplication, communicationPreferences, scheduleConflict, interviewSchedules, jobs, previousReports, type ApplicationStatus, type CvStatus, type InterviewReport } from './sanad-data';
 import { SanadContext } from './sanad-state';
+import type { CareerTrackId } from './career-discovery';
+import { candidatePool, SELF_ID, type CompanyJob } from './company';
+import type { AccountRole } from './sanad-state';
+import { advanceTicket, createTicket, rateTicket, type CommunicationMode, type SupportCategory, type SupportTicket } from './support-tickets';
 import { getTrainingReadiness, recordTrainingQuestion, type TrainingProgress } from './training-readiness';
 export function SanadProvider({ children }: { children: ReactNode }) {
   const [sessionKey, setSessionKey] = useState(0);
@@ -12,9 +16,20 @@ function SanadSessionProvider({ children, signOut }: { children: ReactNode; sign
   const [candidateName, setCandidateName] = useState('أحمد');
   const [candidateEmail, setCandidateEmail] = useState('');
   const [signedIn, setSignedIn] = useState(false);
+  const [communicationMode, setCommunicationMode] = useState<CommunicationMode>('sign');
+  const [role, setRole] = useState<AccountRole>('candidate');
+  const [companyName, setCompanyName] = useState('شركة بُعد التقنية');
+  const [companyJobs, setCompanyJobs] = useState<CompanyJob[]>([]);
+  const [jobMinYears, setMinYears] = useState<Record<string, number>>({ analyst: 1, support: 1, designer: 1 });
+  const [poolApplications, setPoolApplications] = useState<Record<string, Record<string, ApplicationStatus>>>(() => Object.fromEntries(candidatePool.map(candidate => [candidate.id, { ...candidate.applications }])));
+  const [poolSchedules, setPoolSchedules] = useState<Record<string, string>>({});
+  const [careerTrack, setCareerTrack] = useState<CareerTrackId | null>(null);
+  const [careerDecided, setCareerDecided] = useState(false);
+  const [supportTickets, setSupportTickets] = useState<SupportTicket[]>([]);
   const [termsAccepted, setTermsAccepted] = useState(false);
   const [trainingConsent, setTrainingConsent] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
+  const [largeText, setLargeText] = useState(false);
   const [guideOpen, setGuideOpen] = useState(false);
   const [schedules, setSchedules] = useState<Record<string, string>>(interviewSchedules);
   const [applicationDates, setApplicationDates] = useState<Record<string, string>>({ analyst: '2026-11-12T09:00:00+03:00', support: '2026-11-13T09:00:00+03:00' });
@@ -38,6 +53,10 @@ function SanadSessionProvider({ children, signOut }: { children: ReactNode; sign
   const [interviewCompleted, setInterviewCompleted] = useState(false);
   const [sentAnswers, setSentAnswers] = useState<string[]>([]);
   useEffect(() => {
+    document.documentElement.classList.toggle('a11y-large', largeText);
+    return () => document.documentElement.classList.remove('a11y-large');
+  }, [largeText]);
+  useEffect(() => {
     document.documentElement.classList.toggle('dark', darkMode);
     return () => document.documentElement.classList.remove('dark');
   }, [darkMode]);
@@ -46,7 +65,51 @@ function SanadSessionProvider({ children, signOut }: { children: ReactNode; sign
     const timer = window.setInterval(() => setNow(Date.now()), 1000);
     return () => window.clearInterval(timer);
   }, []);
-  function signIn(name: string, email = '') { if (!name.trim()) return; setCandidateName(name.trim()); setCandidateEmail(email.trim()); setSignedIn(true); }
+  function signIn(name: string, email = '', mode?: CommunicationMode, account: AccountRole = 'candidate') {
+    if (!name.trim()) return;
+    if (account === 'company') setCompanyName(name.trim()); else setCandidateName(name.trim());
+    setCandidateEmail(email.trim()); if (mode) setCommunicationMode(mode); setRole(account); setSignedIn(true);
+  }
+  function addCompanyJob(title: string, skills: string[], minYears: number) {
+    const cleanSkills = [...new Set(skills.map(skill => skill.trim()).filter(Boolean))];
+    if (!title.trim()) return 'اكتب المسمى الوظيفي.';
+    if (!cleanSkills.length) return 'أضف مهارة مطلوبة واحدة على الأقل.';
+    const id = `job-${Date.now()}`;
+    setCompanyJobs(current => [...current, { id, title: title.trim(), skills: cleanSkills, minYears, custom: true }]);
+    setMinYears(current => ({ ...current, [id]: minYears }));
+    return null;
+  }
+  function companyUpdateCandidate(candidateId: string, jobId: string, status: ApplicationStatus) {
+    if (candidateId === SELF_ID) { updateApplication(jobId, status); return; }
+    const current = poolApplications[candidateId]?.[jobId] ?? 'available';
+    if (current !== 'available' ? !canUpdateApplication(current, status) : status !== 'nominated') return;
+    setPoolApplications(all => ({ ...all, [candidateId]: { ...all[candidateId], [jobId]: status } }));
+  }
+  function companySchedule(candidateId: string, jobId: string, date: string) {
+    if (!Number.isFinite(Date.parse(date))) return 'اختر موعدًا صحيحًا.';
+    if (candidateId === SELF_ID) {
+      const error = scheduleInterview(jobId, date);
+      if (error) return error;
+      updateApplication(jobId, 'scheduled');
+      return null;
+    }
+    setPoolSchedules(all => ({ ...all, [`${candidateId}:${jobId}`]: date }));
+    companyUpdateCandidate(candidateId, jobId, 'scheduled');
+    return null;
+  }
+  function completeCareerDiscovery(track: CareerTrackId) { setCareerTrack(track); setCareerDecided(true); }
+  function acceptOffer(id: string) { if (applications[id] === 'accepted') updateApplication(id, 'hired'); }
+  const hiredJobId = jobs.find(job => applications[job.id] === 'hired')?.id;
+  function submitSupportTicket(category: SupportCategory, details: string) {
+    if (!hiredJobId) return false;
+    const ticket = createTicket(`ticket-${Date.now()}`, hiredJobId, category, details, new Date().toISOString());
+    if (!ticket) return false;
+    setSupportTickets(current => [ticket, ...current]);
+    return true;
+  }
+  function rateSupportTicket(id: string, rating: number) {
+    setSupportTickets(current => current.map(ticket => ticket.id === id ? rateTicket(ticket, rating) : ticket));
+  }
   function updateProfile(name: string, email: string) {
     if (!signedIn || !name.trim() || !/^\S+@\S+\.\S+$/.test(email.trim())) return;
     setCandidateName(name.trim()); setCandidateEmail(email.trim());
@@ -67,6 +130,12 @@ function SanadSessionProvider({ children, signOut }: { children: ReactNode; sign
     setApplicationHistory(current => ({ ...current, [id]: [...(current[id] ?? []), { status: applications[id] ?? 'available', date: timestamp }] }));
     return null;
   }
+  const openTicketKey = supportTickets.filter(ticket => ticket.status !== 'resolved').map(ticket => `${ticket.id}:${ticket.status}`).join('|');
+  useEffect(() => {
+    if (!openTicketKey) return;
+    const timer = window.setTimeout(() => setSupportTickets(current => current.map(ticket => ticket.status === 'resolved' ? ticket : advanceTicket(ticket, new Date().toISOString()))), 4000);
+    return () => window.clearTimeout(timer);
+  }, [openTicketKey]);
   useEffect(() => {
     if (cvStatus !== 'analysing') return;
     const timer = window.setTimeout(() => setCvStatus('analysed'), 1200);
@@ -109,7 +178,7 @@ function SanadSessionProvider({ children, signOut }: { children: ReactNode; sign
     setReports(current => [{ id: `session-${Date.now()}`, jobId: selectedJobId, date: new Date().toISOString(), answers: [...sentAnswers], questions: questions ? [...questions] : [], durationSeconds }, ...current]);
     setSentAnswers([]);
   }
-  return <SanadContext.Provider value={{ termsAccepted, setTermsAccepted, trainingConsent, setTrainingConsent, darkMode, setDarkMode, candidateName, candidateEmail, signedIn, signIn, updateProfile, signOut, guideOpen, openGuide: () => setGuideOpen(true), closeGuide: () => setGuideOpen(false), schedules, scheduleInterview, applicationDates, applicationHistory, updateApplication, jobSkills, setJobSkills: (id, skills) => setSkills(current => ({ ...current, [id]: skills })), selectedJobId, selectJob, cvName, setCvName, cvStatus, setCvStatus, applications, applyToJob, nominateJob, reviewedPlans, reviewPlan, preferences, setJobPreferences, additionalCommunicationNeeds, setAdditionalCommunicationNeeds, now, reports, finishInterview, interpreterRequested, setInterpreterRequested, practiceCompleted, trainingProgress, completeTrainingQuestion, interviewCompleted, setInterviewCompleted, sentAnswers, setSentAnswers }}>{children}</SanadContext.Provider>;
+  return <SanadContext.Provider value={{ termsAccepted, setTermsAccepted, trainingConsent, setTrainingConsent, darkMode, setDarkMode, largeText, setLargeText, candidateName, candidateEmail, signedIn, signIn, role, switchRole: setRole, companyName, companyJobs, addCompanyJob, jobMinYears, setJobMinYears: (id, years) => setMinYears(current => ({ ...current, [id]: years })), poolApplications, poolSchedules, companyUpdateCandidate, companySchedule, communicationMode, setCommunicationMode, careerTrack, careerDecided, completeCareerDiscovery, skipCareerDiscovery: () => setCareerDecided(true), acceptOffer, supportTickets, submitSupportTicket, rateSupportTicket, updateProfile, signOut, guideOpen, openGuide: () => setGuideOpen(true), closeGuide: () => setGuideOpen(false), schedules, scheduleInterview, applicationDates, applicationHistory, updateApplication, jobSkills, setJobSkills: (id, skills) => setSkills(current => ({ ...current, [id]: skills })), selectedJobId, selectJob, cvName, setCvName, cvStatus, setCvStatus, applications, applyToJob, nominateJob, reviewedPlans, reviewPlan, preferences, setJobPreferences, additionalCommunicationNeeds, setAdditionalCommunicationNeeds, now, reports, finishInterview, interpreterRequested, setInterpreterRequested, practiceCompleted, trainingProgress, completeTrainingQuestion, interviewCompleted, setInterviewCompleted, sentAnswers, setSentAnswers }}>{children}</SanadContext.Provider>;
 }
 export function useSanad() {
   const context = useContext(SanadContext);

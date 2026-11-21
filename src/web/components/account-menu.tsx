@@ -1,5 +1,5 @@
 import { Link, useNavigate } from '@tanstack/react-router';
-import { ChevronDown, ClipboardList, LogOut, Moon, Save, Settings, Sun, Target, UserRound } from 'lucide-react';
+import { ArrowLeftRight, Building2, ChevronDown, ClipboardList, Compass, LifeBuoy, LogOut, Moon, Save, Settings, Sun, Target, UserRound } from 'lucide-react';
 import { useState, type FormEvent } from 'react';
 import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
@@ -31,10 +31,18 @@ export function AccountMenu() {
   }
   return <>
     <DropdownMenu dir="rtl"><DropdownMenuTrigger asChild>
-      <Button variant="secondary" className="account-trigger" title={`مرحبًا، ${state.candidateName}`}><UserRound aria-hidden="true" /><span>مرحبًا، {state.candidateName}</span><ChevronDown aria-hidden="true" /></Button>
+      <Button variant="secondary" className="account-trigger" title={`مرحبًا، ${state.role === 'company' ? state.companyName : state.candidateName}`}>{state.role === 'company' ? <Building2 aria-hidden="true" /> : <UserRound aria-hidden="true" />}<span>مرحبًا، {state.role === 'company' ? state.companyName : state.candidateName}</span><ChevronDown aria-hidden="true" /></Button>
     </DropdownMenuTrigger><DropdownMenuContent align="end" sideOffset={8} className="w-52">
-      <DropdownMenuItem onSelect={() => void navigate({ to: '/coach' })}><Target aria-hidden="true" />ابدأ التدريب</DropdownMenuItem>
-      <DropdownMenuItem onSelect={() => void navigate({ to: '/applications' })}><ClipboardList aria-hidden="true" />تتبع تقديماتي</DropdownMenuItem>
+      {state.role === 'company' ? <>
+        <DropdownMenuItem onSelect={() => void navigate({ to: '/company' })}><Building2 aria-hidden="true" />لوحة الجهة</DropdownMenuItem>
+        <DropdownMenuItem onSelect={() => { state.switchRole('candidate'); void navigate({ to: '/applications' }); }}><ArrowLeftRight aria-hidden="true" />التبديل إلى حساب المرشح (تجربة)</DropdownMenuItem>
+      </> : <>
+        <DropdownMenuItem onSelect={() => void navigate({ to: '/coach' })}><Target aria-hidden="true" />ابدأ التدريب</DropdownMenuItem>
+        <DropdownMenuItem onSelect={() => void navigate({ to: '/applications' })}><ClipboardList aria-hidden="true" />تتبع تقديماتي</DropdownMenuItem>
+        <DropdownMenuItem onSelect={() => void navigate({ to: '/discover' })}><Compass aria-hidden="true" />اكتشف مسارك المهني</DropdownMenuItem>
+        <DropdownMenuItem onSelect={() => void navigate({ to: '/support' })}><LifeBuoy aria-hidden="true" />دعم سند بعد التوظيف</DropdownMenuItem>
+        <DropdownMenuItem onSelect={() => { state.switchRole('company'); void navigate({ to: '/company' }); }}><ArrowLeftRight aria-hidden="true" />التبديل إلى حساب الجهة (تجربة)</DropdownMenuItem>
+      </>}
       <DropdownMenuItem onSelect={openProfile}><UserRound aria-hidden="true" />تعديل الملف الشخصي</DropdownMenuItem>
       <DropdownMenuItem onSelect={() => setPanel('settings')}><Settings aria-hidden="true" />الإعدادات</DropdownMenuItem>
       <DropdownMenuSeparator />
@@ -49,7 +57,9 @@ export function AccountMenu() {
         {error && <p role="alert" className="text-sm text-destructive">{error}</p>}
         <Button type="submit"><Save aria-hidden="true" />حفظ التغييرات</Button>
       </form> : <div className="space-y-4">
+        <div className="space-y-2"><p className="text-sm font-medium">طريقة التواصل</p><div className="flex gap-2" role="radiogroup" aria-label="طريقة التواصل">{([{ id: 'sign', label: 'لغة الإشارة' }, { id: 'voice', label: 'الصوت' }] as const).map(item => <Button key={item.id} type="button" variant={state.communicationMode === item.id ? 'secondary' : 'outline'} role="radio" aria-checked={state.communicationMode === item.id} onClick={() => state.setCommunicationMode(item.id)}>{item.label}</Button>)}</div></div>
         <div className="flex items-center justify-between gap-3"><span className="flex items-center gap-2 text-sm">{state.darkMode ? <Moon aria-hidden="true" className="size-4" /> : <Sun aria-hidden="true" className="size-4" />}الوضع {state.darkMode ? 'الداكن' : 'الفاتح'}</span><Switch aria-label="التبديل بين الوضع الفاتح والداكن" checked={state.darkMode} onCheckedChange={state.setDarkMode} /></div>
+        <div className="flex items-center justify-between gap-3"><span className="text-sm">خط وأيقونات أكبر بتباين أعلى</span><Switch aria-label="خط وأيقونات أكبر بتباين أعلى لضعاف البصر" checked={state.largeText} onCheckedChange={state.setLargeText} /></div>
         <label className="flex items-start gap-3"><Checkbox checked={state.trainingConsent} onCheckedChange={value => state.setTrainingConsent(value === true)} /><span>موافقة اختيارية على تدريب نماذج سَند</span></label>
         <p className="text-sm text-muted-foreground">مستقلة عن الشروط ويمكن سحبها في أي وقت؛ لا يبدأ جمع بيانات أو تدريب في هذه التجربة.</p>
         <Button asChild variant="link" className="px-0"><Link to="/charter" onClick={() => setPanel(null)}>الميثاق والأحكام والشروط</Link></Button>

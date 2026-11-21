@@ -1,12 +1,39 @@
 import { createContext, type Context } from 'react';
 import type { ApplicationStatus, CvStatus, InterviewReport } from './sanad-data';
 import type { TrainingProgress } from './training-readiness';
+import type { CareerTrackId } from './career-discovery';
+import type { CompanyJob } from './company';
+import type { CommunicationMode, SupportCategory, SupportTicket } from './support-tickets';
+
+export type AccountRole = 'candidate' | 'company';
 
 export interface SanadState {
   candidateName: string;
   candidateEmail: string;
   signedIn: boolean;
-  signIn: (name: string, email?: string) => void;
+  signIn: (name: string, email?: string, mode?: CommunicationMode, role?: AccountRole) => void;
+  role: AccountRole;
+  /** Demo only: switch between the two accounts while keeping the shared session data. */
+  switchRole: (role: AccountRole) => void;
+  companyName: string;
+  companyJobs: CompanyJob[];
+  addCompanyJob: (title: string, skills: string[], minYears: number) => string | null;
+  jobMinYears: Record<string, number>;
+  setJobMinYears: (id: string, years: number) => void;
+  poolApplications: Record<string, Record<string, ApplicationStatus>>;
+  poolSchedules: Record<string, string>;
+  companyUpdateCandidate: (candidateId: string, jobId: string, status: ApplicationStatus) => void;
+  companySchedule: (candidateId: string, jobId: string, date: string) => string | null;
+  communicationMode: CommunicationMode;
+  setCommunicationMode: (mode: CommunicationMode) => void;
+  careerTrack: CareerTrackId | null;
+  careerDecided: boolean;
+  completeCareerDiscovery: (track: CareerTrackId) => void;
+  skipCareerDiscovery: () => void;
+  acceptOffer: (id: string) => void;
+  supportTickets: SupportTicket[];
+  submitSupportTicket: (category: SupportCategory, details: string) => boolean;
+  rateSupportTicket: (id: string, rating: number) => void;
   updateProfile: (name: string, email: string) => void;
   signOut: () => void;
   guideOpen: boolean;
@@ -19,6 +46,8 @@ export interface SanadState {
   trainingConsent: boolean;
   setTrainingConsent: (value: boolean) => void;
   darkMode: boolean;
+  largeText: boolean;
+  setLargeText: (value: boolean) => void;
   setDarkMode: (value: boolean) => void;
   applicationDates: Record<string, string>;
   applicationHistory: Record<string, { status: ApplicationStatus; date: string }[]>;

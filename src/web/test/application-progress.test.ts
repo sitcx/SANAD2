@@ -22,6 +22,7 @@ describe('Visual application progress', () => {
       { status: 'scheduled', state: 'upcoming', date: undefined },
       { status: 'completed', state: 'upcoming', date: undefined },
       { status: 'accepted', state: 'upcoming', date: undefined },
+      { status: 'hired', state: 'upcoming', date: undefined },
     ]);
   });
   it('does not mark a skipped interview as completed when a direct offer arrives', () => {

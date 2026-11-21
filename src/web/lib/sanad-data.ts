@@ -34,18 +34,18 @@ export function requestInterpreter(requested: boolean): 'optional' | 'requested'
   return requested ? 'requested' : 'optional';
 }
 
-export type ApplicationStatus = 'available' | 'applied' | 'reviewing' | 'nominated' | 'scheduled' | 'completed' | 'accepted' | 'rejected' | 'withdrawn';
+export type ApplicationStatus = 'available' | 'applied' | 'reviewing' | 'nominated' | 'scheduled' | 'completed' | 'accepted' | 'hired' | 'rejected' | 'withdrawn';
 export type CvStatus = 'uploaded' | 'analysing' | 'analysed';
 export const statusLabels: Record<ApplicationStatus, string> = {
-  available: 'متاحة للتقديم', applied: 'تم التقديم', reviewing: 'قيد المراجعة', nominated: 'تم الترشيح للمقابلة', scheduled: 'مقابلة مجدولة', completed: 'المقابلة مكتملة', accepted: 'عرض وظيفي', rejected: 'مرفوض', withdrawn: 'منسحب',
+  available: 'متاحة للتقديم', applied: 'تم التقديم', reviewing: 'قيد المراجعة', nominated: 'تم الترشيح للمقابلة', scheduled: 'مقابلة مجدولة', completed: 'المقابلة مكتملة', accepted: 'عرض وظيفي', hired: 'موظف', rejected: 'مرفوض', withdrawn: 'منسحب',
 };
-export const applicationSteps: ApplicationStatus[] = ['applied', 'reviewing', 'nominated', 'scheduled', 'completed', 'accepted', 'rejected', 'withdrawn'];
+export const applicationSteps: ApplicationStatus[] = ['applied', 'reviewing', 'nominated', 'scheduled', 'completed', 'accepted', 'hired', 'rejected', 'withdrawn'];
 export const nextSteps: Record<ApplicationStatus, string> = {
-  available: 'راجع التهيئة ثم قدّم طلبك.', applied: 'انتظر مراجعة الشركة لطلبك.', reviewing: 'ستظهر نتيجة مراجعة الطلب هنا.', nominated: 'راجع الموعد واستعد بالتدريب.', scheduled: 'راجع التقويم واستعد لموعد المقابلة.', completed: 'راجع التقرير وانتظر قرار الشركة.', accepted: 'تابع تفاصيل العرض مع الشركة.', rejected: 'اكتشف فرصًا أخرى مناسبة لمهاراتك.', withdrawn: 'تم الانسحاب من الطلب. يمكنك استكشاف وظائف أخرى.',
+  available: 'راجع التهيئة ثم قدّم طلبك.', applied: 'انتظر مراجعة الشركة لطلبك.', reviewing: 'ستظهر نتيجة مراجعة الطلب هنا.', nominated: 'راجع الموعد واستعد بالتدريب.', scheduled: 'راجع التقويم واستعد لموعد المقابلة.', completed: 'راجع التقرير وانتظر قرار الشركة.', accepted: 'اقبل العرض الوظيفي لتبدأ عملك.', hired: 'إذا واجهت صعوبة في عملك، ارفع طلب دعم إلى سند.', rejected: 'اكتشف فرصًا أخرى مناسبة لمهاراتك.', withdrawn: 'تم الانسحاب من الطلب. يمكنك استكشاف وظائف أخرى.',
 };
 export function canUpdateApplication(current: ApplicationStatus, next: ApplicationStatus): boolean {
   const transitions: Record<ApplicationStatus, ApplicationStatus[]> = {
-    available: ['applied'], applied: ['reviewing', 'nominated', 'scheduled', 'accepted', 'rejected', 'withdrawn'], reviewing: ['nominated', 'scheduled', 'accepted', 'rejected', 'withdrawn'], nominated: ['scheduled', 'completed', 'accepted', 'rejected', 'withdrawn'], scheduled: ['completed', 'accepted', 'rejected', 'withdrawn'], completed: ['accepted', 'rejected', 'withdrawn'], accepted: ['withdrawn'], rejected: [], withdrawn: [],
+    available: ['applied'], applied: ['reviewing', 'nominated', 'scheduled', 'accepted', 'rejected', 'withdrawn'], reviewing: ['nominated', 'scheduled', 'accepted', 'rejected', 'withdrawn'], nominated: ['scheduled', 'completed', 'accepted', 'rejected', 'withdrawn'], scheduled: ['completed', 'accepted', 'rejected', 'withdrawn'], completed: ['accepted', 'rejected', 'withdrawn'], accepted: ['hired', 'withdrawn'], hired: [], rejected: [], withdrawn: [],
   };
   return transitions[current].includes(next);
 }

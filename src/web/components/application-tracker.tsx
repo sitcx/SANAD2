@@ -2,6 +2,7 @@ import { Link } from '@tanstack/react-router';
 import { useState } from 'react';
 import { ArrowLeft, ClipboardList } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { SpeakButton } from '@/components/speak-button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useSanad } from '@/lib/sanad-context';
 import { ApplicationProgress } from '@/components/application-progress';
@@ -22,10 +23,12 @@ export function ApplicationTracker({ compact = false }: { compact?: boolean }) {
       const appliedAt = state.applicationDates[job.id];
       const interviewAt = getApplicationInterview(status, state.schedules[job.id]);
       return <article className="tracking-row" key={job.id} aria-label={`طلب ${job.title}`}>
-        <div className="flex flex-wrap justify-between items-start gap-3"><div><h3 className="font-semibold">{job.title}</h3><p className="text-sm text-muted-foreground mt-1">{job.company}</p></div><span className="status-label" data-status={status}>{statusLabels[status]}</span></div>
+        <div className="flex flex-wrap justify-between items-start gap-3"><div><h3 className="font-semibold">{job.title}</h3><p className="text-sm text-muted-foreground mt-1">{job.company}</p></div><div className="flex items-center gap-2"><SpeakButton label={`طلب ${job.title}`} text={`طلب ${job.title} في ${job.company}. الحالة: ${statusLabels[status]}. الخطوة التالية: ${nextSteps[status]}${interviewAt ? ` موعد المقابلة: ${formatInterviewDate(interviewAt)}.` : ''}`} /><span className="status-label" data-status={status}>{statusLabels[status]}</span></div></div>
         <dl className="grid sm:grid-cols-2 gap-3 text-sm mt-4"><div><dt className="text-muted-foreground">تاريخ التقديم</dt><dd>{appliedAt ? formatInterviewDate(appliedAt) : 'غير متاح'}</dd></div><div><dt className="text-muted-foreground">الخطوة التالية</dt><dd>{nextSteps[status]}</dd></div>{['nominated', 'scheduled'].includes(status) && <div><dt className="text-muted-foreground">موعد المقابلة</dt><dd>{interviewAt ? <ApplicationInterviewDate value={interviewAt} /> : 'لم يُحدد الموعد بعد'}</dd></div>}</dl>
         <ApplicationProgress status={status} history={history} paused={state.guideOpen} interviewAt={interviewAt} />
-        <div className="mt-5"><Button asChild variant="link" className="px-0"><Link to="/jobs/$jobId" params={{ jobId: job.id }}>تفاصيل الوظيفة<ArrowLeft /></Link></Button></div>
+        <div className="mt-5 flex flex-wrap items-center gap-3"><Button asChild variant="link" className="px-0"><Link to="/jobs/$jobId" params={{ jobId: job.id }}>تفاصيل الوظيفة<ArrowLeft /></Link></Button>
+          {status === 'accepted' && <Button onClick={() => state.acceptOffer(job.id)}>قبول العرض الوظيفي</Button>}
+          {status === 'hired' && <Button asChild><Link to="/support">دعم سند بعد التوظيف<ArrowLeft /></Link></Button>}</div>
       </article>;
     })}</div>
     {!filtered.length && <div className="py-8 text-center"><ClipboardList className="size-7 mx-auto text-primary" /><p className="text-sm text-muted-foreground mt-3">لا توجد طلبات في هذه الحالة.</p><Button variant="outline" asChild className="mt-4"><Link to="/jobs">استكشف الوظائف<ArrowLeft /></Link></Button></div>}

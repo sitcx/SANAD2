@@ -24,7 +24,7 @@ describe('Application journey timing and lifecycle', () => {
     act(() => vi.advanceTimersByTime(300));
     expect(result.current.steps[0]?.connector).toBe('drawing');
     act(() => vi.advanceTimersByTime(4000));
-    expect(result.current.steps.map(step => step.node)).toEqual(['checked', 'checked', 'active', 'muted', 'muted', 'muted']);
+    expect(result.current.steps.map(step => step.node)).toEqual(['checked', 'checked', 'active', 'muted', 'muted', 'muted', 'muted']);
     expect(result.current.settled).toBe(true);
     unmount();
     expect(vi.getTimerCount()).toBe(0);
@@ -55,7 +55,7 @@ describe('Application journey timing and lifecycle', () => {
   it('shows saved states immediately without timers when reduced motion is requested', () => {
     vi.spyOn(window, 'matchMedia').mockReturnValue({ matches: true, addEventListener: () => {}, removeEventListener: () => {} } as unknown as MediaQueryList);
     const { result, unmount } = renderHook(() => useApplicationJourney(nominated, false));
-    expect(result.current.steps.map(step => step.node)).toEqual(['checked', 'checked', 'active', 'muted', 'muted', 'muted']);
+    expect(result.current.steps.map(step => step.node)).toEqual(['checked', 'checked', 'active', 'muted', 'muted', 'muted', 'muted']);
     expect(result.current.settled).toBe(true);
     expect(vi.getTimerCount()).toBe(0);
     unmount();

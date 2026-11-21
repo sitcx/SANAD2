@@ -1111,3 +1111,11 @@ html { scroll-behavior: smooth; }
   .daily-skill-actions { gap: 8px; }
   .daily-skill-actions button { font-size: 14px; padding-inline: 8px; }
 }
+
+/* Low vision: larger text and icons, stronger contrast (Settings → خط وأيقونات أكبر). */
+html.a11y-large { font-size: 118%; }
+html.a11y-large body { --muted-foreground: var(--foreground); }
+html.a11y-large svg.lucide { width: 1.4em; height: 1.4em; stroke-width: 2.4; }
+html.a11y-large button, html.a11y-large a { text-decoration-thickness: 2px; }
+html.a11y-large :focus-visible { outline: 3px solid var(--primary); outline-offset: 3px; }
+.speak-button svg { color: var(--primary); }
