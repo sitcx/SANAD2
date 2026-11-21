@@ -7,7 +7,7 @@ const logo = { url: '/sanad-logo.png' };
 import { useSanad } from '@/lib/sanad-context';
 import { workspaceNavigation } from '@/lib/workspace-navigation';
 import { SanadContext } from '@/lib/sanad-state';
-import { speak } from '@/lib/voice-guide';
+import { readPageAloud, speak } from '@/lib/voice-guide';
 
 export function Brand() {
   return <Link to="/" aria-label="سَند — الصفحة الرئيسية" className="shrink-0"><img className="brand-image" src={logo.url} alt="سَند — لأن صوتك يستحق أن يصل" width={118} height={68} /></Link>;
@@ -59,5 +59,5 @@ export function PageTitle({ title, subtitle, action }: { title: string; subtitle
   const voice = useContext(SanadContext)?.communicationMode === 'voice';
   // Blind candidates hear where they are as soon as a page opens.
   useEffect(() => { if (voice) speak(`${title}. ${subtitle}`); }, [voice, title, subtitle]);
-  return <div className="grid grid-cols-[minmax(0,1fr)_auto] gap-3 items-center mb-7"><div className="min-w-0"><h1 className="page-heading">{title}</h1><p className="page-subheading">{subtitle}</p></div><div className="flex gap-2 items-center">{voice && <Button variant="outline" onClick={() => speak(`${title}. ${subtitle}`)}><Volume2 aria-hidden="true" />استمع للصفحة</Button>}{action}</div></div>;
+  return <div className="grid grid-cols-[minmax(0,1fr)_auto] gap-3 items-center mb-7"><div className="min-w-0"><h1 className="page-heading">{title}</h1><p className="page-subheading">{subtitle}</p></div><div className="flex gap-2 items-center">{voice && <Button variant="outline" onClick={() => void readPageAloud(`${title}. ${subtitle}`)}><Volume2 aria-hidden="true" />استمع للصفحة</Button>}{action}</div></div>;
 }

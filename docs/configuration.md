@@ -18,6 +18,11 @@ values (not in git; copy from `.env.example`).
 | `signs.dataset_dir` | `src/data/dataset` | Saudi Sign Language dataset |
 | `signs.vocabulary_size` | `40` | target number of gallery words |
 | `signs.gallery_dir` | `src/data/sign_gallery` | sign gallery |
+| `accessibility.provider_url` | `https://openrouter.ai/api/v1` | OpenAI-compatible chat API for the web accessibility assistant |
+| `accessibility.api_key_env` | `OPENROUTER_API_KEY` | name of the key in `.env` (server only) |
+| `accessibility.model` | `google/gemini-2.5-flash` | model that describes pages |
+| `accessibility.reasoning` | `"off"` | `off` · `low` · `medium` · `high` · `""` (model default); off was ~2× faster |
+| `accessibility.max_tokens` / `timeout` / `max_page_chars` | `4000` / `30` / `12000` | reply size, seconds, longest page text sent |
 | `database.path` | `instance/sanad.db` | SQLite file |
 | `logging.level` | `INFO` | log level |
 | `logging.file` | `src/logger/logs/sanad.log` | log file |
@@ -29,6 +34,7 @@ Restart the API after changing `config.yaml` (`run.py` restarts it automatically
 | Variable | Side | Meaning |
 |---|---|---|
 | `ANTHROPIC_API_KEY` | server | enables Claude; empty = rule-based fallbacks |
+| `OPENROUTER_API_KEY` | server | web accessibility assistant (page descriptions); empty = rule-based description |
 | `VITE_SANAD_API_URL` | browser (public) | API address used by the web UI; default `http://localhost:8010` |
 | `SANAD_API_PORT` | launcher | port `run.py` starts the API on; default `8010` |
 | `SANAD_WEB_ORIGINS` | server | browser origins allowed to call the API (comma-separated) |

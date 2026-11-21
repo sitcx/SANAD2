@@ -20,6 +20,16 @@ signs:
   vocabulary_size: 40
   gallery_dir: src/data/sign_gallery
 
+accessibility:                     # web accessibility assistant (src/agent/accessibility) - Arabic page descriptions
+  provider_url: https://openrouter.ai/api/v1   # any OpenAI-compatible chat completions API
+  api_key_env: OPENROUTER_API_KEY  # name of the key in .env (server-side only)
+  model: google/gemini-2.5-flash
+  temperature: 0.2
+  max_tokens: 4000
+  reasoning: "off"                 # off | low | medium | high | "" (model default); off = ~2x faster, no cut-off JSON
+  timeout: 30                      # seconds
+  max_page_chars: 12000            # longer extracted pages are cut (cost and latency)
+
 database:
   path: instance/sanad.db          # runtime data folder, not in git (see instance/README.md)
 

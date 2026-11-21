@@ -4,6 +4,7 @@ Run from the project root:  uvicorn src.agent.api:app --reload --port 8010
 
     GET  /health
     POST /jobs/recommend        multipart: cv (pdf/docx/txt/md/json file) | profile (JSON), answers (JSON), name
+    POST /accessibility/describe  JSON PageContentRequest -> PageDescriptionReply (Arabic page guide for blind users)
     WS   /interview/{session}   first message {"type": "start", "mode": "ai"|"human", "job_id"?, "candidate_id"?}
                                 then events: {"type": "question", "text"} | {"type": "signs", "segments"}
                                              {"type": "choose", "index": 0..2 | null} | {"type": "interpreter"}
@@ -24,8 +25,9 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from pydantic import ValidationError
 
+from src.agent.accessibility import describe_page
 from src.agent.interview_agent.graph import InterviewSession, build_interview_graph
-from src.agent.schemas import ErrorReply, StartedReply, StartMessage, StateReply, event_message_adapter
+from src.agent.schemas import ErrorReply, PageContentRequest, PageDescriptionReply, StartedReply, StartMessage, StateReply, event_message_adapter
 from src.agent.job_agent.graph import recommend_jobs
 from src.database import db
 from src.logger import get_logger, new_run_id, set_run_id
@@ -87,6 +89,17 @@ def _json_form(value: str | None, field: str) -> dict:
     if not isinstance(data, dict):
         raise HTTPException(422, f"{field} must be a JSON object")
     return data
+
+
+@app.post("/accessibility/describe")
+async def accessibility_describe(page: PageContentRequest) -> PageDescriptionReply:
+    """Web accessibility assistant: Arabic spoken description of the page the user is on.
+
+    The browser sends the page's visible elements in reading order; the reply is validated
+    (PageDescriptionResponse) and grounded in those elements, with `speech` ready for the browser's TTS.
+    The LLM key stays on the server; without it a rule-based description is returned (via="rules").
+    """
+    return await run_in_threadpool(describe_page, page)
 
 
 @app.post("/jobs/recommend")

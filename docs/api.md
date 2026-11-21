@@ -11,6 +11,25 @@ Allowed browser origins: `SANAD_WEB_ORIGINS` (default `http://localhost:3000`).
 {"status": "ok"}
 ```
 
+## `POST /accessibility/describe`
+
+Web accessibility assistant: a short Arabic spoken guide to the page the user is on (blind and visually
+impaired users, voice mode). Body (`PageContentRequest`): the page's visible elements in reading order.
+
+```json
+{"url": "/jobs", "title": "الوظائف", "elements": [
+  {"id": "e1", "kind": "heading", "level": 1, "region": "main", "text": "الوظائف"},
+  {"id": "e2", "kind": "button", "region": "main", "text": "تقديم", "disabled": true}
+]}
+```
+
+`kind`: `heading` `text` `button` `link` `field` `form` `image` · `region`: `header` `nav` `main` `aside` `footer` `dialog` `other`.
+
+Reply (`PageDescriptionReply`): `via` (`llm` or `rules` fallback), `model`, `description`
+(`PageDescriptionResponse`: purpose, main_heading, introduction, sections, actions, clarifications) and
+`speech` (short Arabic parts to read aloud in order). The LLM reply is validated with pydantic and grounded:
+anything that refers to an element not in the request is dropped, and labels come from the page.
+
 ## `POST /jobs/recommend`
 
 Runs the Job Agent. Body is `multipart/form-data`:
