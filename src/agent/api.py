@@ -36,6 +36,7 @@ from src.agent.speech.live import LiveCaptions
 from src.agent.speech.openrouter import api_key as openrouter_key
 from src.agent.schemas import CaptionReply, ErrorReply, EventType, StartedReply, StartMessage, StateReply, event_message_adapter
 from src.agent.job_agent.graph import recommend_jobs
+from src.agent.candidate_api import router as candidate_router
 from src.agent.company_api import router as company_router
 from src.database import db
 from src.logger import get_logger, new_run_id, set_run_id
@@ -51,6 +52,8 @@ _NO_LIVE = object()                          # live audio refused for this conne
 @asynccontextmanager
 async def lifespan(_app: FastAPI):
     db.init_db()
+    from src.agent.job_agent.service import start_scheduler   # periodic job search (off in tests)
+    start_scheduler()
     if os.getenv("SANAD_SPEECH_PRELOAD") == "1":   # set by run.py: load Whisper now, not on the first question
         threading.Thread(target=warm_up, name="whisper-warm-up", daemon=True).start()
     log.info("[OK]    database ready, API listening")
@@ -59,6 +62,7 @@ async def lifespan(_app: FastAPI):
 
 app = FastAPI(title="Sanad Agents", lifespan=lifespan)
 app.include_router(company_router)
+app.include_router(candidate_router)
 app.add_middleware(
     CORSMiddleware,
     # An empty SANAD_WEB_ORIGINS= in .env means "use the default", not "allow nobody".

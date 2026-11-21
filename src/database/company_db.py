@@ -10,7 +10,7 @@ from __future__ import annotations
 import json
 import re
 import sqlite3
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 
 from src.agent.core.config import project_path
 from src.database.db import connect
@@ -102,7 +102,7 @@ def list_postings() -> list[dict]:
     with connect() as conn:
         counts = dict(conn.execute(
             "SELECT posting_id, COUNT(*) FROM applications WHERE status != 'available' GROUP BY posting_id").fetchall())
-        rows = conn.execute("SELECT * FROM postings ORDER BY created_at, rowid").fetchall()
+        rows = conn.execute("SELECT * FROM postings WHERE source = 'company' ORDER BY created_at, rowid").fetchall()
     return [_posting(row, counts) for row in rows]
 
 
@@ -193,6 +193,26 @@ def _write(conn, posting_id: str, talent_id: str, status: str, interview_at: str
         (posting_id, talent_id, status, interview_at, retained))
 
 
+def _has_cv(conn, talent_id: str) -> bool:
+    """Applying needs a CV: an analysed profile, or (the demo pool) a talent record that already lists skills."""
+    if conn.execute("SELECT 1 FROM cv_profiles WHERE candidate_id = ?", (talent_id,)).fetchone():
+        return True
+    row = conn.execute("SELECT skills_json FROM talents WHERE id = ?", (talent_id,)).fetchone()
+    return bool(row and json.loads(row["skills_json"] or "[]"))
+
+
+def _default_interview(conn, talent_id: str) -> str:
+    """Default slot when a candidate is nominated: two days later, 10:00 Riyadh, skipping days with another interview."""
+    taken = {r["interview_at"][:10] for r in conn.execute(
+        "SELECT interview_at FROM applications WHERE talent_id = ? AND interview_at IS NOT NULL", (talent_id,)).fetchall()}
+    riyadh = timezone(timedelta(hours=3))
+    for offset in range(2, 60):
+        day = (datetime.now(riyadh) + timedelta(days=offset)).date().isoformat()
+        if day not in taken:
+            return f"{day}T10:00:00+03:00"
+    return (datetime.now(riyadh) + timedelta(days=60)).replace(hour=10, minute=0, second=0, microsecond=0).isoformat()
+
+
 @log_step(summary=lambda s: f"status={s}")
 def change_status(posting_id: str, talent_id: str, status: str, *, by: str = "company") -> str:
     if status not in STATUSES or status == "available":
@@ -205,7 +225,18 @@ def change_status(posting_id: str, talent_id: str, status: str, *, by: str = "co
         current = _current(conn, posting_id, talent_id)
         if status not in ALLOWED[current]:
             raise RuleError(f"لا يمكن الانتقال من «{current}» إلى «{status}».")
-        _write(conn, posting_id, talent_id, status)
+        if status == "applied":
+            job = conn.execute("SELECT status FROM postings WHERE id = ?", (posting_id,)).fetchone()
+            if job and job["status"] != "active":
+                raise RuleError("انتهى التقديم على هذه الوظيفة.")
+            if not _has_cv(conn, talent_id):
+                raise RuleError("أكمل تحليل سيرتك الذاتية قبل التقديم.")
+        interview = None
+        if status == "nominated":
+            row = conn.execute("SELECT interview_at FROM applications WHERE posting_id = ? AND talent_id = ?", (posting_id, talent_id)).fetchone()
+            if not (row and row["interview_at"]):
+                interview = _default_interview(conn, talent_id)
+        _write(conn, posting_id, talent_id, status, interview)
     return status
 
 
@@ -242,7 +273,7 @@ def indicators(posting_id: str | None = None) -> dict:
                " WHERE a.status != 'available'")
         rows = conn.execute(sql + (" AND a.posting_id = ?" if posting_id else ""),
                             (posting_id,) if posting_id else ()).fetchall()
-        postings = conn.execute("SELECT COUNT(*) FROM postings").fetchone()[0]
+        postings = conn.execute("SELECT COUNT(*) FROM postings WHERE source = 'company'").fetchone()[0]
     matches = [match_score(json.loads(r["talent_skills"]), json.loads(r["posting_skills"])) for r in rows]
     hired = [r for r in rows if r["status"] == "hired"]
     pct = lambda part, whole: round(part / whole * 100) if whole else 0  # noqa: E731

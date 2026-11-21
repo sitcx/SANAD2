@@ -54,7 +54,9 @@ def test_search_widens_and_ranks():
     matches = [j["match"] for j in state["jobs"]]
     assert matches == sorted(matches, reverse=True)
     top = state["recommended"][0]
-    assert top["job_id"] == "analyst" and top["match"] >= 70   # 2 of 3 skills + city + experience
+    # ATS-style weighting (teammate's matcher): 2 of 3 requirements + city + experience, but no held title or degree -> ~60%
+    assert top["job_id"] == "analyst" and top["match"] >= 55
+    assert top["missing_skills"] == ["Data analysis"] and "ينقصك" in top["reason"]
     assert top["title"] == "Data Analyst" and top["reason"]
     assert len(state["recommended"]) <= 3
 

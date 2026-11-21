@@ -149,11 +149,6 @@ function SanadSessionProvider({ children, signOut }: { children: ReactNode; sign
     const timer = window.setTimeout(() => setSupportTickets(current => current.map(ticket => ticket.status === 'resolved' ? ticket : advanceTicket(ticket, new Date().toISOString()))), 4000);
     return () => window.clearTimeout(timer);
   }, [openTicketKey]);
-  useEffect(() => {
-    if (cvStatus !== 'analysing') return;
-    const timer = window.setTimeout(() => setCvStatus('analysed'), 1200);
-    return () => window.clearTimeout(timer);
-  }, [cvStatus]);
   function selectJob(id: string) {
     if (!jobs.some(job => job.id === id) || id === selectedJobId) return;
     setSelectedJobId(id);

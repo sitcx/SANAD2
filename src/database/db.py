@@ -34,7 +34,9 @@ def init_db() -> None:
                 " VALUES (?, ?, ?, ?, ?, ?, ?)",
                 (job["id"], job["title"], job.get("company"), job.get("city"), job.get("mode"),
                  job.get("description"), json.dumps(job.get("skills", []), ensure_ascii=False)))
-        from src.database.company_db import seed   # local import: company_db imports this module
+        from src.database.candidate_db import migrate   # local imports: these modules import this one
+        from src.database.company_db import seed
+        migrate(conn)
         seed(conn)
 
 

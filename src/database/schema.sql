@@ -62,3 +62,35 @@ CREATE TABLE IF NOT EXISTS applications (
     updated_at    TEXT DEFAULT CURRENT_TIMESTAMP,
     UNIQUE (posting_id, talent_id)
 );
+
+-- Job agent (CV reader, matching, job search): one analysed profile per candidate, match per job, agent runs.
+CREATE TABLE IF NOT EXISTS cv_profiles (
+    candidate_id    TEXT PRIMARY KEY,         -- talent id (company side) or job-agent candidate id
+    profile_json    TEXT NOT NULL,            -- ATS profile: skills, roles by kind, education, projects, ATS report
+    engine          TEXT NOT NULL,            -- heuristic | claude
+    parser_version  INTEGER NOT NULL,
+    cv_text         TEXT,                     -- extracted text: re-matching scans it like an ATS; re-read when the reader improves
+    updated_at      TEXT DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS job_matches (
+    candidate_id    TEXT NOT NULL,
+    job_id          TEXT NOT NULL,
+    score           INTEGER NOT NULL,
+    reason          TEXT NOT NULL,
+    matched_json    TEXT NOT NULL,
+    missing_json    TEXT NOT NULL,
+    updated_at      TEXT DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (candidate_id, job_id)
+);
+
+CREATE TABLE IF NOT EXISTS agent_runs (
+    id            INTEGER PRIMARY KEY AUTOINCREMENT,
+    agent         TEXT NOT NULL,              -- cv | jobs-personal | jobs-sources
+    candidate_id  TEXT,
+    status        TEXT NOT NULL,              -- running | succeeded | failed
+    stats_json    TEXT NOT NULL DEFAULT '{}', -- stages (name, label, status, detail) or search counts
+    error         TEXT,
+    started_at    TEXT DEFAULT CURRENT_TIMESTAMP,
+    finished_at   TEXT
+);

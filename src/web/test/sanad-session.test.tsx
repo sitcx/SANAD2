@@ -21,13 +21,14 @@ describe('Candidate session journey', () => {
     expect(error).not.toBeNull();
     expect(result.current.schedules['support']).toBe('2026-11-22T10:00:00+03:00');
   });
-  it('finishes mock CV analysis in shared session state', () => {
+  it('keeps the CV analysing until the job agent answers', () => {
     vi.useFakeTimers();
     try {
       const { result, unmount } = renderHook(() => useSanad(), { wrapper: SanadProvider });
       act(() => result.current.setCvStatus('analysing'));
+      act(() => vi.advanceTimersByTime(5000));
       expect(result.current.cvStatus).toBe('analysing');
-      act(() => vi.advanceTimersByTime(1200));
+      act(() => result.current.setCvStatus('analysed'));
       expect(result.current.cvStatus).toBe('analysed');
       unmount();
     } finally {

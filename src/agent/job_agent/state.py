@@ -7,6 +7,7 @@ from typing import Annotated, TypedDict
 
 class JobAgentState(TypedDict, total=False):
     cv_file: str               # path of the uploaded CV
+    cv_text: str               # its text: job keywords are also looked up here (never logged, not returned by the API)
     answers: dict              # candidate's answers to missing_info (e.g. {"city": "Riyadh"})
     profile: dict              # skills, major, experience, city (from read_cv + answers)
     missing_info: list[str]    # fields the agent must ask the candidate about
@@ -20,3 +21,4 @@ class ScoreTask(TypedDict):
     """Input of one parallel score_job branch."""
     profile: dict
     job: dict
+    cv_text: str

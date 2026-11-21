@@ -59,7 +59,7 @@ def test_job_flow_logs_every_step(log_lines):
     for step in ("search_jobs", "score_job", "init_db", "save_candidate"):
         assert _ok(log_lines, step), step
     text = "\n".join(log_lines)
-    for tag in ("[RUN] Job Agent", "[DECISION]", "[RESULT]", "[DONE] Job Agent", "[FALLBACK]"):
+    for tag in ("[RUN] Job Agent", "[DECISION]", "[RESULT]", "[DONE] Job Agent"):   # scoring is deterministic: no LLM fallback
         assert tag in text, tag
 
 

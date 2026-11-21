@@ -1,6 +1,7 @@
 # Python dependencies for the Sanad agents (src/agent, src/database)
 langgraph>=0.2
 langchain-anthropic>=0.3
+anthropic>=2.0             # job search agent: Claude with web search + web fetch (src/agent/job_agent/search)
 fastapi>=0.115
 uvicorn[standard]>=0.30
 python-multipart>=0.0.9   # CV upload (multipart form)

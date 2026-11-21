@@ -7,6 +7,7 @@ import json
 import os
 
 os.environ["SANAD_LOG_FILE"] = "none"   # tests log to the console only, not src/logger/logs/sanad.log
+os.environ["SANAD_DISABLE_JOB_SOURCES"] = "1"   # tests never call live job sites
 
 import numpy as np
 import pytest
@@ -18,11 +19,14 @@ from src.agent.inference import llm, sign_model
 @pytest.fixture(autouse=True)
 def isolated(monkeypatch, tmp_path):
     monkeypatch.setenv("ANTHROPIC_API_KEY", "")   # rules only, never call Claude in tests
+    monkeypatch.setenv("OPENROUTER_API_KEY", "")  # nor OpenRouter (the real key may be in .env)
     llm.get_llm.cache_clear()
     settings = copy.deepcopy(config_module.get_config())
     settings["database"]["path"] = str(tmp_path / "sanad.db")
+    settings["llm"] = {**settings.get("llm", {}), "provider": "anthropic", "model": "claude-sonnet-5-5"}
+    settings["job_agent"] = {**settings.get("job_agent", {}), "llm": {"provider": "anthropic", "model": "claude-opus-5-5"}}
     settings["signs"]["gallery_dir"] = str(tmp_path / "gallery")
-    for module in ("src.agent.core.config", "src.database.db", "src.agent.job_agent.graph",
+    for module in ("src.agent.core.config", "src.agent.inference.llm", "src.database.db", "src.agent.job_agent.graph",
                    "src.agent.job_agent.tools.search_jobs", "src.agent.interview_agent.graph",
                    "src.agent.interview_agent.tools.compose_sentence", "src.agent.inference.sign_model"):
         # import_module returns the module itself; a dotted string would hit the same-named
