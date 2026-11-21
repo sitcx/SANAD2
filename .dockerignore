@@ -1,0 +1,14 @@
+.git
+.venv
+node_modules
+.output
+.tanstack
+.pytest_cache
+__pycache__
+**/__pycache__
+.env
+.env.*
+!.env.example
+src/logger/logs
+src/data/dataset
+instance
