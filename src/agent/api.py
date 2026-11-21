@@ -3,17 +3,20 @@
 Run from the project root:  uvicorn src.agent.api:app --reload --port 8010
 
     GET  /health
+    GET  /speech/status         Whisper Large-v3 (Arabic only): idle | loading | ready | unavailable
     POST /jobs/recommend        multipart: cv (pdf/docx/txt/md/json file) | profile (JSON), answers (JSON), name
     WS   /interview/{session}   first message {"type": "start", "mode": "ai"|"human", "job_id"?, "candidate_id"?}
-                                then events: {"type": "question", "text"} | {"type": "signs", "segments"}
+                                then events: {"type": "question", "text" | "audio_b64"} | {"type": "signs", "segments"}
                                              {"type": "choose", "index": 0..2 | null} | {"type": "interpreter"}
 """
 from __future__ import annotations
 
 import base64
+import binascii
 import json
 import os
 import tempfile
+import threading
 import time
 from contextlib import asynccontextmanager
 from pathlib import Path
@@ -25,6 +28,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import ValidationError
 
 from src.agent.interview_agent.graph import InterviewSession, build_interview_graph
+from src.agent.speech import InvalidAudio, SpeechError, model_status, warm_up
 from src.agent.schemas import ErrorReply, StartedReply, StartMessage, StateReply, event_message_adapter
 from src.agent.job_agent.graph import recommend_jobs
 from src.database import db
@@ -40,6 +44,8 @@ _interview_graph = build_interview_graph()   # one graph; state kept per session
 @asynccontextmanager
 async def lifespan(_app: FastAPI):
     db.init_db()
+    if os.getenv("SANAD_SPEECH_PRELOAD") == "1":   # set by run.py: load Whisper now, not on the first question
+        threading.Thread(target=warm_up, name="whisper-warm-up", daemon=True).start()
     log.info("[OK]    database ready, API listening")
     yield
 
@@ -75,6 +81,12 @@ async def log_requests(request, call_next):
 @app.get("/health")
 def health() -> dict:
     return {"status": "ok"}
+
+
+@app.get("/speech/status")
+def speech_status() -> dict:
+    """State of the Arabic-only Whisper Large-v3 model (language is always "ar", task "transcribe")."""
+    return model_status()
 
 
 def _json_form(value: str | None, field: str) -> dict:
@@ -146,7 +158,10 @@ def _event_from_message(message) -> dict:
     if message.type == "choose":
         event["index"] = message.index          # keep None = "None of these"
     if getattr(message, "audio_b64", None):
-        event["audio"] = base64.b64decode(message.audio_b64)
+        try:
+            event["audio"] = base64.b64decode(message.audio_b64, validate=True)
+        except (binascii.Error, ValueError) as exc:
+            raise InvalidAudio(detail="audio_b64 is not valid base64") from exc
     return event
 
 
@@ -183,6 +198,10 @@ async def interview(websocket: WebSocket, session_id: str) -> None:
                 continue
             try:
                 result = await run_in_threadpool(session.send, _event_from_message(message))
+            except SpeechError as exc:   # microphone question not understood: Arabic message for the UI
+                log.warning("[FAIL]  speech -> %s (%s)", exc.code, exc.detail)
+                await _send(websocket, ErrorReply(error=exc.code, details=[exc.message]))
+                continue
             except Exception as exc:  # noqa: BLE001 - keep the interview going
                 log.exception("interview event failed: session=%s", session_id)
                 await _send(websocket, ErrorReply(error=type(exc).__name__))

@@ -36,6 +36,7 @@ Claude is optional: add `ANTHROPIC_API_KEY` to `.env`; without it the agents use
 | [Database](docs/database.md) | tables and the `instance/` folder |
 | [Logging](docs/logging.md) | reading the logs, tags, request ids |
 | [Sign recognition](docs/sign-recognition.md) | sign gallery and keypoint format |
+| [Speech-to-text](docs/speech.md) | Whisper Large-v3, Arabic only, from the interview microphone |
 | [Configuration](docs/configuration.md) | `config.yaml` and `.env` |
 
 ## Project structure

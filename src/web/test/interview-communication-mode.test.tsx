@@ -54,11 +54,15 @@ describe('Interview communication without audio', () => {
     expect((notice!.compareDocumentPosition(captions!) & Node.DOCUMENT_POSITION_FOLLOWING) > 0).toBe(true);
   });
 
-  it('has no human support entry and no microphone control in the room', () => {
+  it('has no human support entry and an opt-in Arabic microphone control in the room', () => {
     window.scrollTo = vi.fn();
+    const getUserMedia = vi.fn();
+    vi.stubGlobal('navigator', { ...navigator, mediaDevices: { getUserMedia } });
     render(<SanadProvider><TooltipProvider><MeetingRoom job={jobs[0]} preview media={cameraOnlyMedia} candidateName="رند" communication="sign" /></TooltipProvider></SanadProvider>);
     expect(screen.queryByText(/دعم بشري/)).toBeNull();
-    expect(screen.queryByRole('button', { name: /الميكروفون/ })).toBeNull();
+    expect(screen.getByRole('button', { name: 'تشغيل الميكروفون لكلام مسؤول التوظيف بالعربية' })).toHaveAttribute('aria-pressed', 'false');
+    expect(getUserMedia).not.toHaveBeenCalled();
     expect(screen.queryByRole('button', { name: /مترجم/ })).not.toBeNull();
+    vi.unstubAllGlobals();
   });
 });

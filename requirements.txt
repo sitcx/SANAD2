@@ -19,4 +19,6 @@ httpx>=0.27
 mediapipe>=0.10; python_version < "3.13"
 opencv-python>=4.9; python_version < "3.13"
 
-# Optional server-side speech-to-text fallback: pip install faster-whisper
+# Arabic speech-to-text (src/agent/speech): Whisper Large-v3 via CTranslate2.
+# The model (~3 GB) downloads on first use; see config.yaml -> speech.
+faster-whisper>=1.1
